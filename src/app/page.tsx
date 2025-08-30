@@ -7,10 +7,10 @@ export default async function Home() {
         <HydrateClient>
             <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
                 <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-                    <h1 className="font-extrabold text-5xl tracking-tight sm:text-[5rem]">
+                    <h1 className="font-extrabold text-5xl tracking-tight sm:text-[5rem] text-center">
                         Wadebridge <span className="text-[hsl(280,100%,70%)]">Gaming</span> Group
                     </h1>
-                   <p className="mt-4 text-2xl font-semibold text-white/80 text-center">
+                    <p className="mt-4 text-2xl font-semibold text-white/80 text-center">
                         Join us for board games and other tabletop fun every
                         <span className="text-orange-400"> Thursday at 6.30pm</span>.
                         <br />

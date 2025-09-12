@@ -7,16 +7,43 @@ export default async function Home() {
         <HydrateClient>
             <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
                 <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
+                    <img
+                        src="/logo.png"
+                        alt="Wadebridge Gaming Group Logo"
+                        className="h-128 w-128 rounded-full shadow-lg mb-4"
+                        width={96}
+                        height={96}
+                    />
                     <h1 className="font-extrabold text-5xl tracking-tight sm:text-[5rem] text-center">
                         Wadebridge <span className="text-[hsl(280,100%,70%)]">Gaming</span> Group
                     </h1>
                     <p className="mt-4 text-2xl font-semibold text-white/80 text-center">
                         Join us for board games and other tabletop fun every
-                        <span className="text-orange-400"> Thursday at 6.30pm</span>.
-                        <br />
-                        Click below to find out more and chat to us.
+                        <span className="text-orange-400"> Thursday at 6.30pm</span> at the Egloshayle Pavilion, Wadebridge.
                     </p>
 
+                    <div className="w-full flex flex-col items-center gap-4">
+                        <div className="w-full max-w-xl h-128 rounded-xl overflow-hidden shadow-lg border border-white/20">
+                            <iframe
+                                title="Meeting place - Egloshayle Pavilion, Wadebridge"
+                                src="https://www.google.com/maps?q=Wadebridge+Egloshayle+Pavilion,+Wadebridge,+PL27+6AQ&output=embed"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen={true}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+                        <div className="text-lg text-white/80 text-center">
+                            <p className="font-semibold">Address:</p>
+                            <p>Egloshayle Pavilion, Wadebridge, PL27 6AQ</p>
+                        </div>
+                    </div>
+
+                    <p className="mt-4 text-2xl font-semibold text-white/80 text-center">
+                        Click below to to join our Discord community and Facebook group
+                    </p>
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
                         <a
                             className="flex flex-col items-center gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20 transition"
@@ -38,25 +65,6 @@ export default async function Home() {
                             <FaFacebook size={48} className="text-blue-500" />
                             <span className="font-bold text-2xl">Facebook</span>
                         </a>
-                    </div>
-
-                    <div className="w-full flex flex-col items-center gap-4 mt-12">
-                        <div className="w-full max-w-xl h-128 rounded-xl overflow-hidden shadow-lg border border-white/20">
-                            <iframe
-                                title="Meeting place - Egloshayle Pavilion, Wadebridge"
-                                src="https://www.google.com/maps?q=Wadebridge+Egloshayle+Pavilion,+Wadebridge,+PL27+6AQ&output=embed"
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allowFullScreen={true}
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                            />
-                        </div>
-                        <div className="text-lg text-white/80 text-center">
-                            <p className="font-semibold">Address:</p>
-                            <p>Egloshayle Pavilion, Wadebridge, PL27 6AQ</p>
-                        </div>
                     </div>
                 </div>
             </main>

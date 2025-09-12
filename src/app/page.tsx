@@ -8,9 +8,9 @@ export default async function Home() {
             <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
                 <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
                     <img
-                        src="/logo.png"
+                        src="/logo_no_background.png"
                         alt="Wadebridge Gaming Group Logo"
-                        className="h-128 w-128 rounded-full shadow-lg mb-4"
+                        className="h-104 w-128 rounded-full"
                         width={96}
                         height={96}
                     />

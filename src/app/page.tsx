@@ -8,11 +8,10 @@ export default async function Home() {
             <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
                 <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
                     <img
-                        src="/logo_no_background.png"
+                        src="/logo_no_background_white.png"
                         alt="Wadebridge Gaming Group Logo"
-                        className="h-104 w-128 rounded-full"
-                        width={96}
-                        height={96}
+                        className="w-42 h-42 sm:w-48 sm:h-48 lg:w-72 lg:h-72 rounded-full object-cover"
+                        style={{ aspectRatio: "1 / 1" }}
                     />
                     <h1 className="font-extrabold text-5xl tracking-tight sm:text-[5rem] text-center">
                         Wadebridge <span className="text-[hsl(280,100%,70%)]">Gaming</span> Group

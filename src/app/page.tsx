@@ -46,7 +46,7 @@ export default async function Home() {
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
                         <a
                             className="flex flex-col items-center gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20 transition"
-                            href="https://discord.gg/cFWZA79S"
+                            href="https://discord.gg/ByhbFs6HXm"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Discord"

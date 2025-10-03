@@ -1,6 +1,6 @@
 {
 	"name": "wadgebrige-gaming-group",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -42,8 +42,8 @@
 		"@commitlint/cli": "^20.1.0",
 		"@commitlint/config-conventional": "^20.0.0",
 		"@semantic-release/changelog": "^6.0.3",
-        "@semantic-release/git": "^10.0.1",
-        "@semantic-release/github": "^10.1.0",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/github": "^10.1.0",
 		"@tailwindcss/postcss": "^4.0.15",
 		"@types/node": "^20.14.10",
 		"@types/react": "^19.0.0",

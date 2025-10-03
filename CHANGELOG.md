@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.0...v1.0.1) (2025-10-03)
+
+
+### Bug Fixes
+
+* removed short sha version ([11dfd39](https://github.com/jackson147/wadebridge-gaming-group/commit/11dfd39b2f6e5746ad48e2ebdd0bdd5df9e22065))
+
 # 1.0.0 (2025-10-03)
 
 

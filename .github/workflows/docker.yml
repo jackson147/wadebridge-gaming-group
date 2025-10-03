@@ -12,16 +12,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: npm ci 
+
       - name: Semantic Release
         run: npx semantic-release
         env:
-          # GITHUB_TOKEN is automatically created by GitHub Actions.
-          # semantic-release uses it for creating a GitHub Release/tag.
-          # Note: If you are using branch protection, you might need a Personal Access Token 
-          # with 'repo' scope set as a secret, e.g., GH_TOKEN, and pass it here instead of GITHUB_TOKEN.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # If you are publishing to npm, you'll need the NPM_TOKEN secret as well
-          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Extract Semantic Version Tag
+        id: tag_vars
+        # semantic-release creates a tag. We find the latest one starting with 'v'.
+        run: |
+          RELEASE_TAG=$(git describe --tags --abbrev=0)
+          # Only proceed with Docker steps if a release tag was created
+          if [ -z "$RELEASE_TAG" ]; then
+            echo "::notice::No new release tag created by semantic-release. Skipping Docker build."
+            echo "NEXT_VERSION=no_release" >> $GITHUB_ENV
+          else
+            # Remove the 'v' prefix for the Docker tag
+            NEXT_VERSION=${RELEASE_TAG:1} 
+            echo "NEXT_VERSION=$NEXT_VERSION" >> $GITHUB_ENV
+            echo "IS_RELEASE=true" >> $GITHUB_ENV
+          fi
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -52,4 +65,5 @@ jobs:
           push: true
           tags: |
             jackson147/wadebridge-gaming-group:latest
+            jackson147/wadebridge-gaming-group:${{ env.NEXT_VERSION }}
             jackson147/wadebridge-gaming-group:${{ env.SHORT_SHA }}

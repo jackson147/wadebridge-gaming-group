@@ -6,11 +6,22 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  build-push-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Semantic Release
+        run: npx semantic-release
+        env:
+          # GITHUB_TOKEN is automatically created by GitHub Actions.
+          # semantic-release uses it for creating a GitHub Release/tag.
+          # Note: If you are using branch protection, you might need a Personal Access Token 
+          # with 'repo' scope set as a secret, e.g., GH_TOKEN, and pass it here instead of GITHUB_TOKEN.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # If you are publishing to npm, you'll need the NPM_TOKEN secret as well
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3

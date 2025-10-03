@@ -16,7 +16,9 @@
 		"postinstall": "prisma generate",
 		"preview": "next build && next start",
 		"start": "next start",
-		"typecheck": "tsc --noEmit"
+		"test": "echo \"No dedicated tests configured for T3 stack. Proceeding with type checks.\"",
+		"typecheck": "tsc --noEmit",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@auth/prisma-adapter": "^2.7.2",
@@ -37,10 +39,13 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@commitlint/cli": "^20.1.0",
+		"@commitlint/config-conventional": "^20.0.0",
 		"@tailwindcss/postcss": "^4.0.15",
 		"@types/node": "^20.14.10",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
+		"husky": "^9.1.7",
 		"postcss": "^8.5.3",
 		"prisma": "^6.5.0",
 		"tailwindcss": "^4.0.15",

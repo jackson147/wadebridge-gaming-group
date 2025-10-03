@@ -1,0 +1,28 @@
+# .releaserc.yml
+branches:
+  - main
+
+plugins:
+  # 1. Analyze commits to determine the next version (major, minor, or patch)
+  - "@semantic-release/commit-analyzer"
+  
+  # 2. Generate release notes content
+  - "@semantic-release/release-notes-generator"
+  
+  # 3. Update the CHANGELOG.md file
+  - - "@semantic-release/changelog"
+    - changelogFile: "CHANGELOG.md"
+  
+  # 4. Update the package.json version (if this is a Node.js project)
+  #    If not a Node.js project, you would replace or remove this plugin.
+  # - "@semantic-release/npm" # Default included, but listed here for clarity
+  
+  # 5. Commit the updated files (e.g., package.json, CHANGELOG.md)
+  - - "@semantic-release/git"
+    - assets:
+        - "CHANGELOG.md"
+        - "package.json" # If using npm plugin
+      message: "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+
+  # 6. Create a GitHub Release and a Git Tag
+  - "@semantic-release/github"

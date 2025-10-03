@@ -12,7 +12,7 @@ jobs:
       packages: write
       issues: write
       pull-requests: write
-      
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -72,4 +72,3 @@ jobs:
           tags: |
             jackson147/wadebridge-gaming-group:latest
             jackson147/wadebridge-gaming-group:${{ env.NEXT_VERSION }}
-            jackson147/wadebridge-gaming-group:${{ env.SHORT_SHA }}

@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.1...v1.0.2) (2025-10-03)
+
+
+### Bug Fixes
+
+* **discord:** updated invite link ([6bfa142](https://github.com/jackson147/wadebridge-gaming-group/commit/6bfa142a54ace2f339d6de2766a92c57f5964ab1))
+
 ## [1.0.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.0...v1.0.1) (2025-10-03)
 
 

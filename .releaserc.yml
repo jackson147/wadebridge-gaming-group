@@ -15,7 +15,7 @@ plugins:
   
   # 4. Update the package.json version (if this is a Node.js project)
   #    If not a Node.js project, you would replace or remove this plugin.
-  # - "@semantic-release/npm" # Default included, but listed here for clarity
+  - "@semantic-release/npm" # Default included, but listed here for clarity
   
   # 5. Commit the updated files (e.g., package.json, CHANGELOG.md)
   - - "@semantic-release/git"

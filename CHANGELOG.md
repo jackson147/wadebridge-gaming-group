@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.3...v1.0.4) (2025-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency next to v15.5.4 ([#4](https://github.com/jackson147/wadebridge-gaming-group/issues/4)) ([8b68814](https://github.com/jackson147/wadebridge-gaming-group/commit/8b688149a1c90b8e9ad74e29215506dd863d2d9e))
+* **deps:** update dependency next-auth to v5.0.0-beta.29 ([#8](https://github.com/jackson147/wadebridge-gaming-group/issues/8)) ([88847fd](https://github.com/jackson147/wadebridge-gaming-group/commit/88847fdcbd1dbdf4d5e0e85697d060af745e06b3))
+* **renovate:** modified renovate to auto merge and ignore tests (as we don't have any) ([dc3154f](https://github.com/jackson147/wadebridge-gaming-group/commit/dc3154fc69c9ee9883989079eca4057b8ed60148))
+
 ## [1.0.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.2...v1.0.3) (2025-10-04)
 
 

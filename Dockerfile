@@ -10,11 +10,6 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-ARG AUTH_SECRET
-ARG AUTH_DISCORD_ID
-ARG AUTH_DISCORD_SECRET
-ARG DATABASE_URL
-ARG AUTH_TRUST_HOST
 
 RUN --mount=type=secret,id=auth_secret,env=AUTH_SECRET \
     --mount=type=secret,id=auth_discord_id,env=AUTH_DISCORD_ID \

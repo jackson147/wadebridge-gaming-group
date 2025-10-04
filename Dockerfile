@@ -16,12 +16,12 @@ ARG AUTH_DISCORD_SECRET
 ARG DATABASE_URL
 ARG AUTH_TRUST_HOST
 
-ENV AUTH_SECRET=$AUTH_SECRET
-ENV AUTH_DISCORD_ID=$AUTH_DISCORD_ID
-ENV AUTH_DISCORD_SECRET=$AUTH_DISCORD_SECRET
-ENV DATABASE_URL=$DATABASE_URL
-ENV AUTH_TRUST_HOST=$AUTH_TRUST_HOST
-RUN npm run build
+RUN --mount=type=secret,id=auth_secret,env=AUTH_SECRET \
+    --mount=type=secret,id=auth_discord_id,env=AUTH_DISCORD_ID \
+    --mount=type=secret,id=auth_discord_secret,env=AUTH_DISCORD_SECRET \
+    --mount=type=secret,id=database_url,env=DATABASE_URL \
+    --mount=type=secret,id=auth_trust_host,env=AUTH_TRUST_HOST \
+    npm run build
 
 # Production image
 FROM node:22-alpine AS runner

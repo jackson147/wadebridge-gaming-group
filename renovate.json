@@ -3,5 +3,12 @@
   "extends": [
     "config:recommended",
     ":semanticCommitTypeAll(fix)"
+  ],
+  "ignoreTests": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true 
+    }
   ]
 }

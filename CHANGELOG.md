@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.8...v1.0.9) (2025-10-04)
+
+
+### Bug Fixes
+
+* test secure build ([1cf3ae9](https://github.com/jackson147/wadebridge-gaming-group/commit/1cf3ae9fbcdf0ecda1d2b233c79638049341efc1))
+
 ## [1.0.8](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.7...v1.0.8) (2025-10-04)
 
 

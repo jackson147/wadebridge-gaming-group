@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.11...v1.0.12) (2025-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update npm to v11 ([467918d](https://github.com/jackson147/wadebridge-gaming-group/commit/467918d4b515fc144611e9369a5683c08700470b))
+
 ## [1.0.11](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.10...v1.0.11) (2025-10-04)
 
 

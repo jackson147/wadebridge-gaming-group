@@ -1,3 +1,13 @@
+## [1.0.10](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.9...v1.0.10) (2025-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency zod to v4 ([4eb3e87](https://github.com/jackson147/wadebridge-gaming-group/commit/4eb3e874c629857f325f9d8b6b6b295b04bb91ab))
+* **deps:** update docker/build-push-action action to v6 ([baecc20](https://github.com/jackson147/wadebridge-gaming-group/commit/baecc2056b8ecfde09129968e6ccf8cf32e45646))
+* removed redundant args ([ff743f8](https://github.com/jackson147/wadebridge-gaming-group/commit/ff743f83b1913229155d1091937ca2875efdd130))
+* tried to lock down build ([409b807](https://github.com/jackson147/wadebridge-gaming-group/commit/409b807b2bf4b109ce56f28b7b1f212e6277389f))
+
 ## [1.0.9](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.8...v1.0.9) (2025-10-04)
 
 

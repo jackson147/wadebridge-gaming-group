@@ -1,3 +1,13 @@
+## [1.0.11](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.10...v1.0.11) (2025-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update actions/checkout action to v5 ([97bd0b1](https://github.com/jackson147/wadebridge-gaming-group/commit/97bd0b1f2c817a6d1c503b65108b7bcafa977c93))
+* **deps:** update actions/setup-node action to v5 ([fe6ddb5](https://github.com/jackson147/wadebridge-gaming-group/commit/fe6ddb5e14bd6e1eb9af8c679fbfb7c32c9e4377))
+* **deps:** update dependency @semantic-release/github to v11 ([040b6a3](https://github.com/jackson147/wadebridge-gaming-group/commit/040b6a3099222679e930ecf8135e2cebd83b2e4e))
+* **deps:** update dependency node to v22 ([6565530](https://github.com/jackson147/wadebridge-gaming-group/commit/6565530a628b7e699e7466ade3061404b99fa84c))
+
 ## [1.0.10](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.9...v1.0.10) (2025-10-04)
 
 

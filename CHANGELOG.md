@@ -1,3 +1,11 @@
+## [1.0.6](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.5...v1.0.6) (2025-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-query to v5.90.2 ([#9](https://github.com/jackson147/wadebridge-gaming-group/issues/9)) ([a48e8d1](https://github.com/jackson147/wadebridge-gaming-group/commit/a48e8d169f80534955d83e7224bb5ad621f02896))
+* **deps:** update prisma monorepo to v6.16.3 ([#10](https://github.com/jackson147/wadebridge-gaming-group/issues/10)) ([6e283b9](https://github.com/jackson147/wadebridge-gaming-group/commit/6e283b99107cf44c6b4fa5c393818da9d80028ef))
+
 ## [1.0.5](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.4...v1.0.5) (2025-10-04)
 
 

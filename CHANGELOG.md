@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.2...v1.0.3) (2025-10-04)
+
+
+### Bug Fixes
+
+* **renovate:** ensured all renovate mrs are set to fix as opposed to chore ([ead43c4](https://github.com/jackson147/wadebridge-gaming-group/commit/ead43c4c3a07202fa12a94947f0d6570517e8ef1))
+
 ## [1.0.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.1...v1.0.2) (2025-10-03)
 
 

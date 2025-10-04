@@ -1,3 +1,11 @@
+## [1.0.8](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.7...v1.0.8) (2025-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update actions/checkout action to v5 ([f88dc62](https://github.com/jackson147/wadebridge-gaming-group/commit/f88dc62b9ecee1f42818f9421a44469904947ad0))
+* **deps:** update dependency @biomejs/biome to v2 ([39c1716](https://github.com/jackson147/wadebridge-gaming-group/commit/39c1716f3e651acd45be91bced2288c749d9a6e2))
+
 ## [1.0.7](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.6...v1.0.7) (2025-10-04)
 
 

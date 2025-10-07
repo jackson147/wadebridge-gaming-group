@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.16...v1.0.17) (2025-10-07)
+
+
+### Bug Fixes
+
+* **deps:** update prisma monorepo to v6.17.0 ([#28](https://github.com/jackson147/wadebridge-gaming-group/issues/28)) ([eaf4015](https://github.com/jackson147/wadebridge-gaming-group/commit/eaf40150a34b8f12f7356189003aca00b91eab0a))
+
 ## [1.0.16](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.15...v1.0.16) (2025-10-07)
 
 

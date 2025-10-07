@@ -1,4 +1,5 @@
 import { FaFacebook, FaDiscord } from "react-icons/fa";
+import { FaImages } from "react-icons/fa6";
 import { HydrateClient } from "~/trpc/server";
 
 export default async function Home() {
@@ -43,7 +44,7 @@ export default async function Home() {
                     <p className="mt-4 text-2xl font-semibold text-white/80 text-center">
                         Click below to to join our Discord community and Facebook group
                     </p>
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-8">
                         <a
                             className="flex flex-col items-center gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20 transition"
                             href="https://discord.gg/ByhbFs6HXm"
@@ -63,6 +64,14 @@ export default async function Home() {
                         >
                             <FaFacebook size={48} className="text-blue-500" />
                             <span className="font-bold text-2xl">Facebook</span>
+                        </a>
+                        <a
+                            className="flex flex-col items-center gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20 transition"
+                            href="/gallery"
+                            aria-label="Gallery"
+                        >
+                            <FaImages size={48} className="text-green-400" />
+                            <span className="font-bold text-2xl">Gallery</span>
                         </a>
                     </div>
                 </div>

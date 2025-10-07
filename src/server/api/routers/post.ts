@@ -1,41 +1,86 @@
+import { PutObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import { randomUUID } from "crypto";
 import { z } from "zod";
-
 import {
-	createTRPCRouter,
-	protectedProcedure,
-	publicProcedure,
+  createTRPCRouter,
+  protectedProcedure,
+  publicProcedure,
 } from "~/server/api/trpc";
+import { s3Client } from "~/server/api/routers/s3";
+import { env } from "~/env";
 
 export const postRouter = createTRPCRouter({
-	hello: publicProcedure
-		.input(z.object({ text: z.string() }))
-		.query(({ input }) => {
-			return {
-				greeting: `Hello ${input.text}`,
-			};
-		}),
+  // Procedure to get a presigned URL for uploading a file
+  createPresignedUrl: protectedProcedure
+    .input(z.object({ fileType: z.string() }))
+    .mutation(async ({ input }) => {
+      const id = randomUUID();
+      const ex = input.fileType.split("/")[1];
+      const key = `${id}.${ex}`;
 
-	create: protectedProcedure
-		.input(z.object({ name: z.string().min(1) }))
-		.mutation(async ({ ctx, input }) => {
-			return ctx.db.post.create({
-				data: {
-					name: input.name,
-					createdBy: { connect: { id: ctx.session.user.id } },
-				},
-			});
-		}),
+      const command = new PutObjectCommand({
+        Bucket: env.S3_BUCKET_NAME,
+        Key: key,
+        ContentType: input.fileType,
+      });
 
-	getLatest: protectedProcedure.query(async ({ ctx }) => {
-		const post = await ctx.db.post.findFirst({
-			orderBy: { createdAt: "desc" },
-			where: { createdBy: { id: ctx.session.user.id } },
-		});
+      const url = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
 
-		return post ?? null;
-	}),
+      return { url, key };
+    }),
 
-	getSecretMessage: protectedProcedure.query(() => {
-		return "you can now see this secret message!";
-	}),
+  // Procedure to confirm upload and create a Post record
+  confirmUpload: protectedProcedure
+    .input(
+      z.object({
+        key: z.string(),
+        name: z.string().min(1),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      const imageUrl = `${env.S3_ENDPOINT}/${env.S3_BUCKET_NAME}/${input.key}`;
+
+      return ctx.db.post.create({
+        data: {
+          name: input.name,
+          imageUrl,
+          createdBy: { connect: { id: ctx.session.user.id } },
+        },
+      });
+    }),
+
+  // Procedure to get all posts for the gallery view
+  getAll: publicProcedure.query(({ ctx }) => {
+    return ctx.db.post.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+  }),
+
+  getLatest: protectedProcedure.query(async ({ ctx }) => {
+    const post = await ctx.db.post.findFirst({
+      orderBy: { createdAt: "desc" },
+      where: { createdBy: { id: ctx.session.user.id } },
+    });
+
+    return post ?? null;
+  }),
+
+  getSecretMessage: protectedProcedure.query(() => {
+    return "you can now see this secret message!";
+  }),
+
+  // This is no longer used by the modal, but we can keep it for now
+  create: protectedProcedure
+    .input(z.object({ name: z.string().min(1) }))
+    .mutation(async ({ ctx, input }) => {
+      // This mutation would need to be updated to handle image URLs if used elsewhere
+      return ctx.db.post.create({
+        data: {
+          name: input.name,
+          createdBy: { connect: { id: ctx.session.user.id } },
+          imageUrl: "", // Added a default empty string
+        },
+      });
+    }),
 });

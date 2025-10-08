@@ -1,3 +1,11 @@
+## [1.0.18](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.17...v1.0.18) (2025-10-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @auth/prisma-adapter to v2.11.0 ([#30](https://github.com/jackson147/wadebridge-gaming-group/issues/30)) ([2aadc05](https://github.com/jackson147/wadebridge-gaming-group/commit/2aadc05efc5a364b7c596ad23b0df303d3e08932))
+* **deps:** update npm to v11.6.2 ([#29](https://github.com/jackson147/wadebridge-gaming-group/issues/29)) ([dd1082c](https://github.com/jackson147/wadebridge-gaming-group/commit/dd1082ca046c9243f79b333d906969b3c143ebc9))
+
 ## [1.0.17](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.16...v1.0.17) (2025-10-07)
 
 

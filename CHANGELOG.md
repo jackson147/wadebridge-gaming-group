@@ -1,3 +1,10 @@
+## [1.0.19](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.18...v1.0.19) (2025-10-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v22.18.9 ([#32](https://github.com/jackson147/wadebridge-gaming-group/issues/32)) ([13b9c3a](https://github.com/jackson147/wadebridge-gaming-group/commit/13b9c3a5a5019850e4ec4dc9ec04334ba4bbdb33))
+
 ## [1.0.18](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.17...v1.0.18) (2025-10-08)
 
 

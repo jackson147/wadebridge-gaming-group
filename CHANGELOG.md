@@ -1,3 +1,10 @@
+## [1.0.22](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.21...v1.0.22) (2025-10-11)
+
+
+### Bug Fixes
+
+* **deps:** update docker/build-push-action action to v6 ([d441771](https://github.com/jackson147/wadebridge-gaming-group/commit/d4417716403aca9094761b63065f1a008c15126e))
+
 ## [1.0.21](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.20...v1.0.21) (2025-10-11)
 
 

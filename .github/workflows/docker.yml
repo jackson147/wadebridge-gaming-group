@@ -5,7 +5,7 @@ on:
   push:
     branches:
       # Run on all branches
-      - '*'
+      - '**'
 
 jobs:
   build-push-release:
@@ -127,7 +127,7 @@ jobs:
           context: .
           push: true
           # Tags the image uniquely with branch-name-short-sha (e.g., feature-auth-fix-a1b2c3d)
-          tags: jackson147/wadebridge-gaming-group:${{ env.IMAGE_TAG }}
+          tags: jackson147/wadebridge-gaming-group:${{ steps.vars.outputs.IMAGE_TAG }}
           secrets: |
             auth_secret=${{ secrets.AUTH_SECRET }}
             auth_discord_id=${{ secrets.AUTH_DISCORD_ID }}

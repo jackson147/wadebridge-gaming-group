@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.20...v1.0.21) (2025-10-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v22.18.10 ([#34](https://github.com/jackson147/wadebridge-gaming-group/issues/34)) ([b7b998d](https://github.com/jackson147/wadebridge-gaming-group/commit/b7b998de71a13bd1b52c9f579d776003c0281c04))
+
 ## [1.0.20](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.19...v1.0.20) (2025-10-10)
 
 

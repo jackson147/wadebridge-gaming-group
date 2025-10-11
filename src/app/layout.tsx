@@ -1,49 +1,40 @@
 import "~/styles/globals.css";
 
-import type { Metadata } from "next";
-import Link from "next/link"; // <-- Added Link for navigation
-import { Geist } from "next/font/google";
+import { Inter } from "next/font/google";
+import { cookies } from "next/headers";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "~/server/auth";
+import { TopNav } from "./_components/TopNav";
 
-export const metadata: Metadata = {
-	title: "Wadebridge Gaming Group",
-	description: "Website for the Wadebridge Gaming Group",
-	icons: [
-		{ rel: "icon", type: "image/svg+xml", url: "/favicon.svg" },
-		{ rel: "icon", url: "/favicon.ico" }
-	],
-};
-
-const geist = Geist({
-	subsets: ["latin"],
-	variable: "--font-geist-sans",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
-export default function RootLayout({
-	children,
-}: Readonly<{ children: React.ReactNode }>) {
-	return (
-		<html lang="en" className={`${geist.variable}`}>
-			<body>
-				<TRPCReactProvider>
-					{/* Simple Fixed Navigation Bar */}
-					<nav className="sticky top-0 z-50 bg-[#2e026d] p-4 shadow-lg flex justify-center">
-						<div className="flex space-x-6 text-xl font-semibold">
-							<Link href="/" className="text-white hover:text-[hsl(280,100%,70%)] transition duration-150">
-								Home
-							</Link>
-							<Link href="/gallery" className="text-white hover:text-[hsl(280,100%,70%)] transition duration-150">
-								Gallery
-							</Link>
-						</div>
-					</nav>
-					
-					{/* Content */}
-					{children}
-					
-				</TRPCReactProvider>
-			</body>
-		</html>
-	);
+export const metadata = {
+  title: "Wadebridge Gaming Group",
+  description: "Community website for the Wadebridge Gaming Group",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
+};
+
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const session = await auth();
+  return (
+    <html lang="en">
+      <body className={`font-sans ${inter.variable} flex min-h-screen flex-col bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white`}>
+        <SessionProvider session={session}>
+          <TRPCReactProvider>
+            <TopNav />
+            {children}
+          </TRPCReactProvider>
+        </SessionProvider>
+      </body>
+    </html>
+  );
 }

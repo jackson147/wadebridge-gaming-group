@@ -25,7 +25,7 @@ export function UploadModal() {
   // This mutation likely exists in your app to get a presigned URL from the server
   const createPresignedUrl = api.post.createPresignedUrl.useMutation();
   const confirmUpload = api.post.confirmUpload.useMutation();
-
+  
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {

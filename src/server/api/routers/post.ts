@@ -14,13 +14,15 @@ export const postRouter = createTRPCRouter({
   // Procedure to get a presigned URL for uploading a file
   createPresignedUrl: protectedProcedure
     .input(z.object({ fileType: z.string() }))
-    .mutation(async ({ input }) => {
+    .mutation(async ({ ctx, input }) => {
       const id = randomUUID();
-      const ex = input.fileType.split("/")[1];
+      // A simple split might be risky if the file type is complex.
+      // Consider a more robust way to get the extension.
+      const ex = input.fileType.split("/")[1] ?? "";
       const key = `${id}.${ex}`;
 
       const command = new PutObjectCommand({
-        Bucket: env.S3_BUCKET_NAME,
+        Bucket: env.MINIO_BUCKET_NAME,
         Key: key,
         ContentType: input.fileType,
       });
@@ -39,7 +41,7 @@ export const postRouter = createTRPCRouter({
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const imageUrl = `${env.S3_ENDPOINT}/${env.S3_BUCKET_NAME}/${input.key}`;
+      const imageUrl = `${env.MINIO_ENDPOINT}/${env.MINIO_BUCKET_NAME}/${input.key}`;
 
       return ctx.db.post.create({
         data: {

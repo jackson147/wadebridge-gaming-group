@@ -17,11 +17,11 @@ export const env = createEnv({
 		NODE_ENV: z
 			.enum(["development", "test", "production"])
 			.default("development"),
-		S3_ENDPOINT: z.string(),
-		S3_REGION: z.string(),
-		S3_ACCESS_KEY_ID: z.string(),
-		S3_SECRET_ACCESS_KEY: z.string(),
-		S3_BUCKET_NAME: z.string(),
+		MINIO_ENDPOINT: z.string(),
+		MINIO_REGION: z.string(),
+		MINIO_ACCESS_KEY_ID: z.string(),
+		MINIO_SECRET_ACCESS_KEY: z.string(),
+		MINIO_BUCKET_NAME: z.string(),
 	},
 
 	/**
@@ -43,11 +43,11 @@ export const env = createEnv({
 		AUTH_DISCORD_SECRET: process.env.AUTH_DISCORD_SECRET,
 		DATABASE_URL: process.env.DATABASE_URL,
 		NODE_ENV: process.env.NODE_ENV,
-		S3_ENDPOINT: process.env.S3_ENDPOINT,
-		S3_REGION: process.env.S3_REGION,
-		S3_ACCESS_KEY_ID: process.env.S3_ACCESS_KEY_ID,
-		S3_SECRET_ACCESS_KEY: process.env.S3_SECRET_ACCESS_KEY,
-		S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
+		MINIO_ENDPOINT: process.env.MINIO_ENDPOINT,
+		MINIO_REGION: process.env.MINIO_REGION,
+		MINIO_ACCESS_KEY_ID: process.env.MINIO_ACCESS_KEY_ID,
+		MINIO_SECRET_ACCESS_KEY: process.env.MINIO_SECRET_ACCESS_KEY,
+		MINIO_BUCKET_NAME: process.env.MINIO_BUCKET_NAME,
 		// NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 	},
 	/**

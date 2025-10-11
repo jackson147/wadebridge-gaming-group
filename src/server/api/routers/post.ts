@@ -1,4 +1,4 @@
-import { PutObjectCommand } from "@aws-sdk/client-s3";
+import { DeleteObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { randomUUID } from "crypto";
 import { z } from "zod";
@@ -7,6 +7,7 @@ import {
   protectedProcedure,
   publicProcedure,
 } from "~/server/api/trpc";
+import { TRPCError } from "@trpc/server";
 import { s3Client } from "~/server/api/routers/s3";
 import { env } from "~/env";
 
@@ -60,4 +61,41 @@ export const postRouter = createTRPCRouter({
     });
   }),
 
+  // Procedure to delete a post
+  delete: protectedProcedure
+    .input(z.object({ id: z.number() }))
+    .mutation(async ({ ctx, input }) => {
+      const post = await ctx.db.post.findUnique({
+        where: { id: input.id },
+      });
+
+      // Check if post exists and if the user is the owner
+      if (!post) {
+        throw new TRPCError({ code: "NOT_FOUND" });
+      }
+      if (post.createdById !== ctx.session.user.id) {
+        throw new TRPCError({ code: "UNAUTHORIZED" });
+      }
+
+      // Extract the key from the image URL
+      const key = post.imageUrl.split("/").pop();
+      if (!key) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Could not extract image key from URL.",
+        });
+      }
+
+      // Delete the object from S3/MinIO
+      const deleteCommand = new DeleteObjectCommand({
+        Bucket: env.MINIO_BUCKET_NAME,
+        Key: key,
+      });
+      await s3Client.send(deleteCommand);
+
+      // Delete the post from the database
+      await ctx.db.post.delete({ where: { id: input.id } });
+
+      return { success: true };
+    }),
 });

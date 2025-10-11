@@ -28,6 +28,7 @@ export const postRouter = createTRPCRouter({
       });
 
       const url = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
+      console.log(url)
 
       return { url, key };
     }),
@@ -59,30 +60,4 @@ export const postRouter = createTRPCRouter({
     });
   }),
 
-  getLatest: protectedProcedure.query(async ({ ctx }) => {
-    const post = await ctx.db.post.findFirst({
-      orderBy: { createdAt: "desc" },
-      where: { createdBy: { id: ctx.session.user.id } },
-    });
-
-    return post ?? null;
-  }),
-
-  getSecretMessage: protectedProcedure.query(() => {
-    return "you can now see this secret message!";
-  }),
-
-  // This is no longer used by the modal, but we can keep it for now
-  create: protectedProcedure
-    .input(z.object({ name: z.string().min(1) }))
-    .mutation(async ({ ctx, input }) => {
-      // This mutation would need to be updated to handle image URLs if used elsewhere
-      return ctx.db.post.create({
-        data: {
-          name: input.name,
-          createdBy: { connect: { id: ctx.session.user.id } },
-          imageUrl: "", // Added a default empty string
-        },
-      });
-    }),
 });

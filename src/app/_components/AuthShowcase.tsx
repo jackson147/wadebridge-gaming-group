@@ -1,22 +1,14 @@
-import { auth, signIn, signOut } from "~/server/auth";
+"use client";
 
-export async function AuthShowcase() {
-	const session = await auth();
+import { useSession, signOut } from "next-auth/react";
+import { SignInModal } from "./SignInModal";
 
-	if (!session) {
-		return (
-			<form
-				action={async () => {
-					"use server";
-					await signIn("discord", { redirectTo: "/" });
-				}}
-			>
-				<button className="rounded-full bg-white/10 px-6 py-2 font-semibold no-underline transition hover:bg-white/20">
-					Sign in with Discord
-				</button>
-			</form>
-		);
-	}
+export function AuthShowcase() {
+  const { data: session } = useSession();
+
+  if (!session) {
+    return <SignInModal />;
+  }
 
 	return (
 		<div className="flex items-center gap-4">
@@ -24,9 +16,8 @@ export async function AuthShowcase() {
 				{session && <span>Logged in as {session.user?.name}</span>}
 			</p>
 			<form
-				action={async () => {
-					"use server";
-					await signOut();
+				action={() => {
+          void signOut();
 				}}
 			>
 				<button className="rounded-full bg-white/10 px-6 py-2 font-semibold no-underline transition hover:bg-white/20">

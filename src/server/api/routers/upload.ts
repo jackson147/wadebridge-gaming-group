@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
-// NOTE: You would typically import the MinIO client library here:
+import * as Minio from 'minio';
+import { env } from "~/env";
 // import * as Minio from 'minio';
 
 // --- Conditional Implementation Based on Environment ---
@@ -9,42 +10,35 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
  * PRODUCTION Implementation: Actual MinIO Upload Logic.
  * This function will only be executed when NODE_ENV is 'production'.
  */
-const uploadFileToMinIO_Prod = async (fileName: string, base64Data: string) => {
+const uploadFileToMinIO_Prod = async (fileName: string, base64Data: string, mimeType: string) => {
 	console.log(`[MinIO PROD] Attempting to save file: ${fileName}`);
 
+	// The MinIO client expects the endpoint to be a hostname, not a full URL.
+	const endpoint = process.env.MINIO_ENDPOINT!.replace(/(^\w+:|^)\/\//, '');
+
 	// 1. MinIO CLIENT INITIALIZATION (Example configuration)
-	/*
+	console.warn(endpoint, process.env.MINIO_PORT, process.env.MINIO_ACCESS_KEY_ID, process.env.MINIO_SECRET_ACCESS_KEY)
 	const minioClient = new Minio.Client({
-		endPoint: process.env.MINIO_ENDPOINT!, // Must be defined in .env
-		port: parseInt(process.env.MINIO_PORT || '9000'),
-		useSSL: process.env.MINIO_USE_SSL === 'true',
-		accessKey: process.env.MINIO_ACCESS_KEY!,
-		secretKey: process.env.MINIO_SECRET_KEY!,
+		endPoint: endpoint,
+		port: process.env.MINIO_PORT ? parseInt(process.env.MINIO_PORT) : undefined,
+		useSSL: true,
+		accessKey: process.env.MINIO_ACCESS_KEY_ID!,
+		secretKey: process.env.MINIO_SECRET_ACCESS_KEY!,
 	});
-    const bucketName = 'your-photo-bucket';
-	*/
+	const bucketName = process.env.MINIO_BUCKET_NAME!;
 
 	// 2. Decode Base64 string to Buffer
-	// const fileBuffer = Buffer.from(base64Data, 'base64');
-	// const fileMimeType = // ... extract mime type if needed
+	const fileBuffer = Buffer.from(base64Data, 'base64');
 
-	// 3. MinIO Call
-	/*
-	await minioClient.putObject(bucketName, fileName, fileBuffer, {
-		'Content-Type': fileMimeType
-	});
-	*/
-
-	// -----------------------------------------------------
-	// Replace the following mock with your actual MinIO connection and upload:
-	throw new Error("MinIO connection is not fully implemented in the production path yet!");
+	// 3. MinIO Call - The third argument is the size, followed by metaData
+	await minioClient.putObject(bucketName, fileName, fileBuffer, fileBuffer.length, { 'Content-Type': mimeType });
 };
 
 /**
  * DEVELOPMENT Implementation: Mock/Placeholder Logic.
  * This function will be executed when NODE_ENV is NOT 'production'.
  */
-const uploadFileToMinIO_Dev = async (fileName: string, base64Data: string) => {
+const uploadFileToMinIO_Dev = async (fileName: string, base64Data: string, _mimeType: string) => {
 	console.log(`[MinIO DEV MOCK] Simulating file save for: ${fileName}`);
 	
 	// Simulate the decode and upload delay without connecting to MinIO
@@ -60,7 +54,7 @@ const uploadFileToMinIO_Dev = async (fileName: string, base64Data: string) => {
 
 
 // --- Determine which function to use ---
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = true//process.env.NODE_ENV === 'production';
 const uploadFileToMinIO = isProduction ? uploadFileToMinIO_Prod : uploadFileToMinIO_Dev;
 console.log(`[UPLOAD ROUTER] Running in ${isProduction ? 'PRODUCTION (Real MinIO)' : 'DEVELOPMENT (Mock MinIO)'} mode.`);
 
@@ -74,20 +68,20 @@ export const uploadRouter = createTRPCRouter({
 			mimeType: z.string().startsWith("image/", "Must be an image MIME type"),
 		}))
 		.mutation(async ({ input }) => {
-			const { fileName, base64Data } = input;
+			const { fileName, base64Data, mimeType } = input;
 
 			// Remove the data URI prefix (e.g., "data:image/jpeg;base64,")
 			const base64Content = base64Data.split(',')[1] ?? base64Data;
 
 			try {
-				await uploadFileToMinIO(fileName, base64Content);
+				await uploadFileToMinIO(fileName, base64Content, mimeType);
 
 				return {
 					success: true,
 					message: `Photo "${fileName}" successfully uploaded!`,
 					// Use a mock URL in dev, or a dynamically generated MinIO URL in prod
 					url: isProduction 
-						? `https://your-minio-cluster/my-bucket/${fileName}` 
+						? `${env.MINIO_ENDPOINT}/${env.MINIO_BUCKET_NAME}/${fileName}` 
 						: `mock-dev-url/my-bucket/${fileName}`
 				};
 			} catch (error) {

@@ -33,8 +33,8 @@ export default function RootLayout({
 							<Link href="/" className="text-white hover:text-[hsl(280,100%,70%)] transition duration-150">
 								Home
 							</Link>
-							<Link href="/upload" className="text-white hover:text-[hsl(280,100%,70%)] transition duration-150">
-								Upload Photo
+							<Link href="/gallery" className="text-white hover:text-[hsl(280,100%,70%)] transition duration-150">
+								Gallery
 							</Link>
 						</div>
 					</nav>

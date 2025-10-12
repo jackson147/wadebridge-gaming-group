@@ -15,7 +15,7 @@ on:
 
 jobs:
   build-push-release:
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: write
       packages: write
@@ -134,7 +134,7 @@ jobs:
 
   dev_testing_build:
     # This job runs if the push is NOT to the 'main' branch
-    if: github.ref != 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

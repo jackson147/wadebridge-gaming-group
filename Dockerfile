@@ -16,6 +16,11 @@ RUN --mount=type=secret,id=auth_secret,env=AUTH_SECRET \
     --mount=type=secret,id=auth_discord_secret,env=AUTH_DISCORD_SECRET \
     --mount=type=secret,id=database_url,env=DATABASE_URL \
     --mount=type=secret,id=auth_trust_host,env=AUTH_TRUST_HOST \
+    --mount=type=secret,id=minio_access_key_id,env=MINIO_ACCESS_KEY_ID \
+    --mount=type=secret,id=minio_secret_access_key,env=MINIO_SECRET_ACCESS_KEY \
+    --mount=type=secret,id=minio_endpoint,env=MINIO_ENDPOINT \
+    --mount=type=secret,id=minio_bucket_name,env=MINIO_BUCKET_NAME \
+    --mount=type=secret,id=minio_region,env=MINIO_REGION \
     npm run build
 
 # Production image

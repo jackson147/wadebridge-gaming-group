@@ -1,3 +1,79 @@
+# [1.1.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.22...v1.1.0) (2025-10-12)
+
+
+### Bug Fixes
+
+* squash ([c1c2d20](https://github.com/jackson147/wadebridge-gaming-group/commit/c1c2d209ef3324d05a16382dd8fc7d6b9582d0ba))
+
+
+### Features
+
+* added seperate job for manual dev push ([8a99915](https://github.com/jackson147/wadebridge-gaming-group/commit/8a999154c76318269902795747da53bc8ff06682))
+
+## [1.0.22](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.21...v1.0.22) (2025-10-11)
+
+
+### Bug Fixes
+
+* **deps:** update docker/build-push-action action to v6 ([d441771](https://github.com/jackson147/wadebridge-gaming-group/commit/d4417716403aca9094761b63065f1a008c15126e))
+
+## [1.0.21](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.20...v1.0.21) (2025-10-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v22.18.10 ([#34](https://github.com/jackson147/wadebridge-gaming-group/issues/34)) ([b7b998d](https://github.com/jackson147/wadebridge-gaming-group/commit/b7b998de71a13bd1b52c9f579d776003c0281c04))
+
+## [1.0.20](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.19...v1.0.20) (2025-10-10)
+
+
+### Bug Fixes
+
+* **deps:** update prisma monorepo to v6.17.1 ([#33](https://github.com/jackson147/wadebridge-gaming-group/issues/33)) ([78c961f](https://github.com/jackson147/wadebridge-gaming-group/commit/78c961f040b12882f165858ce5e91472374b8026))
+
+## [1.0.19](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.18...v1.0.19) (2025-10-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v22.18.9 ([#32](https://github.com/jackson147/wadebridge-gaming-group/issues/32)) ([13b9c3a](https://github.com/jackson147/wadebridge-gaming-group/commit/13b9c3a5a5019850e4ec4dc9ec04334ba4bbdb33))
+
+## [1.0.18](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.17...v1.0.18) (2025-10-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @auth/prisma-adapter to v2.11.0 ([#30](https://github.com/jackson147/wadebridge-gaming-group/issues/30)) ([2aadc05](https://github.com/jackson147/wadebridge-gaming-group/commit/2aadc05efc5a364b7c596ad23b0df303d3e08932))
+* **deps:** update npm to v11.6.2 ([#29](https://github.com/jackson147/wadebridge-gaming-group/issues/29)) ([dd1082c](https://github.com/jackson147/wadebridge-gaming-group/commit/dd1082ca046c9243f79b333d906969b3c143ebc9))
+
+## [1.0.17](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.16...v1.0.17) (2025-10-07)
+
+
+### Bug Fixes
+
+* **deps:** update prisma monorepo to v6.17.0 ([#28](https://github.com/jackson147/wadebridge-gaming-group/issues/28)) ([eaf4015](https://github.com/jackson147/wadebridge-gaming-group/commit/eaf40150a34b8f12f7356189003aca00b91eab0a))
+
+## [1.0.16](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.15...v1.0.16) (2025-10-07)
+
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v19.2.2 ([#27](https://github.com/jackson147/wadebridge-gaming-group/issues/27)) ([b0bda24](https://github.com/jackson147/wadebridge-gaming-group/commit/b0bda2439b9d116a1d267178500169ebb7341338))
+
+## [1.0.15](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.14...v1.0.15) (2025-10-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/react to v19.2.1 ([#26](https://github.com/jackson147/wadebridge-gaming-group/issues/26)) ([9b9eda9](https://github.com/jackson147/wadebridge-gaming-group/commit/9b9eda9f19f5990fbcad076e8be86247a511c12b))
+
+## [1.0.14](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.13...v1.0.14) (2025-10-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency zod to v4.1.12 ([#25](https://github.com/jackson147/wadebridge-gaming-group/issues/25)) ([6400032](https://github.com/jackson147/wadebridge-gaming-group/commit/6400032bdfb6d580ae3db08b7c8e1737580569ff))
+
 ## [1.0.13](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.12...v1.0.13) (2025-10-04)
 
 

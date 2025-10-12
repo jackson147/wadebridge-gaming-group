@@ -11,7 +11,7 @@ import { TRPCError } from "@trpc/server";
 import { s3Client } from "~/server/api/routers/s3";
 import { env } from "~/env";
 
-export const postRouter = createTRPCRouter({
+export const galleryPostRouter = createTRPCRouter({
   // Procedure to get a presigned URL for uploading a file
   createPresignedUrl: protectedProcedure
     .input(z.object({ fileType: z.string() }))
@@ -34,29 +34,27 @@ export const postRouter = createTRPCRouter({
       return { url, key };
     }),
 
-  // Procedure to confirm upload and create a Post record
+  // Procedure to confirm upload and create a galleryPost record
   confirmUpload: protectedProcedure
     .input(
       z.object({
         key: z.string(),
-        name: z.string().min(1),
       }),
     )
     .mutation(async ({ ctx, input }) => {
       const imageUrl = `${env.MINIO_ENDPOINT}/${env.MINIO_BUCKET_NAME}/${input.key}`;
 
-      return ctx.db.post.create({
+      return ctx.db.galleryPost.create({
         data: {
-          name: input.name,
           imageUrl,
           createdBy: { connect: { id: ctx.session.user.id } },
         },
       });
     }),
 
-  // Procedure to get all posts for the gallery view
+  // Procedure to get all galleryPosts for the gallery view
   getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.db.post.findMany({
+    return ctx.db.galleryPost.findMany({
       orderBy: { createdAt: "desc" },
     });
   }),
@@ -65,20 +63,20 @@ export const postRouter = createTRPCRouter({
   delete: protectedProcedure
     .input(z.object({ id: z.number() }))
     .mutation(async ({ ctx, input }) => {
-      const post = await ctx.db.post.findUnique({
+      const galleryPost = await ctx.db.galleryPost.findUnique({
         where: { id: input.id },
       });
 
       // Check if post exists and if the user is the owner
-      if (!post) {
+      if (!galleryPost) {
         throw new TRPCError({ code: "NOT_FOUND" });
       }
-      if (post.createdById !== ctx.session.user.id) {
+      if (galleryPost.createdById !== ctx.session.user.id) {
         throw new TRPCError({ code: "UNAUTHORIZED" });
       }
 
       // Extract the key from the image URL
-      const key = post.imageUrl.split("/").pop();
+      const key = galleryPost.imageUrl.split("/").pop();
       if (!key) {
         throw new TRPCError({
           code: "INTERNAL_SERVER_ERROR",
@@ -94,7 +92,7 @@ export const postRouter = createTRPCRouter({
       await s3Client.send(deleteCommand);
 
       // Delete the post from the database
-      await ctx.db.post.delete({ where: { id: input.id } });
+      await ctx.db.galleryPost.delete({ where: { id: input.id } });
 
       return { success: true };
     }),

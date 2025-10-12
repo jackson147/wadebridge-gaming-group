@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.22...v1.1.0) (2025-10-12)
+
+
+### Bug Fixes
+
+* squash ([c1c2d20](https://github.com/jackson147/wadebridge-gaming-group/commit/c1c2d209ef3324d05a16382dd8fc7d6b9582d0ba))
+
+
+### Features
+
+* added seperate job for manual dev push ([8a99915](https://github.com/jackson147/wadebridge-gaming-group/commit/8a999154c76318269902795747da53bc8ff06682))
+
 ## [1.0.22](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.21...v1.0.22) (2025-10-11)
 
 

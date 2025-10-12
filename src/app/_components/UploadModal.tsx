@@ -1,6 +1,7 @@
 // src/components/UploadModal.tsx
 "use client";
 
+import imageCompression from "browser-image-compression";
 import { Fragment, useState } from "react";
 import {
   Dialog,
@@ -11,82 +12,108 @@ import {
 } from "@headlessui/react";
 import { FaUpload, FaTimes } from "react-icons/fa";
 import { api } from "~/trpc/react";
-import { useRouter } from "next/navigation";
 
 export function UploadModal() {
-  const [file, setFile] = useState<File | null>(null);
-  const [name, setName] = useState("");
+  const [files, setFiles] = useState<File[]>([]);
   const [isUploading, setIsUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const router = useRouter();
+  const utils = api.useUtils();
 
-  // This mutation likely exists in your app to get a presigned URL from the server
-  const createPresignedUrl = api.post.createPresignedUrl.useMutation();
-  const confirmUpload = api.post.confirmUpload.useMutation();
-  
+  const createPresignedUrl = api.galleryPost.createPresignedUrl.useMutation();
+  const confirmUpload = api.galleryPost.confirmUpload.useMutation({
+    onSuccess: async () => {
+      // Invalidate the query to refetch the gallery data
+      await utils.galleryPost.getAll.invalidate();
+
+      // Reset state and close modal
+      setFiles([]);
+      setIsUploading(false);
+      setIsOpen(false);
+    },
+    onError: (err) => {
+      console.error("Upload confirmation failed:", err);
+      setError("An error occurred after upload. Please try again.");
+      setIsUploading(false);
+    },
+  });
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files?.[0];
-    if (selectedFile) {
-      setFile(selectedFile);
+    const selectedFiles = e.target.files;
+    if (selectedFiles) {
+      setFiles(Array.from(selectedFiles));
       setError(null); // Clear previous errors
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!file) {
-      setError("Please select a file to upload.");
-      return;
-    }
-    if (!name) {
-      setError("Please enter a name for the image.");
+    if (files.length === 0) {
+      setError("Please select one or more files to upload.");
       return;
     }
 
     setIsUploading(true);
     setError(null);
 
-    try {
-      // 1. Get a presigned URL from our tRPC backend
-      const { url, key } = await createPresignedUrl.mutateAsync({
-        fileType: file.type,
-      });
+    const uploadPromises = files.map(async (file) => {
+      const options = {
+        maxSizeMB: 1, // (default: undefined)
+        maxWidthOrHeight: 1920, // (default: undefined)
+        useWebWorker: true,
+      };
 
-      // 2. Upload the file directly to Minio/S3 using the presigned URL
-      const uploadResponse = await fetch(url, {
-        method: "PUT",
-        body: file,
-        headers: {
-          "Content-Type": file.type,
-        },
-      });
+      try {
+        const compressedFile = await imageCompression(file, options);
 
-      if (!uploadResponse.ok) {
-        throw new Error("Failed to upload file to storage.");
+        // 1. Get a presigned URL for the compressed file
+        const { url, key } = await createPresignedUrl.mutateAsync({
+          fileType: compressedFile.type,
+        });
+
+        // 2. Upload the file directly to Minio/S3 using the presigned URL
+        const uploadResponse = await fetch(url, {
+          method: "PUT",
+          body: compressedFile,
+          headers: {
+            "Content-Type": compressedFile.type,
+          },
+        });
+
+        if (!uploadResponse.ok) {
+          throw new Error(`Failed to upload to storage.`);
+        }
+
+        // 3. Notify your backend that the upload is complete
+        await confirmUpload.mutateAsync({ key });
+      } catch (err) {
+        console.error(`Upload process failed:`, err);
+        // We'll re-throw to be caught by Promise.allSettled
+        throw new Error(`Failed to upload.`);
       }
+    });
 
-      // 3. Notify your backend that the upload is complete
-      await confirmUpload.mutateAsync({ key, name });
+    const results = await Promise.allSettled(uploadPromises);
+    const failedUploads = results.filter((r) => r.status === "rejected");
 
-      // 4. Reset state, close modal, and refresh data
-      setFile(null);
-      setName("");
+    if (failedUploads.length > 0) {
+      setError(
+        `${failedUploads.length} of ${files.length} uploads failed. Please try again.`,
+      );
       setIsUploading(false);
-      setIsOpen(false);
-      router.refresh(); // Refreshes server components to show the new image
-    } catch (err) {
-      console.error(err);
-      setError("An error occurred during upload. Please try again.");
-      setIsUploading(false);
+    } else {
+      // onSuccess of the mutation will handle the rest
     }
   };
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="flex items-center gap-2">
-        <FaUpload />
+      <button
+        onClick={() => setIsOpen(true)}
+        className="flex items-center gap-2 rounded-xl bg-white/10 p-4 text-white transition hover:bg-white/20"
+      >
+        <FaUpload className="size-5" />
         <span>Upload Image</span>
       </button>
 
@@ -115,7 +142,7 @@ export function UploadModal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <DialogPanel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-[#15162c] border-2 border-white/10 p-6 text-left align-middle text-white shadow-xl transition-all">
+                <DialogPanel className="relative w-full max-w-md transform overflow-hidden rounded-2xl border-2 border-white/10 bg-[#15162c] p-6 text-left align-middle text-white shadow-xl transition-all">
                   <DialogTitle
                     as="h3"
                     className="text-lg font-medium leading-6"
@@ -129,19 +156,18 @@ export function UploadModal() {
                   </div>
 
                   <form onSubmit={handleSubmit} className="mt-4 grid gap-4">
-                    <div className="grid gap-2">
-                      <label htmlFor="name" className="font-semibold">Name</label>
-                      <input
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        className="w-full rounded-lg bg-white/10 p-3 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-[hsl(280,100%,70%)]"
-                        placeholder="A cool image"
-                      />
-                      <label htmlFor="picture" className="mt-2 font-semibold">Picture</label>
-                      <input id="picture" type="file" onChange={handleFileChange} accept="image/*" className="w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-white/10 file:text-white hover:file:bg-white/20"/>
+                    <div>
+                      <label htmlFor="picture" className="font-semibold">Pictures</label>
+                      <input id="picture" type="file" onChange={handleFileChange} accept="image/*" multiple className="mt-2 w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-white/10 file:text-white hover:file:bg-white/20"/>
                     </div>
-                    {file && <p className="text-sm text-white/60">Selected: {file.name}</p>}
+                    {files.length > 0 && (
+                      <div className="text-sm text-white/60">
+                        <p>Selected: {files.length} file{files.length > 1 ? 's' : ''}</p>
+                        <ul className="list-disc pl-5">
+                          {files.map(f => <li key={f.name} className="truncate">{f.name}</li>)}
+                        </ul>
+                      </div>
+                    )}
                     {error && <p className="text-sm text-red-400">{error}</p>}
                     <div className="mt-4 flex justify-end gap-2">
                        <button
@@ -154,7 +180,7 @@ export function UploadModal() {
                       </button>
                       <button
                         type="submit"
-                        disabled={isUploading || !file || !name}
+                        disabled={isUploading || files.length === 0}
                         className="rounded-xl bg-[hsl(280,100%,70%)]/80 px-5 py-2.5 font-semibold text-white transition hover:bg-[hsl(280,100%,70%)] disabled:opacity-50"
                       >
                         {isUploading ? "Uploading..." : "Upload"}

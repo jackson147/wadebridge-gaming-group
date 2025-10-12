@@ -35,7 +35,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/prisma ./prisma
 
 # Apply database migrations
-RUN npm run prisma:migrate
+RUN npm run db:migrate
 
 # Set environment variables
 ENV NODE_ENV=production

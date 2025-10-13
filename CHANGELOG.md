@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.1...v1.1.2) (2025-10-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/react-dom to v19.2.2 ([#38](https://github.com/jackson147/wadebridge-gaming-group/issues/38)) ([f6068e6](https://github.com/jackson147/wadebridge-gaming-group/commit/f6068e61fbab56abf19611943582c8e3d174e668))
+* **deps:** update dependency next to v15.5.5 ([#39](https://github.com/jackson147/wadebridge-gaming-group/issues/39)) ([8d636e2](https://github.com/jackson147/wadebridge-gaming-group/commit/8d636e2af3de4694fb8b3f5f2ba077973bbec133))
+
 ## [1.1.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.0...v1.1.1) (2025-10-13)
 
 

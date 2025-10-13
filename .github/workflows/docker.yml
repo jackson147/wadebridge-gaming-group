@@ -26,6 +26,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+        with:
+          # Fetches all history and all tags
+          fetch-depth: 0
 
       - name: Install dependencies
         run: npm ci 
@@ -68,12 +71,8 @@ jobs:
           tags: |
             jackson147/wadebridge-gaming-group:latest
             jackson147/wadebridge-gaming-group:${{ env.NEXT_VERSION }}
-          secrets: |
-            auth_secret=${{ secrets.AUTH_SECRET }}
-            auth_discord_id=${{ secrets.AUTH_DISCORD_ID }}
-            auth_discord_secret=${{ secrets.AUTH_DISCORD_SECRET }}
-            database_url=${{ vars.DATABASE_URL }}
-            auth_trust_host=${{ vars.AUTH_TRUST_HOST }}
+          build-args: |
+            AUTH_URL=${{ vars.AUTH_URL }}
           labels: |
             org.opencontainers.image.revision=${{ env.SHORT_SHA }}
 
@@ -88,9 +87,9 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
 
       - name: Set up Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
 
       - name: Cache Node Modules
         uses: actions/cache@v4
@@ -118,17 +117,8 @@ jobs:
           context: .
           push: true
           tags: jackson147/wadebridge-gaming-group:dev
-          secrets: |
-            auth_secret=${{ secrets.AUTH_SECRET }}
-            auth_discord_id=${{ secrets.AUTH_DISCORD_ID }}
-            auth_discord_secret=${{ secrets.AUTH_DISCORD_SECRET }}
-            database_url=${{ vars.DATABASE_URL }}
-            auth_trust_host=${{ vars.AUTH_TRUST_HOST }}
-            minio_access_key_id=${{ secrets.MINIO_ACCESS_KEY_ID }}
-            minio_secret_access_key=${{ secrets.MINIO_SECRET_ACCESS_KEY }}
-            minio_endpoint=${{ vars.MINIO_ENDPOINT }}
-            minio_bucket_name=${{ vars.MINIO_BUCKET_NAME }}
-            minio_region=${{ vars.MINIO_REGION }}
+          build-args: |
+            AUTH_URL=${{ vars.AUTH_URL_DEV }}
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
 
@@ -141,9 +131,9 @@ jobs:
         uses: actions/checkout@v5
         
       - name: Set up Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
 
       - name: Cache Node Modules
         uses: actions/cache@v4
@@ -184,11 +174,7 @@ jobs:
           push: true
           # Tags the image uniquely with branch-name-short-sha (e.g., feature-auth-fix-a1b2c3d)
           tags: jackson147/wadebridge-gaming-group:${{ env.IMAGE_TAG }}
-          secrets: |
-            auth_secret=${{ secrets.AUTH_SECRET }}
-            auth_discord_id=${{ secrets.AUTH_DISCORD_ID }}
-            auth_discord_secret=${{ secrets.AUTH_DISCORD_SECRET }}
-            database_url=${{ vars.DATABASE_URL }}
-            auth_trust_host=${{ vars.AUTH_TRUST_HOST }}
+          build-args: |
+            AUTH_URL=${{ vars.AUTH_URL }}
           labels: |
             org.opencontainers.image.revision=${{ env.SHORT_SHA }}

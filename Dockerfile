@@ -45,8 +45,10 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+# Not sensitve data
 ENV AUTH_TRUST_HOST=true
 
+# AUTH_URL is simply the host the service will be at. Not sensitive (http://localhost:3000 for dev)
 ARG AUTH_URL
 ENV AUTH_URL=${AUTH_URL}
 

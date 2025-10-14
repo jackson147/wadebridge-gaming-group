@@ -114,7 +114,6 @@ jobs:
           context: .
           push: true
           tags: jackson147/wadebridge-gaming-group:dev
-          file: ./Dockerfile.dev
           build-args: |
             AUTH_URL=${{ vars.AUTH_URL_DEV }}
           labels: |

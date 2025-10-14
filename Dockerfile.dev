@@ -49,8 +49,8 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV AUTH_TRUST_HOST=true
 
 # AUTH_URL is simply the host the service will be at. Not sensitive (http://localhost:3000 for dev)
-ARG AUTH_URL
-ENV AUTH_URL=${AUTH_URL}
+ARG AUTH_URL_DEV
+ENV AUTH_URL=${AUTH_URL_DEV}
 
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public

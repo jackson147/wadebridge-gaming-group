@@ -30,11 +30,6 @@ jobs:
       - name: Install dependencies
         run: npm ci 
 
-      - name: Run Prisma Migrate
-        run: npx prisma migrate deploy
-        env:
-          DATABASE_URL: ${{ vars.DATABASE_URL }}
-
       - name: Semantic Release
         run: npx semantic-release
         env:
@@ -74,7 +69,7 @@ jobs:
             jackson147/wadebridge-gaming-group:latest
             jackson147/wadebridge-gaming-group:${{ env.NEXT_VERSION }}
           build-args: |
-            DATABASE_URL=${{ vars.DATABASE_URL }}
+            AUTH_URL=${{ vars.AUTH_URL }}
           labels: |
             org.opencontainers.image.revision=${{ env.SHORT_SHA }}
 
@@ -120,7 +115,7 @@ jobs:
           push: true
           tags: jackson147/wadebridge-gaming-group:dev
           build-args: |
-            DATABASE_URL=${{ vars.DATABASE_URL }}
+            AUTH_URL=${{ vars.AUTH_URL }}
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
 
@@ -177,6 +172,6 @@ jobs:
           # Tags the image uniquely with branch-name-short-sha (e.g., feature-auth-fix-a1b2c3d)
           tags: jackson147/wadebridge-gaming-group:${{ env.IMAGE_TAG }}
           build-args: |
-            DATABASE_URL=${{ vars.DATABASE_URL }}
+            AUTH_URL=${{ vars.AUTH_URL }}
           labels: |
             org.opencontainers.image.revision=${{ env.SHORT_SHA }}

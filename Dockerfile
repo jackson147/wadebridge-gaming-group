@@ -1,47 +1,63 @@
-# Install dependencies only when needed
-FROM node:22-alpine AS deps
-WORKDIR /app
-COPY package.json package-lock.json* pnpm-lock.yaml* yarn.lock* ./
-COPY prisma ./prisma
-RUN npm install --frozen-lockfile
+##### DEPENDENCIES
 
-# Build the app
-FROM node:22-alpine AS builder
+ARG BUILDPLATFORM=linux/amd64
+
+FROM --platform=${BUILDPLATFORM} node:20-alpine AS deps
+RUN apk add --no-cache libc6-compat openssl
+WORKDIR /app
+
+# Install Prisma Client - remove if not using Prisma
+
+COPY prisma ./
+
+# Install dependencies based on the preferred package manager
+
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml\* ./
+
+RUN \
+    if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+    elif [ -f package-lock.json ]; then npm ci; \
+    elif [ -f pnpm-lock.yaml ]; then npm install -g pnpm && pnpm i; \
+    else echo "Lockfile not found." && exit 1; \
+    fi
+
+##### BUILDER
+
+FROM --platform=${BUILDPLATFORM} node:20-alpine AS builder
+ARG DATABASE_URL
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN --mount=type=secret,id=auth_secret,env=AUTH_SECRET \
-    --mount=type=secret,id=auth_discord_id,env=AUTH_DISCORD_ID \
-    --mount=type=secret,id=auth_discord_secret,env=AUTH_DISCORD_SECRET \
-    --mount=type=secret,id=database_url,env=DATABASE_URL \
-    --mount=type=secret,id=auth_trust_host,env=AUTH_TRUST_HOST \
-    --mount=type=secret,id=minio_access_key_id,env=MINIO_ACCESS_KEY_ID \
-    --mount=type=secret,id=minio_secret_access_key,env=MINIO_SECRET_ACCESS_KEY \
-    --mount=type=secret,id=minio_endpoint,env=MINIO_ENDPOINT \
-    --mount=type=secret,id=minio_bucket_name,env=MINIO_BUCKET_NAME \
-    --mount=type=secret,id=minio_region,env=MINIO_REGION \
-    npm run build
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Production image
-FROM node:22-alpine AS runner
+RUN \
+    if [ -f yarn.lock ]; then SKIP_ENV_VALIDATION=1 yarn build; \
+    elif [ -f package-lock.json ]; then SKIP_ENV_VALIDATION=1 npm run build; \
+    elif [ -f pnpm-lock.yaml ]; then npm install -g pnpm && SKIP_ENV_VALIDATION=1 pnpm run build; \
+    else echo "Lockfile not found." && exit 1; \
+    fi
+
+##### RUNNER
+
+FROM --platform=${BUILDPLATFORM} gcr.io/distroless/nodejs20-debian12 AS runner
 WORKDIR /app
 
-# Copy built assets and node_modules
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/prisma ./prisma
-
-# Apply database migrations
-RUN npm run db:migrate
-
-# Set environment variables
 ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV AUTH_TRUST_HOST=true
 
-# Expose port
+ARG AUTH_URL
+ENV AUTH_URL=${AUTH_URL}
+
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
+
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
 EXPOSE 3000
+ENV PORT=3000
 
-# Start the app
-CMD ["npm", "start"]
+CMD ["server.js"]

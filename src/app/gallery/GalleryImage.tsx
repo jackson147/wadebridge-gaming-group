@@ -28,7 +28,8 @@ export function GalleryImage({ post }: GalleryImageProps) {
     },
   });
 
-  const canDelete = session?.user?.id === post.createdById;
+  const canDelete =
+    session?.user.role === "ADMIN" || session?.user?.id === post.createdById;
 
   const handleDelete = () => {
     if (!canDelete) return;

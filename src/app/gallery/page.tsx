@@ -1,6 +1,7 @@
 import { UploadModal } from "~/app/_components/UploadModal";
 import { api, HydrateClient } from "~/trpc/server";
 import { GalleryImage } from "./GalleryImage";
+import { auth } from "~/server/auth";
 
 // This is an async Server Component that fetches data directly
 async function ImageGallery() {
@@ -23,27 +24,30 @@ async function ImageGallery() {
 }
 
 export default async function GalleryPage() {
+  const session = await auth();
+
   return (
-    <HydrateClient>
-      <main className="items-center text-white">
+    <main className="items-center text-white">
+      <HydrateClient>
         <div className="container mx-auto flex flex-col items-center gap-8 px-4 py-16">
           <div className="flex w-full max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
             <h1 className="text-4xl font-extrabold tracking-tight">
               Image Gallery
             </h1>
-            <div className="flex items-center justify-center">
-              <div className="rounded-xl bg-white/10 p-4 text-white transition hover:bg-white/20">
-                {/* The UploadModal is a Client Component with the upload button */}
-                <UploadModal />
+            {session?.user.role === "ADMIN" && (
+              <div className="flex items-center justify-center">
+                <div className="rounded-xl bg-white/10 p-4 text-white transition hover:bg-white/20">
+                  <UploadModal />
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className="w-full max-w-5xl">
             <ImageGallery />
           </div>
         </div>
-      </main>
-    </HydrateClient>
+      </HydrateClient>
+    </main>
   );
 }

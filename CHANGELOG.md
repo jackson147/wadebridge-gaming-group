@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.4...v1.1.5) (2025-10-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @tanstack/react-query to v5.90.5 ([#44](https://github.com/jackson147/wadebridge-gaming-group/issues/44)) ([d436132](https://github.com/jackson147/wadebridge-gaming-group/commit/d4361321b725be30d7cc0bbcae941b85d6ca7642))
+
 ## [1.1.4](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.3...v1.1.4) (2025-10-16)
 
 

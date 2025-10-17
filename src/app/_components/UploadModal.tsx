@@ -11,7 +11,6 @@ import {
 } from "@headlessui/react";
 import { FaUpload, FaTimes } from "react-icons/fa";
 import { api } from "~/trpc/react";
-import { useRouter } from "next/navigation";
 
 export function UploadModal() {
   const [file, setFile] = useState<File | null>(null);
@@ -20,12 +19,27 @@ export function UploadModal() {
   const [error, setError] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const router = useRouter();
+  const utils = api.useUtils();
 
-  // This mutation likely exists in your app to get a presigned URL from the server
   const createPresignedUrl = api.post.createPresignedUrl.useMutation();
-  const confirmUpload = api.post.confirmUpload.useMutation();
-  
+  const confirmUpload = api.post.confirmUpload.useMutation({
+    onSuccess: async () => {
+      // Invalidate the query to refetch the gallery data
+      await utils.post.getAll.invalidate();
+
+      // Reset state and close modal
+      setFile(null);
+      setName("");
+      setIsUploading(false);
+      setIsOpen(false);
+    },
+    onError: (err) => {
+      console.error("Upload confirmation failed:", err);
+      setError("An error occurred after upload. Please try again.");
+      setIsUploading(false);
+    },
+  });
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (selectedFile) {
@@ -68,16 +82,9 @@ export function UploadModal() {
       }
 
       // 3. Notify your backend that the upload is complete
-      await confirmUpload.mutateAsync({ key, name });
-
-      // 4. Reset state, close modal, and refresh data
-      setFile(null);
-      setName("");
-      setIsUploading(false);
-      setIsOpen(false);
-      router.refresh(); // Refreshes server components to show the new image
+      confirmUpload.mutate({ key, name });
     } catch (err) {
-      console.error(err);
+      console.error("Upload process failed:", err);
       setError("An error occurred during upload. Please try again.");
       setIsUploading(false);
     }

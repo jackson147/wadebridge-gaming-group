@@ -6,9 +6,9 @@ export function TopNav() {
     <nav className="flex w-full items-center justify-between p-4 text-white">
       <div className="flex items-center gap-6">
         <Link href="/" className="text-2xl font-bold text-[hsl(280,100%,70%)]">
-          WGG
+          WBG
         </Link>
-        <Link href="/gallery" className="hover:text-white/80 transition">
+        <Link href="/gallery" className="hover:text-white/80 font-bold transition">
           Gallery
         </Link>
       </div>

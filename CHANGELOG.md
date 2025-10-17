@@ -1,3 +1,11 @@
+## [1.1.6](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.5...v1.1.6) (2025-10-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v22.18.11 ([#45](https://github.com/jackson147/wadebridge-gaming-group/issues/45)) ([d81eee6](https://github.com/jackson147/wadebridge-gaming-group/commit/d81eee6787cb202ab9b84691accef1d3f4572d80))
+* **deps:** update dependency next to v15.5.6 ([#46](https://github.com/jackson147/wadebridge-gaming-group/issues/46)) ([c40074f](https://github.com/jackson147/wadebridge-gaming-group/commit/c40074fe32dc8f07ea92abfe8188fb27f8b1c703))
+
 ## [1.1.5](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.4...v1.1.5) (2025-10-16)
 
 

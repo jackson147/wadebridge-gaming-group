@@ -1,4 +1,7 @@
 .env
+.env.compose
+.env.example
+build-push-dev.sh
 Dockerfile
 .dockerignore
 node_modules

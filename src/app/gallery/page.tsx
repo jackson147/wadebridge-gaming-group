@@ -35,11 +35,7 @@ export default async function GalleryPage() {
               Image Gallery
             </h1>
             {session?.user.role === "ADMIN" && (
-              <div className="flex items-center justify-center">
-                <div className="rounded-xl bg-white/10 p-4 text-white transition hover:bg-white/20">
-                  <UploadModal />
-                </div>
-              </div>
+              <UploadModal />
             )}
           </div>
 

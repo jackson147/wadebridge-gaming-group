@@ -85,8 +85,11 @@ export function UploadModal() {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="flex items-center gap-2">
-        <FaUpload />
+      <button
+        onClick={() => setIsOpen(true)}
+        className="flex items-center gap-2 rounded-xl bg-white/10 p-4 text-white transition hover:bg-white/20"
+      >
+        <FaUpload className="size-5" />
         <span>Upload Image</span>
       </button>
 
@@ -115,7 +118,7 @@ export function UploadModal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <DialogPanel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-[#15162c] border-2 border-white/10 p-6 text-left align-middle text-white shadow-xl transition-all">
+                <DialogPanel className="relative w-full max-w-md transform overflow-hidden rounded-2xl border-2 border-white/10 bg-[#15162c] p-6 text-left align-middle text-white shadow-xl transition-all">
                   <DialogTitle
                     as="h3"
                     className="text-lg font-medium leading-6"

@@ -1,3 +1,11 @@
+## [1.1.7](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.6...v1.1.7) (2025-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update actions/setup-node action to v6 ([6aa75fa](https://github.com/jackson147/wadebridge-gaming-group/commit/6aa75faddda0811acf97968264ac1b316504d3fc))
+* **deps:** update dependency @semantic-release/github to v12 ([fc2eb98](https://github.com/jackson147/wadebridge-gaming-group/commit/fc2eb98433ce1f9363d2eddce3977e176f1583df))
+
 ## [1.1.6](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.5...v1.1.6) (2025-10-17)
 
 

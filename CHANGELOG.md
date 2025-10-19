@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.2.0...v1.2.1) (2025-10-19)
+
+
+### Bug Fixes
+
+* **deps:** update node.js to v22 ([774e378](https://github.com/jackson147/wadebridge-gaming-group/commit/774e378140b90f4226b25e0ff323bad94b107c90))
+
 # [1.2.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.7...v1.2.0) (2025-10-19)
 
 

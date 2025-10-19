@@ -1,3 +1,20 @@
+# [1.2.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.7...v1.2.0) (2025-10-19)
+
+
+### Bug Fixes
+
+* cleaned up modal ([b662de5](https://github.com/jackson147/wadebridge-gaming-group/commit/b662de5cf4ae8dfa039b12788a6ab33d9d31f64f))
+* gallery for wbgg ([51eac53](https://github.com/jackson147/wadebridge-gaming-group/commit/51eac530b758011c0e023fa1444be7da81a69a92))
+* looking a little better ([df89193](https://github.com/jackson147/wadebridge-gaming-group/commit/df8919358bd48e0c619376d1a68802ae3dc8f88d))
+* tidied up ([fb34a46](https://github.com/jackson147/wadebridge-gaming-group/commit/fb34a460686418d4df0dbefbe7ec0eb88ce1d355))
+
+
+### Features
+
+* added framework to upload a photo ([b4b7e7e](https://github.com/jackson147/wadebridge-gaming-group/commit/b4b7e7e0cf92cd4ed2afd96bfa01c654ce5f8048))
+* made some moves creating a photo gallery ([1d95f5e](https://github.com/jackson147/wadebridge-gaming-group/commit/1d95f5e956ac8dd6054e9e28d528cb50ca722339))
+* minio kinda working actually with zero effort ([248105a](https://github.com/jackson147/wadebridge-gaming-group/commit/248105af7232262c1feb334ec3f31d218c047129))
+
 ## [1.1.7](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.1.6...v1.1.7) (2025-10-18)
 
 

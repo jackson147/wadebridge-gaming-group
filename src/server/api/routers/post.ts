@@ -1,41 +1,99 @@
+import { DeleteObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import { randomUUID } from "crypto";
 import { z } from "zod";
-
 import {
-	createTRPCRouter,
-	protectedProcedure,
-	publicProcedure,
+  createTRPCRouter,
+  protectedProcedure,
+  publicProcedure,
 } from "~/server/api/trpc";
+import { TRPCError } from "@trpc/server";
+import { s3Client } from "~/server/api/routers/s3";
+import { env } from "~/env";
 
-export const postRouter = createTRPCRouter({
-	hello: publicProcedure
-		.input(z.object({ text: z.string() }))
-		.query(({ input }) => {
-			return {
-				greeting: `Hello ${input.text}`,
-			};
-		}),
+export const galleryPostRouter = createTRPCRouter({
+  // Procedure to get a presigned URL for uploading a file
+  createPresignedUrl: protectedProcedure
+    .input(z.object({ fileType: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      const id = randomUUID();
+      // A simple split might be risky if the file type is complex.
+      // Consider a more robust way to get the extension.
+      const ex = input.fileType.split("/")[1] ?? "";
+      const key = `${id}.${ex}`;
 
-	create: protectedProcedure
-		.input(z.object({ name: z.string().min(1) }))
-		.mutation(async ({ ctx, input }) => {
-			return ctx.db.post.create({
-				data: {
-					name: input.name,
-					createdBy: { connect: { id: ctx.session.user.id } },
-				},
-			});
-		}),
+      const command = new PutObjectCommand({
+        Bucket: env.MINIO_BUCKET_NAME,
+        Key: key,
+        ContentType: input.fileType,
+      });
 
-	getLatest: protectedProcedure.query(async ({ ctx }) => {
-		const post = await ctx.db.post.findFirst({
-			orderBy: { createdAt: "desc" },
-			where: { createdBy: { id: ctx.session.user.id } },
-		});
+      const url = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
+      console.log(url)
 
-		return post ?? null;
-	}),
+      return { url, key };
+    }),
 
-	getSecretMessage: protectedProcedure.query(() => {
-		return "you can now see this secret message!";
-	}),
+  // Procedure to confirm upload and create a galleryPost record
+  confirmUpload: protectedProcedure
+    .input(
+      z.object({
+        key: z.string(),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      const imageUrl = `${env.MINIO_ENDPOINT}/${env.MINIO_BUCKET_NAME}/${input.key}`;
+
+      return ctx.db.galleryPost.create({
+        data: {
+          imageUrl,
+          createdBy: { connect: { id: ctx.session.user.id } },
+        },
+      });
+    }),
+
+  // Procedure to get all galleryPosts for the gallery view
+  getAll: publicProcedure.query(({ ctx }) => {
+    return ctx.db.galleryPost.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+  }),
+
+  // Procedure to delete a post
+  delete: protectedProcedure
+    .input(z.object({ id: z.number() }))
+    .mutation(async ({ ctx, input }) => {
+      const galleryPost = await ctx.db.galleryPost.findUnique({
+        where: { id: input.id },
+      });
+
+      // Check if post exists and if the user is the owner
+      if (!galleryPost) {
+        throw new TRPCError({ code: "NOT_FOUND" });
+      }
+      if (galleryPost.createdById !== ctx.session.user.id) {
+        throw new TRPCError({ code: "UNAUTHORIZED" });
+      }
+
+      // Extract the key from the image URL
+      const key = galleryPost.imageUrl.split("/").pop();
+      if (!key) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Could not extract image key from URL.",
+        });
+      }
+
+      // Delete the object from S3/MinIO
+      const deleteCommand = new DeleteObjectCommand({
+        Bucket: env.MINIO_BUCKET_NAME,
+        Key: key,
+      });
+      await s3Client.send(deleteCommand);
+
+      // Delete the post from the database
+      await ctx.db.galleryPost.delete({ where: { id: input.id } });
+
+      return { success: true };
+    }),
 });

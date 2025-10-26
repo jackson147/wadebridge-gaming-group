@@ -7,6 +7,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "~/server/auth";
 import { TopNav } from "./_components/TopNav";
+import { ThemeProvider } from "~/components/context/theme";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,12 +27,21 @@ export default async function RootLayout({
 }) {
   const session = await auth();
   return (
-    <html lang="en">
-      <body className={`font-sans ${inter.variable} flex min-h-screen flex-col bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`font-sans ${inter.variable} flex min-h-screen flex-col bg-linear-to-b from-[#2e026d] to-[#15162c] text-white`}
+      >
         <SessionProvider session={session}>
           <TRPCReactProvider>
-            <TopNav />
-            {children}
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              forcedTheme="dark"
+              disableTransitionOnChange
+            >
+              <TopNav />
+              {children}
+            </ThemeProvider>
           </TRPCReactProvider>
         </SessionProvider>
       </body>

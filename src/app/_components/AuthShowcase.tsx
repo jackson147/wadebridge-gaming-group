@@ -2,15 +2,17 @@
 
 import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
-import { SignInModal } from "./SignInModal"; 
+import { SignInModal } from "./SignInModal";
 import { SignOutConfirmationModal } from "./SignOutConfirmationModal";
+import { SignInModalV2 } from "./SignInModalV2";
 
 export function AuthShowcase() {
   const { data: session } = useSession();
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 
   if (!session) {
-    return <SignInModal />;
+    // return <SignInModal />;
+    return <SignInModalV2 />;
   }
 
   const handleSignOut = () => {

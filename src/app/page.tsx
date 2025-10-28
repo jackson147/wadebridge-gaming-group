@@ -30,16 +30,17 @@ export default async function Home() {
             </h1>
           </div>
 
-          <Card className="w-full max-w-2xl border-white/20 bg-white/5">
+          <p className="max-w-3xl text-center text-3xl font-semibold">
+            Board games and other tabletop fun every{" "}
+            <span className="text-orange-400">Thursday at 6:30 PM</span> at the
+            Egloshayle Pavilion, Wadebridge.
+          </p>
+
+          <Card className="w-full max-w-4xl border-white/20 bg-white/5">
             <CardHeader>
               <CardTitle className="text-center text-2xl">
-                Join us every Thursday!
+                Find us at
               </CardTitle>
-              <CardDescription className="text-center text-lg text-white/80">
-                Board games and other tabletop fun every{" "}
-                <span className="text-orange-400">Thursday at 6:30 PM</span> at
-                the Egloshayle Pavilion, Wadebridge.
-              </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col items-center gap-4">
               <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 shadow-lg">
@@ -54,7 +55,7 @@ export default async function Home() {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
-              <div className="text-center text-lg text-white/80">
+              <div className="text-center text-lg">
                 <p className="font-semibold">Egloshayle Pavilion</p>
                 <p>Wadebridge, PL27 6AQ</p>
               </div>
@@ -62,19 +63,19 @@ export default async function Home() {
           </Card>
 
           <div className="flex w-full max-w-2xl flex-col items-center gap-4">
-            <h2 className="text-center text-2xl font-semibold text-white/80">
+            <h2 className="text-center text-2xl font-semibold">
               Join our online community
             </h2>
             <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
               <Button asChild size="lg" className="h-auto py-4 text-xl">
                 <a href="https://discord.gg/ByhbFs6HXm" target="_blank">
-                  <FaDiscord className="mr-2 size-6 text-indigo-400" />
+                  <FaDiscord className="mr-2 size-6" />
                   Discord
                 </a>
               </Button>
               <Button asChild size="lg" className="h-auto py-4 text-xl">
                 <a href="https://www.facebook.com/groups/488964738552511" target="_blank">
-                  <FaFacebook className="mr-2 size-6 text-blue-500" />
+                  <FaFacebook className="mr-2 size-6" />
                   Facebook
                 </a>
               </Button>

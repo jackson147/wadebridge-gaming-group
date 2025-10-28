@@ -29,15 +29,14 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`font-sans ${inter.variable} flex min-h-screen flex-col bg-linear-to-b from-[#2e026d] to-[#15162c] text-white`}
+        className={`font-sans ${inter.variable} flex min-h-screen flex-col bg-linear-to-b from-gradientFrom to-gradientTo text-foreground`}
       >
         <SessionProvider session={session}>
           <TRPCReactProvider>
             <ThemeProvider
               attribute="class"
-              defaultTheme="dark"
-              forcedTheme="dark"
-              disableTransitionOnChange
+              defaultTheme="system" // Changed to system for better user preference handling
+              disableTransitionOnChange // Keeps transitions smooth
             >
               <TopNav />
               {children}

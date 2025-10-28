@@ -21,7 +21,7 @@ function ImageGallery() {
     return (
       <div className="text-center">
         <h2 className="text-2xl font-semibold">No images yet!</h2>
-        <p className="text-white/80">Be the first to upload one.</p>
+        <p>Be the first to upload one.</p>
       </div>
     );
   }
@@ -54,7 +54,7 @@ export default function GalleryPage() {
   const { data: session } = useSession();
 
   return (
-    <main className="items-center text-white">
+    <main className="items-center">
       <div className="container mx-auto flex flex-col items-center gap-8 px-4 py-16">
         <div className="flex w-full max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
           <h1 className="text-4xl font-extrabold tracking-tight">

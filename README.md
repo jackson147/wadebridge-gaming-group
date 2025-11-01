@@ -1,5 +1,5 @@
 # Wadebridge Gaming Group 
-   , please join our [Discord](https://t3.gg/discord) and ask for help.
+    , please join our [Discord](https://t3.gg/discord) and ask for help.
 
 - [Next.js](https://nextjs.org)
 - [NextAuth.js](https://next-auth.js.org)

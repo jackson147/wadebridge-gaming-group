@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.0...v1.1.0) (2025-11-01)
+
+
+### Features
+
+* lol ([c97ba14](https://github.com/jackson147/wadebridge-gaming-group/commit/c97ba1411858b785b924c60779879ec1b68f1030))
+* lol ([f5d0184](https://github.com/jackson147/wadebridge-gaming-group/commit/f5d0184e8f537a49d7e64ecd4ff2f0ebd33dd6a8))
+
 # 1.0.0 (2025-11-01)
 
 

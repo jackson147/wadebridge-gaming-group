@@ -1,3 +1,57 @@
+# 1.0.0 (2025-11-01)
+
+
+### Bug Fixes
+
+* commit msg ([b372932](https://github.com/jackson147/wadebridge-gaming-group/commit/b372932fc550410c802a25da46cc786123e053dc))
+* **deps:** update actions/checkout action to v5 ([254514f](https://github.com/jackson147/wadebridge-gaming-group/commit/254514f31855ae8d2122bcdc3699c0bbbde33563))
+* **deps:** update actions/checkout action to v5 ([d62c781](https://github.com/jackson147/wadebridge-gaming-group/commit/d62c7812b59bf64041915815407f84a2d01bfc5e))
+* **deps:** update actions/setup-node action to v5 ([412f941](https://github.com/jackson147/wadebridge-gaming-group/commit/412f941c254900978861d8e42e1db42dbd7e25cc))
+* **deps:** update dependency @auth/prisma-adapter to v2.11.0 ([#30](https://github.com/jackson147/wadebridge-gaming-group/issues/30)) ([754eff9](https://github.com/jackson147/wadebridge-gaming-group/commit/754eff966291357f7698d8e6201aba685852d7ae))
+* **deps:** update dependency @biomejs/biome to v2 ([f875cf5](https://github.com/jackson147/wadebridge-gaming-group/commit/f875cf5ac8169b6ba463b16971ab965a1ba01e05))
+* **deps:** update dependency @biomejs/biome to v2.2.6 ([#37](https://github.com/jackson147/wadebridge-gaming-group/issues/37)) ([9a83cde](https://github.com/jackson147/wadebridge-gaming-group/commit/9a83cdeb028f5d74e44f143c68885c021cc5c475)), closes [#38](https://github.com/jackson147/wadebridge-gaming-group/issues/38) [#39](https://github.com/jackson147/wadebridge-gaming-group/issues/39) [#40](https://github.com/jackson147/wadebridge-gaming-group/issues/40) [#43](https://github.com/jackson147/wadebridge-gaming-group/issues/43) [#44](https://github.com/jackson147/wadebridge-gaming-group/issues/44) [#45](https://github.com/jackson147/wadebridge-gaming-group/issues/45) [#46](https://github.com/jackson147/wadebridge-gaming-group/issues/46) [#48](https://github.com/jackson147/wadebridge-gaming-group/issues/48) [#49](https://github.com/jackson147/wadebridge-gaming-group/issues/49) [#50](https://github.com/jackson147/wadebridge-gaming-group/issues/50) [#51](https://github.com/jackson147/wadebridge-gaming-group/issues/51) [#52](https://github.com/jackson147/wadebridge-gaming-group/issues/52) [#53](https://github.com/jackson147/wadebridge-gaming-group/issues/53) [#54](https://github.com/jackson147/wadebridge-gaming-group/issues/54) [#56](https://github.com/jackson147/wadebridge-gaming-group/issues/56) [#57](https://github.com/jackson147/wadebridge-gaming-group/issues/57) [#58](https://github.com/jackson147/wadebridge-gaming-group/issues/58) [#59](https://github.com/jackson147/wadebridge-gaming-group/issues/59) [#60](https://github.com/jackson147/wadebridge-gaming-group/issues/60) [#62](https://github.com/jackson147/wadebridge-gaming-group/issues/62) [#63](https://github.com/jackson147/wadebridge-gaming-group/issues/63) [#64](https://github.com/jackson147/wadebridge-gaming-group/issues/64) [#66](https://github.com/jackson147/wadebridge-gaming-group/issues/66) [#67](https://github.com/jackson147/wadebridge-gaming-group/issues/67) [#68](https://github.com/jackson147/wadebridge-gaming-group/issues/68) [#69](https://github.com/jackson147/wadebridge-gaming-group/issues/69) [#71](https://github.com/jackson147/wadebridge-gaming-group/issues/71) [#72](https://github.com/jackson147/wadebridge-gaming-group/issues/72) [#73](https://github.com/jackson147/wadebridge-gaming-group/issues/73) [#74](https://github.com/jackson147/wadebridge-gaming-group/issues/74) [#75](https://github.com/jackson147/wadebridge-gaming-group/issues/75) [#76](https://github.com/jackson147/wadebridge-gaming-group/issues/76)
+* **deps:** update dependency @semantic-release/github to v11 ([d4bd4ac](https://github.com/jackson147/wadebridge-gaming-group/commit/d4bd4ac259069281378a1cb174ba880860bea5aa))
+* **deps:** update dependency @t3-oss/env-nextjs to ^0.13.0 ([#12](https://github.com/jackson147/wadebridge-gaming-group/issues/12)) ([a25f3d1](https://github.com/jackson147/wadebridge-gaming-group/commit/a25f3d1320c321829e11740d7e9ec1e5fbfd8ae0))
+* **deps:** update dependency @tanstack/react-query to v5.90.2 ([#9](https://github.com/jackson147/wadebridge-gaming-group/issues/9)) ([435df27](https://github.com/jackson147/wadebridge-gaming-group/commit/435df27e6207126533e4f2288af6613b28c8cb15))
+* **deps:** update dependency @types/node to v22.18.10 ([#34](https://github.com/jackson147/wadebridge-gaming-group/issues/34)) ([0bf7dbd](https://github.com/jackson147/wadebridge-gaming-group/commit/0bf7dbd251f9f97037521588a50a1bd450963d73))
+* **deps:** update dependency @types/node to v22.18.9 ([#32](https://github.com/jackson147/wadebridge-gaming-group/issues/32)) ([5d9099f](https://github.com/jackson147/wadebridge-gaming-group/commit/5d9099f667d83715a9deda9e6888e8c6978599e6))
+* **deps:** update dependency @types/react to v19.2.1 ([#26](https://github.com/jackson147/wadebridge-gaming-group/issues/26)) ([04541f5](https://github.com/jackson147/wadebridge-gaming-group/commit/04541f59c6c05a8dc55baf81ccf8e47fc3e73871))
+* **deps:** update dependency next to v15.5.4 ([#4](https://github.com/jackson147/wadebridge-gaming-group/issues/4)) ([bea66a6](https://github.com/jackson147/wadebridge-gaming-group/commit/bea66a62168cff9e673a6633b2b8f58d951d6866))
+* **deps:** update dependency next-auth to v5.0.0-beta.29 ([#8](https://github.com/jackson147/wadebridge-gaming-group/issues/8)) ([0293856](https://github.com/jackson147/wadebridge-gaming-group/commit/0293856fcc15ce158cbfbe5f50bdbde9a6ed3e06))
+* **deps:** update dependency node to v22 ([0533154](https://github.com/jackson147/wadebridge-gaming-group/commit/053315468c17ca32b33e4afa66aaa373a89b57ed))
+* **deps:** update dependency typescript to v5.9.3 ([#6](https://github.com/jackson147/wadebridge-gaming-group/issues/6)) ([b075ae5](https://github.com/jackson147/wadebridge-gaming-group/commit/b075ae544bf12f31cf84665b7da3f92acbcd66eb))
+* **deps:** update dependency zod to v4 ([f4da322](https://github.com/jackson147/wadebridge-gaming-group/commit/f4da3226128b29ec60b984d156444de6379d9132))
+* **deps:** update dependency zod to v4.1.12 ([#25](https://github.com/jackson147/wadebridge-gaming-group/issues/25)) ([ed503e5](https://github.com/jackson147/wadebridge-gaming-group/commit/ed503e50e867bc62b60b34850560cf83230ba5da))
+* **deps:** update docker/build-push-action action to v6 ([3e47425](https://github.com/jackson147/wadebridge-gaming-group/commit/3e474259b91807aa408dcc621d0255f64b537b24))
+* **deps:** update docker/build-push-action action to v6 ([802afc5](https://github.com/jackson147/wadebridge-gaming-group/commit/802afc5a314dabeffc5aae63a0dc031e390ca433))
+* **deps:** update npm to v11 ([bd38cd4](https://github.com/jackson147/wadebridge-gaming-group/commit/bd38cd49dcb5584c15f125d8ba2aa485e1e1b732))
+* **deps:** update npm to v11 ([76313eb](https://github.com/jackson147/wadebridge-gaming-group/commit/76313ebc320a977e59521112221f48c19ff344a3))
+* **deps:** update npm to v11.6.2 ([#29](https://github.com/jackson147/wadebridge-gaming-group/issues/29)) ([77f4f79](https://github.com/jackson147/wadebridge-gaming-group/commit/77f4f794268d85d30e019abb96ad56168346b13c))
+* **deps:** update prisma monorepo to v6.16.3 ([#10](https://github.com/jackson147/wadebridge-gaming-group/issues/10)) ([4d4b5cc](https://github.com/jackson147/wadebridge-gaming-group/commit/4d4b5cc71d3ce4eed69a2e1a384a84c54d441da5))
+* **deps:** update prisma monorepo to v6.17.0 ([#28](https://github.com/jackson147/wadebridge-gaming-group/issues/28)) ([46b2b9c](https://github.com/jackson147/wadebridge-gaming-group/commit/46b2b9cc7062648f9d6bcd4a8c7f8950fcb52206))
+* **deps:** update prisma monorepo to v6.17.1 ([#33](https://github.com/jackson147/wadebridge-gaming-group/issues/33)) ([32aade3](https://github.com/jackson147/wadebridge-gaming-group/commit/32aade357a8fe420671e732a9754516162916004))
+* **deps:** update react monorepo to v19.2.2 ([#27](https://github.com/jackson147/wadebridge-gaming-group/issues/27)) ([078f966](https://github.com/jackson147/wadebridge-gaming-group/commit/078f9661715f257a2919baa45ac122f8d98dc6ae))
+* **deps:** update trpc monorepo to v11.6.0 ([#13](https://github.com/jackson147/wadebridge-gaming-group/issues/13)) ([ff376e3](https://github.com/jackson147/wadebridge-gaming-group/commit/ff376e35af729d151e5b97660715c4d65e25a8bd))
+* **discord:** updated invite link ([84be6c8](https://github.com/jackson147/wadebridge-gaming-group/commit/84be6c88a40c8b34ab29a6dddf6f9e0096413456))
+* fixed sematic ver ([deb7722](https://github.com/jackson147/wadebridge-gaming-group/commit/deb7722d962af393f311811f24cf8d5fb70dae58))
+* removed redundant args ([513e655](https://github.com/jackson147/wadebridge-gaming-group/commit/513e655505dc9f53647a4c9265113549eded74b2))
+* removed short sha version ([11dfd39](https://github.com/jackson147/wadebridge-gaming-group/commit/11dfd39b2f6e5746ad48e2ebdd0bdd5df9e22065))
+* **renovate:** ensured all renovate mrs are set to fix as opposed to chore ([550dfd9](https://github.com/jackson147/wadebridge-gaming-group/commit/550dfd904666b1d99fcb7f0f86fc784535d5a724))
+* **renovate:** modified renovate to auto merge and ignore tests (as we don't have any) ([ce417b0](https://github.com/jackson147/wadebridge-gaming-group/commit/ce417b053b5e561b0b04d7660794f4d3f2fa22ae))
+* squash ([c8e3966](https://github.com/jackson147/wadebridge-gaming-group/commit/c8e3966aff219c5034a65bd431bc2a4f4c0faf2c))
+* test secure build ([2fa483c](https://github.com/jackson147/wadebridge-gaming-group/commit/2fa483c0e67328ea0a291bedf30fcb0ae91263f2))
+* token commit to force build ([516abc7](https://github.com/jackson147/wadebridge-gaming-group/commit/516abc78da600fc6dba06b80de9954f2e536afd0))
+* tried to lock down build ([671e81e](https://github.com/jackson147/wadebridge-gaming-group/commit/671e81ed7f81741000c7dbdd061f3bbefbda7609))
+* try and add sem deps ([d8cf2bf](https://github.com/jackson147/wadebridge-gaming-group/commit/d8cf2bfc6b8b02950b45f8bd56fe0744a5760c75))
+* try and add sem deps ([614cf92](https://github.com/jackson147/wadebridge-gaming-group/commit/614cf9216c65b551b3ca84a0563b587c78934ae2))
+* try and add sem deps ([d17ca64](https://github.com/jackson147/wadebridge-gaming-group/commit/d17ca64857e5e4deaaaf3bac235e663d469f620a))
+
+
+### Features
+
+* added huskey ([be6eec7](https://github.com/jackson147/wadebridge-gaming-group/commit/be6eec787692cb7d0af9ce09d2beb5f3b541db4f))
+* added seperate job for manual dev push ([d7cd683](https://github.com/jackson147/wadebridge-gaming-group/commit/d7cd683dd2d105a5bad79d0fc29b135ca0569135))
+
 # [1.1.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.0...v1.1.0) (2025-11-01)
 
 

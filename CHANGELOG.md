@@ -1,4 +1,4 @@
-## [1.0.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.2...v1.0.3) (2025-11-03)
+## [1.3.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.0.2...v1.3.0) (2025-11-03)
 
 
 ### Bug Fixes

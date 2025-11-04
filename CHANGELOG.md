@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.3...v1.3.4) (2025-11-04)
+
+
+### Bug Fixes
+
+* fixed some broken things since fixup ([8588d00](https://github.com/jackson147/wadebridge-gaming-group/commit/8588d004df59c6df7bb065f3b5fe153e69a0a979))
+
 ## [1.3.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.2...v1.3.3) (2025-11-03)
 
 

@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.4...v1.3.5) (2025-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @radix-ui/react-slot to v1.2.4 ([#81](https://github.com/jackson147/wadebridge-gaming-group/issues/81)) ([41fb072](https://github.com/jackson147/wadebridge-gaming-group/commit/41fb07294490b81da3d7a4613aca85cfcb8db465))
+
 ## [1.3.4](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.3...v1.3.4) (2025-11-04)
 
 

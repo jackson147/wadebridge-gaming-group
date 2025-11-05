@@ -1,3 +1,10 @@
+## [1.3.7](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.6...v1.3.7) (2025-11-05)
+
+
+### Bug Fixes
+
+* **deps:** update aws-sdk-js-v3 monorepo to v3.925.0 ([#84](https://github.com/jackson147/wadebridge-gaming-group/issues/84)) ([04d8522](https://github.com/jackson147/wadebridge-gaming-group/commit/04d85227096c44c3c56041264d0ea8a8b51f0f4e))
+
 ## [1.3.6](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.5...v1.3.6) (2025-11-05)
 
 

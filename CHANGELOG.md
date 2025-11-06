@@ -1,3 +1,10 @@
+## [1.3.10](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.9...v1.3.10) (2025-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-sdk/client-s3 to v3.926.0 ([#87](https://github.com/jackson147/wadebridge-gaming-group/issues/87)) ([1caf34b](https://github.com/jackson147/wadebridge-gaming-group/commit/1caf34bf6dd1542be7828a9f2cc8890655730250))
+
 ## [1.3.9](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.8...v1.3.9) (2025-11-06)
 
 

@@ -1,3 +1,10 @@
+## [1.3.11](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.10...v1.3.11) (2025-11-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-sdk/s3-request-presigner to v3.926.0 ([#88](https://github.com/jackson147/wadebridge-gaming-group/issues/88)) ([ded38b7](https://github.com/jackson147/wadebridge-gaming-group/commit/ded38b71e66759ecb27e64e75261c0ba46099bf7))
+
 ## [1.3.10](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.9...v1.3.10) (2025-11-06)
 
 

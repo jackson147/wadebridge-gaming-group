@@ -1,3 +1,10 @@
+## [1.3.13](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.12...v1.3.13) (2025-11-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @semantic-release/github to v12.0.2 ([#90](https://github.com/jackson147/wadebridge-gaming-group/issues/90)) ([c3ed824](https://github.com/jackson147/wadebridge-gaming-group/commit/c3ed824d6514354a138c99a6eb82a91614cc5893))
+
 ## [1.3.12](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.11...v1.3.12) (2025-11-07)
 
 

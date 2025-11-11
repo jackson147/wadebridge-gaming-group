@@ -1,3 +1,11 @@
+## [1.3.15](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.14...v1.3.15) (2025-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @biomejs/biome to v2.3.5 ([#92](https://github.com/jackson147/wadebridge-gaming-group/issues/92)) ([314fe58](https://github.com/jackson147/wadebridge-gaming-group/commit/314fe58020da7ad644bf40d093ded3a441c3d832))
+* **deps:** update dependency @types/react to v19.2.3 ([#93](https://github.com/jackson147/wadebridge-gaming-group/issues/93)) ([80f50c8](https://github.com/jackson147/wadebridge-gaming-group/commit/80f50c8e84dd8ae774f21e37517f5cc793a3b44e))
+
 ## [1.3.14](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.13...v1.3.14) (2025-11-11)
 
 

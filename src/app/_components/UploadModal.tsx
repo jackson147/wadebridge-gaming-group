@@ -2,16 +2,20 @@
 "use client";
 
 import imageCompression from "browser-image-compression";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import {
   Dialog,
-  DialogPanel,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
   DialogTitle,
-  Transition,
-  TransitionChild,
-} from "@headlessui/react";
-import { FaUpload, FaTimes } from "react-icons/fa";
+  DialogTrigger,
+} from "~/components/ui/dialog";
+import { FaFileImage, FaUpload } from "react-icons/fa";
 import { api } from "~/trpc/react";
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
 
 export function UploadModal() {
   const [files, setFiles] = useState<File[]>([]);
@@ -108,99 +112,74 @@ export function UploadModal() {
   };
 
   return (
-    <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 rounded-xl bg-white/10 p-4 text-white transition hover:bg-white/20"
-      >
-        <FaUpload className="size-5" />
-        <span>Upload Image</span>
-      </button>
-
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(false)}>
-          <TransitionChild
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Button>
+          <FaUpload className="mr-2 size-5" />
+          <span>Upload Image</span>
+        </Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Upload a new image</DialogTitle>
+          <DialogDescription>
+            Select a file from your device to upload to the gallery.
+          </DialogDescription>
+        </DialogHeader>
+        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+          <label
+            htmlFor="picture"
+            className="relative flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-border bg-background p-8 text-center transition hover:bg-accent"
           >
-            <div className="fixed inset-0 bg-black/50" />
-          </TransitionChild>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <TransitionChild
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <DialogPanel className="relative w-full max-w-md transform overflow-hidden rounded-2xl border-2 border-white/10 bg-[#15162c] p-6 text-left align-middle text-white shadow-xl transition-all">
-                  <DialogTitle
-                    as="h3"
-                    className="text-lg font-medium leading-6"
-                  >
-                    Upload a new image
-                  </DialogTitle>
-                  <div className="mt-2">
-                    <p className="text-sm text-white/70">
-                      Select a file from your device to upload to the gallery.
-                    </p>
-                  </div>
-
-                  <form onSubmit={handleSubmit} className="mt-4 grid gap-4">
-                    <div>
-                      <label htmlFor="picture" className="font-semibold">Pictures</label>
-                      <input id="picture" type="file" onChange={handleFileChange} accept="image/*" multiple className="mt-2 w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-white/10 file:text-white hover:file:bg-white/20"/>
-                    </div>
-                    {files.length > 0 && (
-                      <div className="text-sm text-white/60">
-                        <p>Selected: {files.length} file{files.length > 1 ? 's' : ''}</p>
-                        <ul className="list-disc pl-5">
-                          {files.map(f => <li key={f.name} className="truncate">{f.name}</li>)}
-                        </ul>
-                      </div>
-                    )}
-                    {error && <p className="text-sm text-red-400">{error}</p>}
-                    <div className="mt-4 flex justify-end gap-2">
-                       <button
-                        type="button"
-                        onClick={() => setIsOpen(false)}
-                        disabled={isUploading}
-                        className="rounded-xl bg-white/10 px-5 py-2.5 font-semibold transition hover:bg-white/20 disabled:opacity-50"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        type="submit"
-                        disabled={isUploading || files.length === 0}
-                        className="rounded-xl bg-[hsl(280,100%,70%)]/80 px-5 py-2.5 font-semibold text-white transition hover:bg-[hsl(280,100%,70%)] disabled:opacity-50"
-                      >
-                        {isUploading ? "Uploading..." : "Upload"}
-                      </button>
-                    </div>
-                  </form>
-                   <button
-                      type="button"
-                      onClick={() => setIsOpen(false)}
-                      className="absolute top-3 right-3 rounded-full p-1.5 transition hover:bg-white/10"
-                      aria-label="Close"
-                    >
-                      <FaTimes className="size-4" />
-                    </button>
-                </DialogPanel>
-              </TransitionChild>
+            <FaUpload className="size-8 text-muted-foreground" />
+            <span className="font-semibold text-muted-foreground">
+              Click to upload or drag and drop
+            </span>
+            <p className="text-xs text-muted-foreground">
+              Maximum file size 1MB
+            </p>
+            <Input
+              id="picture"
+              type="file"
+              onChange={handleFileChange}
+              accept="image/*"
+              multiple
+              className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+            />
+          </label>
+          {files.length > 0 && (
+            <div className="text-sm text-muted-foreground">
+              <p>
+                Selected: {files.length} file{files.length > 1 ? "s" : ""}
+              </p>
+              <ul className="mt-2 grid gap-2">
+                {files.map((f, index) => (
+                  <li key={f.name} className="truncate">
+                    {f.name}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-        </Dialog>
-      </Transition>
-    </>
+          )}
+          {error && <p className="text-sm text-destructive">{error}</p>}
+          <DialogFooter>
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() => setIsOpen(false)}
+              disabled={isUploading}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              disabled={isUploading || files.length === 0}
+            >
+              {isUploading ? "Uploading..." : "Upload"}
+            </Button>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
   );
 }

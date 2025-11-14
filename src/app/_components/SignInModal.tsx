@@ -1,7 +1,5 @@
 "use client";
 
-import { Fragment, useState } from "react";
-import { Transition, TransitionChild } from "@headlessui/react";
 import { FaDiscord } from "react-icons/fa";
 import { signIn } from "next-auth/react";
 import { Button } from "~/components/ui/button";
@@ -21,13 +19,12 @@ export function SignInModal() {
       <DialogContent>
         <DialogTitle>Sign In</DialogTitle>
         <div className="mt-4 grid gap-4">
-          <button
-            onClick={() => signIn("discord", { redirectTo: "/" })}
-            className="flex w-full items-center justify-center gap-3 rounded-md bg-[#5865F2] px-4 py-3 font-semibold text-white transition hover:bg-[#4752C4]"
-          >
+          <Button
+            className="w-full"
+            onClick={() => signIn("discord", { redirectTo: "/" })}>
             <FaDiscord className="size-5" />
             <span>Sign in with Discord</span>
-          </button>
+          </Button>
         </div>
       </DialogContent>
     </Dialog>

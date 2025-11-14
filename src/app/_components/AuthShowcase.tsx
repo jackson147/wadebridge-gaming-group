@@ -4,7 +4,6 @@ import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
 import { SignInModal } from "./SignInModal";
 import { SignOutConfirmationModal } from "./SignOutConfirmationModal";
-import { SignInModalV2 } from "./SignInModalV2";
 
 export function AuthShowcase() {
   const { data: session } = useSession();
@@ -12,7 +11,7 @@ export function AuthShowcase() {
 
   if (!session) {
     // return <SignInModal />;
-    return <SignInModalV2 />;
+    return <SignInModal />;
   }
 
   const handleSignOut = () => {

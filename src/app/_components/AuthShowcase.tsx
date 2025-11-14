@@ -2,6 +2,7 @@
 
 import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
+import { Button } from "~/components/ui/button";
 import { SignInModal } from "./SignInModal";
 import { SignOutConfirmationModal } from "./SignOutConfirmationModal";
 
@@ -22,12 +23,9 @@ export function AuthShowcase() {
   return (
     <>
       <div className="flex items-center gap-4">
-        <button
-          onClick={() => setIsConfirmOpen(true)}
-          className="rounded-full bg-white/10 px-6 py-2 font-semibold no-underline transition hover:bg-white/20"
-        >
+        <Button onClick={() => setIsConfirmOpen(true)} variant="secondary">
           Sign out
-        </button>
+        </Button>
       </div>
       <SignOutConfirmationModal
         isOpen={isConfirmOpen}

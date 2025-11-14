@@ -14,7 +14,9 @@ export function SignInModal() {
   return (
     <Dialog>
       <DialogTrigger>
-        <Button>Sign in</Button>
+        <Button variant="secondary">
+          Sign in
+        </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogTitle>Sign In</DialogTitle>

@@ -36,14 +36,14 @@ export default async function Home() {
             Egloshayle Pavilion, Wadebridge.
           </p>
 
-          <Card className="w-full max-w-4xl border-white/20 bg-white/5">
+          <Card className="w-full max-w-4xl border-2">
             <CardHeader>
               <CardTitle className="text-center text-2xl">
                 Find us at
               </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-center gap-4">
-              <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20 shadow-lg">
+              <div className="aspect-video w-full overflow-hidden rounded-lg">
                 <iframe
                   title="Meeting place - Egloshayle Pavilion, Wadebridge"
                   src="https://www.google.com/maps?q=Wadebridge+Egloshayle+Pavilion,+Wadebridge,+PL27+6AQ&output=embed"

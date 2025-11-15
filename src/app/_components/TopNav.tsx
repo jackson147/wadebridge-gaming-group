@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import { ModeToggle } from "./ModeToggle";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { AuthShowcase } from "./AuthShowcase";
 
@@ -54,7 +55,10 @@ export function TopNav() {
           </div>
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-4 md:flex">
+          {/* Dark Mode Toggle */}
+          <ModeToggle />
+          {/* Auth Showcase */}
           <AuthShowcase />
         </div>
 
@@ -77,6 +81,8 @@ export function TopNav() {
             >
               Gallery
             </Link>
+            {/* Dark Mode Toggle */}
+            <ModeToggle />
             <div
               className="mt-2"
               onClick={(e) => {

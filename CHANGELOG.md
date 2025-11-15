@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.0...v1.4.1) (2025-11-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lucide-react to ^0.553.0 ([#107](https://github.com/jackson147/wadebridge-gaming-group/issues/107)) ([e5bbbc9](https://github.com/jackson147/wadebridge-gaming-group/commit/e5bbbc96d8669e6102eb7d66f82111273587495b))
+
 # [1.4.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.24...v1.4.0) (2025-11-15)
 
 

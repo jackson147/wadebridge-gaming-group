@@ -1,3 +1,23 @@
+# [1.4.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.24...v1.4.0) (2025-11-15)
+
+
+### Bug Fixes
+
+* added a simple dark mode toggle ([4fb35f3](https://github.com/jackson147/wadebridge-gaming-group/commit/4fb35f34b87e2ea85c5d6614eafbad36a5231412))
+* altered primary button colors a little ([1f7bb15](https://github.com/jackson147/wadebridge-gaming-group/commit/1f7bb15f23e3e16bff294f574f23373faf050734))
+* card now looks a little better in light/dark mode ([9cc53df](https://github.com/jackson147/wadebridge-gaming-group/commit/9cc53df87d27ce831a65e8561b70eacd487b52e4))
+* deps ([f62d3f5](https://github.com/jackson147/wadebridge-gaming-group/commit/f62d3f51f3e33fff7be6da85545b99ccbad6f305))
+* file upload now used ([cc5a7d8](https://github.com/jackson147/wadebridge-gaming-group/commit/cc5a7d815c9ba7872a75a436790891458f326a3a))
+* sign in and out ([225d24e](https://github.com/jackson147/wadebridge-gaming-group/commit/225d24e7ec2a441ed76a8b02cdf1d3e2086da1b9))
+* signout button ([5d38ed3](https://github.com/jackson147/wadebridge-gaming-group/commit/5d38ed39c90e2285ec1424399891607793aa749e))
+* ui button ([1f613b2](https://github.com/jackson147/wadebridge-gaming-group/commit/1f613b2112968a3c9161ef827c2f29a3e16189d6))
+
+
+### Features
+
+* add shadcn ui ([36bba8b](https://github.com/jackson147/wadebridge-gaming-group/commit/36bba8b6646d0b1e7e18f69596ca4f57715ddbbb))
+* added dark mode toggle ([0768732](https://github.com/jackson147/wadebridge-gaming-group/commit/07687320fcf11602982f731a73bbf1b8e1e51d84))
+
 ## [1.3.24](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.3.23...v1.3.24) (2025-11-14)
 
 

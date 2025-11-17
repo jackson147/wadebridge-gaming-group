@@ -1,3 +1,11 @@
+## [1.4.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.2...v1.4.3) (2025-11-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @biomejs/biome to v2.3.6 ([#110](https://github.com/jackson147/wadebridge-gaming-group/issues/110)) ([05304a0](https://github.com/jackson147/wadebridge-gaming-group/commit/05304a0852874230f34bf158f8b24ea52a1380fa))
+* **deps:** update dependency lucide-react to ^0.554.0 ([#111](https://github.com/jackson147/wadebridge-gaming-group/issues/111)) ([3bd0c09](https://github.com/jackson147/wadebridge-gaming-group/commit/3bd0c0986d7e2a30c8709a3bf1d5a5895ab1cf4e))
+
 ## [1.4.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.1...v1.4.2) (2025-11-16)
 
 

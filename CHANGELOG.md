@@ -1,3 +1,10 @@
+## [1.4.12](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.11...v1.4.12) (2025-11-20)
+
+
+### Bug Fixes
+
+* ush dev images to different repo ([881ca50](https://github.com/jackson147/wadebridge-gaming-group/commit/881ca50b51bf8fddeaed02a57fdeb27f79346844))
+
 ## [1.4.11](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.10...v1.4.11) (2025-11-20)
 
 

@@ -1,3 +1,10 @@
+## [1.4.11](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.10...v1.4.11) (2025-11-20)
+
+
+### Bug Fixes
+
+* **prisma:** pinned prisma in entrypoint ([3c91a18](https://github.com/jackson147/wadebridge-gaming-group/commit/3c91a181644d48b718f66c9507c9217cec472bbb))
+
 ## [1.4.10](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.9...v1.4.10) (2025-11-20)
 
 

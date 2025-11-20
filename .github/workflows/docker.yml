@@ -173,7 +173,7 @@ jobs:
           context: .
           push: true
           # Tags the image uniquely with branch-name-short-sha (e.g., feature-auth-fix-a1b2c3d)
-          tags: jackson147/wadebridge-gaming-group:${{ env.IMAGE_TAG }}
+          tags: jackson147/wadebridge-gaming-group-dev:${{ env.IMAGE_TAG }}
           build-args: |
             AUTH_URL=${{ vars.AUTH_URL }}
           labels: |

@@ -1,3 +1,10 @@
+## [1.4.14](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.13...v1.4.14) (2025-11-21)
+
+
+### Bug Fixes
+
+* colours in topnav ([cafa7d4](https://github.com/jackson147/wadebridge-gaming-group/commit/cafa7d4cae4db82ef50160f61ce77ede29e872f6))
+
 ## [1.4.13](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.12...v1.4.13) (2025-11-21)
 
 

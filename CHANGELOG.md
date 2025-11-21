@@ -1,3 +1,10 @@
+## [1.4.13](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.12...v1.4.13) (2025-11-21)
+
+
+### Bug Fixes
+
+* pin to prisma 6 ([271a315](https://github.com/jackson147/wadebridge-gaming-group/commit/271a31531d2820e2cf3beca619d3ae4fa170199a))
+
 ## [1.4.12](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.11...v1.4.12) (2025-11-20)
 
 

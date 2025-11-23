@@ -1,3 +1,11 @@
+## [1.4.16](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.15...v1.4.16) (2025-11-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-day-picker to v9.11.2 ([#127](https://github.com/jackson147/wadebridge-gaming-group/issues/127)) ([89c0794](https://github.com/jackson147/wadebridge-gaming-group/commit/89c0794364a1d6ceea78278b7fdad36d7fb23cef))
+* **deps:** update trpc monorepo to v11.7.2 ([#128](https://github.com/jackson147/wadebridge-gaming-group/issues/128)) ([cef90ec](https://github.com/jackson147/wadebridge-gaming-group/commit/cef90ec2171d4cf206be8522632db62115847047))
+
 ## [1.4.15](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.14...v1.4.15) (2025-11-21)
 
 

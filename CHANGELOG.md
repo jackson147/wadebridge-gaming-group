@@ -1,3 +1,10 @@
+## [1.4.18](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.17...v1.4.18) (2025-11-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/react to v19.2.7 ([#130](https://github.com/jackson147/wadebridge-gaming-group/issues/130)) ([c2179fd](https://github.com/jackson147/wadebridge-gaming-group/commit/c2179fdbcdba40a54d343244d15eb1351bc8d739))
+
 ## [1.4.17](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.16...v1.4.17) (2025-11-24)
 
 

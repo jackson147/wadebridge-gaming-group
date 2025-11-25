@@ -1,3 +1,11 @@
+## [1.4.22](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.21...v1.4.22) (2025-11-25)
+
+
+### Bug Fixes
+
+* **deps:** update aws-sdk-js-v3 monorepo to v3.940.0 ([#135](https://github.com/jackson147/wadebridge-gaming-group/issues/135)) ([a6531f4](https://github.com/jackson147/wadebridge-gaming-group/commit/a6531f4f77e7aa81e1b36a98d4d8e426ba6aaaab))
+* **deps:** update npm to v11.6.4 ([#134](https://github.com/jackson147/wadebridge-gaming-group/issues/134)) ([1881d4e](https://github.com/jackson147/wadebridge-gaming-group/commit/1881d4ea649c52dbfb02fe367de2376682f95722))
+
 ## [1.4.21](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.20...v1.4.21) (2025-11-25)
 
 

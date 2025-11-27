@@ -1,3 +1,11 @@
+## [1.4.25](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.24...v1.4.25) (2025-11-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @biomejs/biome to v2.3.8 ([#138](https://github.com/jackson147/wadebridge-gaming-group/issues/138)) ([5815852](https://github.com/jackson147/wadebridge-gaming-group/commit/5815852149a076e148c757aed4a6f5de49696815))
+* **deps:** update dependency superjson to v2.2.6 ([#139](https://github.com/jackson147/wadebridge-gaming-group/issues/139)) ([ab24790](https://github.com/jackson147/wadebridge-gaming-group/commit/ab24790127f2ac0823cad098fab8338669ed050c))
+
 ## [1.4.24](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.23...v1.4.24) (2025-11-27)
 
 

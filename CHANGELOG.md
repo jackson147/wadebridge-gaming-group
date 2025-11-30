@@ -1,3 +1,10 @@
+## [1.4.28](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.27...v1.4.28) (2025-11-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency next to v16.0.6 ([#142](https://github.com/jackson147/wadebridge-gaming-group/issues/142)) ([e131d2b](https://github.com/jackson147/wadebridge-gaming-group/commit/e131d2b1239a0c72bfbe46d78053b46dd689511c))
+
 ## [1.4.27](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.26...v1.4.27) (2025-11-29)
 
 

@@ -1,3 +1,10 @@
+## [1.4.36](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.35...v1.4.36) (2025-12-08)
+
+
+### Bug Fixes
+
+* removed sign in button -_- ([62b5835](https://github.com/jackson147/wadebridge-gaming-group/commit/62b583546353b2bab189712c8a1b65b410945dc6))
+
 ## [1.4.35](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.34...v1.4.35) (2025-12-06)
 
 

@@ -37,7 +37,7 @@ export function TopNav() {
           {/* Dark Mode Toggle */}
           <ModeToggle />
           {/* Auth Showcase */}
-          <AuthShowcase />
+          {/* <AuthShowcase /> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -62,7 +62,7 @@ export function TopNav() {
                     e.stopPropagation();
                   }}
                 >
-                  <AuthShowcase />
+                  {/* <AuthShowcase /> */}
                 </div>
               </nav>
             </SheetContent>

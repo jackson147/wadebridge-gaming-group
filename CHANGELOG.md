@@ -1,3 +1,11 @@
+## [1.4.47](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.46...v1.4.47) (2025-12-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency next to v16.0.10 ([#166](https://github.com/jackson147/wadebridge-gaming-group/issues/166)) ([a5d7e05](https://github.com/jackson147/wadebridge-gaming-group/commit/a5d7e057f0948ad5b385a3a1d2681a942dd27d05))
+* **deps:** update react monorepo to v19.2.3 ([#162](https://github.com/jackson147/wadebridge-gaming-group/issues/162)) ([5428af6](https://github.com/jackson147/wadebridge-gaming-group/commit/5428af6f547023216e47a1e8df42f234d22385a0))
+
 ## [1.4.46](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.45...v1.4.46) (2025-12-11)
 
 

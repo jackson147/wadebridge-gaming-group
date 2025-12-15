@@ -1,3 +1,10 @@
+## [1.4.51](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.50...v1.4.51) (2025-12-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @t3-oss/env-nextjs to v0.13.10 ([#170](https://github.com/jackson147/wadebridge-gaming-group/issues/170)) ([3d8d220](https://github.com/jackson147/wadebridge-gaming-group/commit/3d8d220d7cc5db0c335bc8dcc331dde455bb134b))
+
 ## [1.4.50](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.49...v1.4.50) (2025-12-14)
 
 

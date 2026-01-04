@@ -1,3 +1,10 @@
+## [1.4.81](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.80...v1.4.81) (2026-01-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency zod to v4.3.5 ([#201](https://github.com/jackson147/wadebridge-gaming-group/issues/201)) ([bd0a1c4](https://github.com/jackson147/wadebridge-gaming-group/commit/bd0a1c4992b404e1d899bee9106b0a0e61f0752c))
+
 ## [1.4.80](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.79...v1.4.80) (2026-01-04)
 
 

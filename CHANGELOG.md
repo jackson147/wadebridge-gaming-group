@@ -1,3 +1,10 @@
+## [1.4.84](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.83...v1.4.84) (2026-01-08)
+
+
+### Bug Fixes
+
+* **deps:** update commitlint monorepo to v20.3.1 ([#204](https://github.com/jackson147/wadebridge-gaming-group/issues/204)) ([bb8477d](https://github.com/jackson147/wadebridge-gaming-group/commit/bb8477dfd88debeed91ac0c5f3aeb13630a2ea29))
+
 ## [1.4.83](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.82...v1.4.83) (2026-01-07)
 
 

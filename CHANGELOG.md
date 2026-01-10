@@ -1,3 +1,10 @@
+## [1.4.88](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.87...v1.4.88) (2026-01-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v24.10.7 ([#208](https://github.com/jackson147/wadebridge-gaming-group/issues/208)) ([55ddca9](https://github.com/jackson147/wadebridge-gaming-group/commit/55ddca93dd6c376c062f7689d0c488acab788359))
+
 ## [1.4.87](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.86...v1.4.87) (2026-01-10)
 
 

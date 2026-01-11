@@ -22,6 +22,12 @@ export const env = createEnv({
 		MINIO_ACCESS_KEY_ID: z.string(),
 		MINIO_SECRET_ACCESS_KEY: z.string(),
 		MINIO_BUCKET_NAME: z.string(),
+		EMAIL_SERVER_HOST: z.string(),
+		EMAIL_SERVER_PORT: z.string(),
+		EMAIL_SERVER_USER: z.string(),
+		EMAIL_SERVER_PASSWORD: z.string(),
+		EMAIL_FROM: z.string(),
+		SAFEGUARDING_EMAIL_TO: z.string(),
 	},
 
 	/**
@@ -48,6 +54,12 @@ export const env = createEnv({
 		MINIO_ACCESS_KEY_ID: process.env.MINIO_ACCESS_KEY_ID,
 		MINIO_SECRET_ACCESS_KEY: process.env.MINIO_SECRET_ACCESS_KEY,
 		MINIO_BUCKET_NAME: process.env.MINIO_BUCKET_NAME,
+		EMAIL_SERVER_HOST: process.env.EMAIL_SERVER_HOST,
+		EMAIL_SERVER_PORT: process.env.EMAIL_SERVER_PORT,
+		EMAIL_SERVER_USER: process.env.EMAIL_SERVER_USER,
+		EMAIL_SERVER_PASSWORD: process.env.EMAIL_SERVER_PASSWORD,
+		EMAIL_FROM: process.env.EMAIL_FROM,
+		SAFEGUARDING_EMAIL_TO: process.env.SAFEGUARDING_EMAIL_TO,
 		// NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 	},
 	/**

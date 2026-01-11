@@ -30,6 +30,11 @@ export function TopNav() {
                 Gallery
               </Link>
             </Button>
+            <Button asChild variant="link" className="text-lg font-bold text-foreground">
+              <Link href="/safeguarding">
+                Safeguarding
+              </Link>
+            </Button>
           </div>
         </div>
 
@@ -55,6 +60,11 @@ export function TopNav() {
                 <SheetClose asChild>
                   <Button asChild variant="link" className="text-2xl text-foreground">
                     <Link href="/gallery">Gallery</Link> 
+                  </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button asChild variant="link" className="text-2xl text-foreground">
+                    <Link href="/safeguarding">Safeguarding</Link>
                   </Button>
                 </SheetClose>
                 <div

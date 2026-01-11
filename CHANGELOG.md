@@ -1,3 +1,16 @@
+# [1.5.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.89...v1.5.0) (2026-01-11)
+
+
+### Bug Fixes
+
+* added blurb to safeguarding ([9027f8b](https://github.com/jackson147/wadebridge-gaming-group/commit/9027f8b773399c8ef2e4446f4af0491d0e602b81))
+* reverted changes to shadcn components ([a8e4e91](https://github.com/jackson147/wadebridge-gaming-group/commit/a8e4e91b3e4047dbe7a97c307699fafd08f3a5fb))
+
+
+### Features
+
+* functioning safeguarding page in dev ([f9c3a27](https://github.com/jackson147/wadebridge-gaming-group/commit/f9c3a27e98dd4a253acceec55e21a1c664ae3782))
+
 ## [1.4.89](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.88...v1.4.89) (2026-01-11)
 
 

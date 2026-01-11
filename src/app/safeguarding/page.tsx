@@ -43,7 +43,16 @@ export default function SafeguardingPage() {
               <p>{state.message}</p>
             </div>
           ) : (
-            <form action={formAction} className="grid gap-4">
+            <>
+              <div className="mb-6 space-y-2 text-muted-foreground">
+                <p>
+                  We want our club to be a fun and safe place for everyone. Even as a small group, it&apos;s important that we look out for one another.
+                </p>
+                <p>
+                  If you have any concerns about a member&apos;s welfare or behavior, please let us know here. All reports are treated as confidential.
+                </p>
+              </div>
+              <form action={formAction} className="grid gap-4">
               {state.message && !state.success && (
                 <div className="text-red-500 font-medium">{state.message}</div>
               )}
@@ -69,7 +78,8 @@ export default function SafeguardingPage() {
                 {state.errors?.message && <p className="text-red-500 text-sm">{state.errors.message[0]}</p>}
               </div>
               <Button type="submit" size="lg" className="text-lg">Submit</Button>
-            </form>
+              </form>
+            </>
           )}
         </CardContent>
       </Card>

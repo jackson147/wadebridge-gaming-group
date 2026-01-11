@@ -26,6 +26,11 @@ export function TopNav() {
           {/* Desktop Gallery Link */}
           <div className="hidden md:block">
             <Button asChild variant="link" className="text-lg font-bold text-foreground">
+              <Link href="/">
+                Home
+              </Link>
+            </Button>
+            <Button asChild variant="link" className="text-lg font-bold text-foreground">
               <Link href="/gallery">
                 Gallery
               </Link>
@@ -57,6 +62,11 @@ export function TopNav() {
             </SheetTrigger>
             <SheetContent side="right">
               <nav className="mt-8 flex flex-col items-center gap-6">
+                <SheetClose asChild>
+                  <Button asChild variant="link" className="text-2xl text-foreground">
+                    <Link href="/">Home</Link> 
+                  </Button>
+                </SheetClose>
                 <SheetClose asChild>
                   <Button asChild variant="link" className="text-2xl text-foreground">
                     <Link href="/gallery">Gallery</Link> 

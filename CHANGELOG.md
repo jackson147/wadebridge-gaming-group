@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.5.0...v1.5.1) (2026-01-11)
+
+
+### Bug Fixes
+
+* added home button to all nav bars ([195b65d](https://github.com/jackson147/wadebridge-gaming-group/commit/195b65dea14d80d52da27d018c9c39e16971316e))
+
 # [1.5.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.4.89...v1.5.0) (2026-01-11)
 
 

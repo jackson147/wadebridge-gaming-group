@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.5.2...v1.6.0) (2026-01-11)
+
+
+### Features
+
+* test multi arch build ([22279c0](https://github.com/jackson147/wadebridge-gaming-group/commit/22279c0e88d8055f84de1ef43014d1d9c6b7cfbb))
+
 ## [1.5.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.5.1...v1.5.2) (2026-01-11)
 
 

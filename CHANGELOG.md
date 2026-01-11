@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.5.1...v1.5.2) (2026-01-11)
+
+
+### Bug Fixes
+
+* moved pg init to an init container ([a04a2db](https://github.com/jackson147/wadebridge-gaming-group/commit/a04a2db214546aeff2f5741c864efa4448b3d114))
+
 ## [1.5.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.5.0...v1.5.1) (2026-01-11)
 
 

@@ -1,8 +1,6 @@
 ##### DEPENDENCIES
 
-ARG BUILDPLATFORM=linux/amd64
-
-FROM --platform=${BUILDPLATFORM} node:24-alpine AS deps
+FROM node:24-alpine AS deps
 RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
 
@@ -23,7 +21,7 @@ RUN \
 
 ##### BUILDER
 
-FROM --platform=${BUILDPLATFORM} node:24-alpine AS builder
+FROM node:24-alpine AS builder
 ARG DATABASE_URL
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
@@ -40,7 +38,7 @@ RUN \
 
 ##### RUNNER
 
-FROM --platform=${BUILDPLATFORM} node:24-alpine AS runner
+FROM node:24-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production

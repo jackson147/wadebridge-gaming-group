@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.0...v1.6.1) (2026-01-11)
+
+
+### Bug Fixes
+
+* **deps:** update actions/cache action to v5 ([f5cb48f](https://github.com/jackson147/wadebridge-gaming-group/commit/f5cb48fd76a9bcecdc99befea4170dc5f743d176))
+
 # [1.6.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.5.2...v1.6.0) (2026-01-11)
 
 

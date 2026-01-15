@@ -1,3 +1,10 @@
+## [1.6.9](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.8...v1.6.9) (2026-01-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency next to v16.1.2 ([#221](https://github.com/jackson147/wadebridge-gaming-group/issues/221)) ([2c9411c](https://github.com/jackson147/wadebridge-gaming-group/commit/2c9411c6523a7b821152b461869c3dc49e6c39bf))
+
 ## [1.6.8](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.7...v1.6.8) (2026-01-14)
 
 

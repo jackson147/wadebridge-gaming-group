@@ -1,3 +1,10 @@
+## [1.6.18](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.17...v1.6.18) (2026-01-20)
+
+
+### Bug Fixes
+
+* updated favicon to logo ([55837b3](https://github.com/jackson147/wadebridge-gaming-group/commit/55837b3a998632c7b1d8a82b026be203a12b5166))
+
 ## [1.6.17](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.16...v1.6.17) (2026-01-20)
 
 

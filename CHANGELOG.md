@@ -1,3 +1,10 @@
+## [1.6.20](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.19...v1.6.20) (2026-01-22)
+
+
+### Bug Fixes
+
+* **deps:** update npm to v11.8.0 ([#232](https://github.com/jackson147/wadebridge-gaming-group/issues/232)) ([d684b0c](https://github.com/jackson147/wadebridge-gaming-group/commit/d684b0cb0e2bb3dcc09b568d3741ee1789f06488))
+
 ## [1.6.19](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.18...v1.6.19) (2026-01-20)
 
 

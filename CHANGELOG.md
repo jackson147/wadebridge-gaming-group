@@ -1,3 +1,11 @@
+## [1.6.23](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.22...v1.6.23) (2026-01-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @biomejs/biome to v2.3.12 ([#236](https://github.com/jackson147/wadebridge-gaming-group/issues/236)) ([5795802](https://github.com/jackson147/wadebridge-gaming-group/commit/5795802abca65050b14f3d4352e8e6c8229bb60f))
+* **deps:** update dependency @tanstack/react-query to v5.90.20 ([#237](https://github.com/jackson147/wadebridge-gaming-group/issues/237)) ([74d306e](https://github.com/jackson147/wadebridge-gaming-group/commit/74d306e39f936c472597338384221a5af73a7283))
+
 ## [1.6.22](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.21...v1.6.22) (2026-01-23)
 
 

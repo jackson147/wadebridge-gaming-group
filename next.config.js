@@ -12,6 +12,7 @@ const config = {
             {
                 protocol: "https",
                 hostname: "**.newlinkedlist.com",
+                pathname: '/**',
             },
             {
                 protocol: "https",

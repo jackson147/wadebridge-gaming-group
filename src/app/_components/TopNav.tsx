@@ -30,11 +30,11 @@ export function TopNav() {
                 Home
               </Link>
             </Button>
-            <Button asChild variant="link" className="text-lg font-bold text-foreground">
+            {/* <Button asChild variant="link" className="text-lg font-bold text-foreground">
               <Link href="/gallery">
                 Gallery
               </Link>
-            </Button>
+            </Button> */}
             <Button asChild variant="link" className="text-lg font-bold text-foreground">
               <Link href="/safeguarding">
                 Safeguarding
@@ -67,11 +67,11 @@ export function TopNav() {
                     <Link href="/">Home</Link> 
                   </Button>
                 </SheetClose>
-                <SheetClose asChild>
+                {/* <SheetClose asChild>
                   <Button asChild variant="link" className="text-2xl text-foreground">
                     <Link href="/gallery">Gallery</Link> 
                   </Button>
-                </SheetClose>
+                </SheetClose> */}
                 <SheetClose asChild>
                   <Button asChild variant="link" className="text-2xl text-foreground">
                     <Link href="/safeguarding">Safeguarding</Link>

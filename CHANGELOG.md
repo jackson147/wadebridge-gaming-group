@@ -1,3 +1,11 @@
+## [1.6.28](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.27...v1.6.28) (2026-01-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/react to v19.2.10 ([#244](https://github.com/jackson147/wadebridge-gaming-group/issues/244)) ([b86df38](https://github.com/jackson147/wadebridge-gaming-group/commit/b86df38e6fc4380e6d93d62262d2d5ef2daaf3f1))
+* **deps:** update dependency nodemailer to v7.0.13 ([#245](https://github.com/jackson147/wadebridge-gaming-group/issues/245)) ([2038ab8](https://github.com/jackson147/wadebridge-gaming-group/commit/2038ab8fd8eb706f41b372a8dc7d803a338501bb))
+
 ## [1.6.27](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.26...v1.6.27) (2026-01-26)
 
 

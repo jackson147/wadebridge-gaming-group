@@ -1,3 +1,10 @@
+## [1.6.33](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.32...v1.6.33) (2026-01-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @semantic-release/github to v12.0.3 ([#251](https://github.com/jackson147/wadebridge-gaming-group/issues/251)) ([f5e8c0c](https://github.com/jackson147/wadebridge-gaming-group/commit/f5e8c0c6960fee5dfc914358a833068fa330a368))
+
 ## [1.6.32](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.31...v1.6.32) (2026-01-30)
 
 

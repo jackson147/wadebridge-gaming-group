@@ -9,6 +9,11 @@ const schema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
+enum EmailType {
+  CONTACT_US = "contact-us",
+  SAFEGUARDING_CONCERN = "safeguarding-concern",
+}
+
 export type FormState = {
   message: string;
   errors?: {
@@ -24,8 +29,16 @@ export type FormState = {
   success?: boolean;
 };
 
-export async function submitSafeguardingConcern(
-  prevState: FormState,
+export async function submitContactUs(prevState: FormState, formData: FormData): Promise<FormState> {
+  return submitEmail(EmailType.CONTACT_US, formData);
+}
+
+export async function submitSafeguardingConcern(prevState: FormState, formData: FormData): Promise<FormState> {
+  return submitEmail(EmailType.SAFEGUARDING_CONCERN, formData);
+}
+
+export async function submitEmail(
+  emailType: EmailType,
   formData: FormData
 ): Promise<FormState> {
   const name = (formData.get("name") as string) || "";
@@ -59,11 +72,16 @@ export async function submitSafeguardingConcern(
       },
       secure: process.env.EMAIL_SERVER_PORT === "465",
     });
+    
+    let subject = "Email from "
+    if (emailType === EmailType.SAFEGUARDING_CONCERN) {
+      subject = "Safeguarding Concern from "
+    }
 
     await transporter.sendMail({
       from: process.env.EMAIL_FROM,
       to: process.env.SAFEGUARDING_EMAIL_TO,
-      subject: `Safeguarding Concern from ${validatedName}`,
+      subject: `${subject}${validatedName}`,
       text: `
         Name: ${validatedName}
         Email: ${validatedEmail}
@@ -73,12 +91,12 @@ export async function submitSafeguardingConcern(
       `,
     });
 
-    return { success: true, message: "Concern submitted successfully." };
+    return { success: true, message: "Message sent successfully." };
   } catch (error) {
     console.error("Email error:", error);
     return { 
       success: false, 
-      message: "Failed to send email. Please try again.",
+      message: "Failed to send message. Please try again.",
       fields: { name, email, message }
     };
   }

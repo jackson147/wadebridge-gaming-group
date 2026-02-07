@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { submitSafeguardingConcern } from "../common/email/actions";
+import { submitContactUs } from "../common/email/actions";
 import { Button } from "~/components/ui/button";
 import {
   Card,
@@ -24,16 +24,16 @@ const initialState = {
   success: false,
 };
 
-export default function SafeguardingPage() {
-  const [state, formAction] = useActionState(submitSafeguardingConcern, initialState);
+export default function ContactPage() {
+  const [state, formAction] = useActionState(submitContactUs, initialState);
 
   return (
     <main className="flex grow flex-col items-center justify-center p-4">
       <Card className="w-full max-w-2xl">
         <CardHeader>
-          <CardTitle className="text-3xl">Safeguarding</CardTitle>
+          <CardTitle className="text-3xl">Contact Us</CardTitle>
           <CardDescription className="text-base">
-            Please fill out the form below to submit a safeguarding concern.
+            Please fill out the form below to get in touch with us.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -46,10 +46,10 @@ export default function SafeguardingPage() {
             <>
               <div className="mb-6 space-y-2 text-muted-foreground">
                 <p>
-                  We want our club to be a fun and safe place for everyone. Even as a small group, it&apos;s important that we look out for one another.
+                  Whether you have a question about the club, want to join a game, or just want to say hello, we&apos;d love to hear from you.
                 </p>
                 <p>
-                  If you have any concerns about a member&apos;s welfare or behavior, please let us know here. All reports are treated as confidential.
+                  Simply fill out the form below and we&apos;ll get back to you as soon as possible.
                 </p>
               </div>
               <form action={formAction} className="grid gap-4">

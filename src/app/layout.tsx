@@ -1,13 +1,14 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
-import { cookies } from "next/headers";
 
+import { CookieConsent } from "~/app/_components/CookieConsent";
 import { TRPCReactProvider } from "~/trpc/react";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "~/server/auth";
 import { TopNav } from "./_components/TopNav";
 import { ThemeProvider } from "~/components/context/theme";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default async function RootLayout({
             >
               <TopNav />
               {children}
+              <CookieConsent /> 
             </ThemeProvider>
           </TRPCReactProvider>
         </SessionProvider>

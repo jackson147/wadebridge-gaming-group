@@ -35,11 +35,6 @@ export function TopNav() {
                 Gallery
               </Link>
             </Button>
-            <Button asChild variant="link" className="text-lg font-bold text-foreground">
-              <Link href="/safeguarding">
-                Safeguarding
-              </Link>
-            </Button>
           </div>
         </div>
 

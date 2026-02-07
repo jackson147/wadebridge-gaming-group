@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.47...v1.7.0) (2026-02-07)
+
+
+### Features
+
+* moved login to admin page ([7f3394b](https://github.com/jackson147/wadebridge-gaming-group/commit/7f3394b410b1fe45a2f5ed9788826cd3356b3ee3))
+
 ## [1.6.47](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.46...v1.6.47) (2026-02-07)
 
 

@@ -1,3 +1,17 @@
+# [1.8.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.7.0...v1.8.0) (2026-02-07)
+
+
+### Bug Fixes
+
+* moved rights reserved under links ([c091558](https://github.com/jackson147/wadebridge-gaming-group/commit/c09155823459af6a36b51bbb3b0da6592369bab0))
+* moved stuff around so it all looks nice ([108d103](https://github.com/jackson147/wadebridge-gaming-group/commit/108d103890b466e823f4591ac6c9126c7911c89b))
+
+
+### Features
+
+* added cookie consent ([e4d9996](https://github.com/jackson147/wadebridge-gaming-group/commit/e4d99967797fdb90bd2c3bc9563ca5d52cf8c392))
+* added privacy policy and bottom bar ([3cc716b](https://github.com/jackson147/wadebridge-gaming-group/commit/3cc716b6eeefadd359d5583c843f6caea10428ca))
+
 # [1.7.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.47...v1.7.0) (2026-02-07)
 
 

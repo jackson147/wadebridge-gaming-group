@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { Inter } from "next/font/google";
 
 import { CookieConsent } from "~/app/_components/CookieConsent";
+import { Footer } from "~/app/_components/Footer";
 import { TRPCReactProvider } from "~/trpc/react";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "~/server/auth";
@@ -41,6 +42,7 @@ export default async function RootLayout({
             >
               <TopNav />
               {children}
+              <Footer />
               <CookieConsent /> 
             </ThemeProvider>
           </TRPCReactProvider>

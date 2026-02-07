@@ -15,13 +15,8 @@ export function CookieConsent() {
     }
   }, []);
 
-  const acceptCookies = () => {
-    localStorage.setItem("cookie-consent", "accepted");
-    setIsVisible(false);
-  };
-
-  const declineCookies = () => {
-    localStorage.setItem("cookie-consent", "declined");
+  const dismiss = () => {
+    localStorage.setItem("cookie-consent", "acknowledged");
     setIsVisible(false);
   };
 
@@ -32,18 +27,15 @@ export function CookieConsent() {
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:flex-row">
         <div className="text-center text-sm text-muted-foreground md:text-left">
           <p>
-            We use cookies to enhance your browsing experience. By continuing to use this site, you agree to our use of cookies.{" "}
+            We use essential cookies to maintain your login session and ensure site security.{" "}
             <Link href="/privacy" className="font-medium underline underline-offset-4 hover:text-primary">
               Privacy Policy
             </Link>
           </p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" onClick={declineCookies}>
-            Decline
-          </Button>
-          <Button onClick={acceptCookies}>
-            Accept
+          <Button onClick={dismiss}>
+            Got it
           </Button>
         </div>
       </div>

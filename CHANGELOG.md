@@ -1,3 +1,11 @@
+## [1.6.46](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.45...v1.6.46) (2026-02-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @semantic-release/github to v12.0.4 ([#266](https://github.com/jackson147/wadebridge-gaming-group/issues/266)) ([ef880a4](https://github.com/jackson147/wadebridge-gaming-group/commit/ef880a4c660366a51f80f86fd99318d4b5de9b64))
+* **deps:** update dependency react-day-picker to v9.13.1 ([#267](https://github.com/jackson147/wadebridge-gaming-group/issues/267)) ([c343daf](https://github.com/jackson147/wadebridge-gaming-group/commit/c343dafeb20e5c50c6ab7f88af4a8ebbe1b26f9c))
+
 ## [1.6.45](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.6.44...v1.6.45) (2026-02-06)
 
 

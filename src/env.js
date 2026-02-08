@@ -27,6 +27,7 @@ export const env = createEnv({
 		EMAIL_SERVER_USER: z.string(),
 		EMAIL_SERVER_PASSWORD: z.string(),
 		EMAIL_FROM: z.string(),
+		CONTACT_EMAIL_TO: z.string(),
 		SAFEGUARDING_EMAIL_TO: z.string(),
 	},
 
@@ -59,6 +60,7 @@ export const env = createEnv({
 		EMAIL_SERVER_USER: process.env.EMAIL_SERVER_USER,
 		EMAIL_SERVER_PASSWORD: process.env.EMAIL_SERVER_PASSWORD,
 		EMAIL_FROM: process.env.EMAIL_FROM,
+		CONTACT_EMAIL_TO: process.env.CONTACT_EMAIL_TO,
 		SAFEGUARDING_EMAIL_TO: process.env.SAFEGUARDING_EMAIL_TO,
 		// NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 	},

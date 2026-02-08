@@ -1,3 +1,11 @@
+## [1.8.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.2...v1.8.3) (2026-02-08)
+
+
+### Bug Fixes
+
+* disable cookie consent ([1bf9e6e](https://github.com/jackson147/wadebridge-gaming-group/commit/1bf9e6e91c49817d80655ba842ad71c2938bd81e))
+* moved navlinks to common map ([3257cf5](https://github.com/jackson147/wadebridge-gaming-group/commit/3257cf5979a2cd810a672db015940067f74d7e07))
+
 ## [1.8.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.1...v1.8.2) (2026-02-08)
 
 

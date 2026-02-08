@@ -13,6 +13,11 @@ import {
 } from "~/components/ui/sheet";
 
 export function TopNav() {
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/gallery", label: "Gallery" },
+  ];
+
   return (
     <nav className="sticky top-0 z-40 w-full border-b bg-background/80 px-4 backdrop-blur-sm">
       <div className="flex h-16 items-center justify-between text-foreground">
@@ -25,16 +30,16 @@ export function TopNav() {
           </Link>
           {/* Desktop Gallery Link */}
           <div className="hidden md:block">
-            <Button asChild variant="link" className="text-lg font-bold text-foreground">
-              <Link href="/">
-                Home
-              </Link>
-            </Button>
-            <Button asChild variant="link" className="text-lg font-bold text-foreground">
-              <Link href="/gallery">
-                Gallery
-              </Link>
-            </Button>
+            {navLinks.map((link) => (
+              <Button
+                key={link.href}
+                asChild
+                variant="link"
+                className="text-lg font-bold text-foreground"
+              >
+                <Link href={link.href}>{link.label}</Link>
+              </Button>
+            ))}
           </div>
         </div>
 
@@ -57,21 +62,17 @@ export function TopNav() {
             </SheetTrigger>
             <SheetContent side="right">
               <nav className="mt-8 flex flex-col items-center gap-6">
-                <SheetClose asChild>
-                  <Button asChild variant="link" className="text-2xl text-foreground">
-                    <Link href="/">Home</Link> 
-                  </Button>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Button asChild variant="link" className="text-2xl text-foreground">
-                    <Link href="/gallery">Gallery</Link> 
-                  </Button>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Button asChild variant="link" className="text-2xl text-foreground">
-                    <Link href="/safeguarding">Safeguarding</Link>
-                  </Button>
-                </SheetClose>
+                {navLinks.map((link) => (
+                  <SheetClose key={link.href} asChild>
+                    <Button
+                      asChild
+                      variant="link"
+                      className="text-2xl text-foreground"
+                    >
+                      <Link href={link.href}>{link.label}</Link>
+                    </Button>
+                  </SheetClose>
+                ))}
                 <div
                   onClick={(e) => {
                     e.stopPropagation();

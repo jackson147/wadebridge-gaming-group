@@ -43,7 +43,7 @@ export default async function RootLayout({
               <TopNav />
               {children}
               <Footer />
-              <CookieConsent /> 
+              {/* <CookieConsent />  */}
             </ThemeProvider>
           </TRPCReactProvider>
         </SessionProvider>

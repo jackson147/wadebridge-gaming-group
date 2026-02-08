@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.3...v1.8.4) (2026-02-08)
+
+
+### Bug Fixes
+
+* **deps:** update actions/checkout action to v6 ([76677da](https://github.com/jackson147/wadebridge-gaming-group/commit/76677daf287b90e651765b00b5ac29d24e5f812f))
+
 ## [1.8.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.2...v1.8.3) (2026-02-08)
 
 

@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.1...v1.8.2) (2026-02-08)
+
+
+### Bug Fixes
+
+* added cloudflare email redirects to contact and safeguarding. Updated example env ([50a2d7d](https://github.com/jackson147/wadebridge-gaming-group/commit/50a2d7d577f8d9d0507dbd4c6c87420b7dacc3a5))
+
 ## [1.8.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.0...v1.8.1) (2026-02-08)
 
 

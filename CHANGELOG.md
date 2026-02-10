@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.5...v1.8.6) (2026-02-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-day-picker to v9.13.2 ([#275](https://github.com/jackson147/wadebridge-gaming-group/issues/275)) ([c4263b7](https://github.com/jackson147/wadebridge-gaming-group/commit/c4263b7f41a5f44b9020febab2d951c82a0ea658))
+
 ## [1.8.5](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.4...v1.8.5) (2026-02-09)
 
 

@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.0...v1.9.1) (2026-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency tailwind-merge to v3.4.1 ([#289](https://github.com/jackson147/wadebridge-gaming-group/issues/289)) ([9bec1a1](https://github.com/jackson147/wadebridge-gaming-group/commit/9bec1a1360fc63d141773a59e223dbca8fa6ad70))
+
 # [1.9.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.18...v1.9.0) (2026-02-15)
 
 

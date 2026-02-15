@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.18...v1.9.0) (2026-02-15)
+
+
+### Features
+
+* finished news feature page v1 ([2d8184a](https://github.com/jackson147/wadebridge-gaming-group/commit/2d8184a99339f9b5a08bde6a2d00ee0ffdb15894))
+
 ## [1.8.18](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.8.17...v1.8.18) (2026-02-13)
 
 

@@ -1,3 +1,10 @@
+## [1.9.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.2...v1.9.3) (2026-02-15)
+
+
+### Bug Fixes
+
+* added missing migration for news posts ([55a5881](https://github.com/jackson147/wadebridge-gaming-group/commit/55a5881b15cee2bdd8370ffe67c38aa7a787a613))
+
 ## [1.9.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.1...v1.9.2) (2026-02-15)
 
 

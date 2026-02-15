@@ -1,3 +1,10 @@
+## [1.9.4](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.3...v1.9.4) (2026-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/nodemailer to v7.0.10 ([#292](https://github.com/jackson147/wadebridge-gaming-group/issues/292)) ([81c5fc2](https://github.com/jackson147/wadebridge-gaming-group/commit/81c5fc210bee0e12b71c267dadf280f3a21b193a))
+
 ## [1.9.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.2...v1.9.3) (2026-02-15)
 
 

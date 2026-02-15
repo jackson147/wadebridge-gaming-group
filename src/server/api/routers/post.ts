@@ -23,7 +23,7 @@ export const galleryPostRouter = createTRPCRouter({
       const key = `${id}.${ex}`;
 
       const command = new PutObjectCommand({
-        Bucket: env.MINIO_BUCKET_NAME,
+        Bucket: env.MINIO_GALLERY_BUCKET_NAME,
         Key: key,
         ContentType: input.fileType,
       });
@@ -42,7 +42,7 @@ export const galleryPostRouter = createTRPCRouter({
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const imageUrl = `${env.MINIO_ENDPOINT}/${env.MINIO_BUCKET_NAME}/${input.key}`;
+      const imageUrl = `${env.MINIO_ENDPOINT}/${env.MINIO_GALLERY_BUCKET_NAME}/${input.key}`;
 
       return ctx.db.galleryPost.create({
         data: {
@@ -86,7 +86,7 @@ export const galleryPostRouter = createTRPCRouter({
 
       // Delete the object from S3/MinIO
       const deleteCommand = new DeleteObjectCommand({
-        Bucket: env.MINIO_BUCKET_NAME,
+        Bucket: env.MINIO_GALLERY_BUCKET_NAME,
         Key: key,
       });
       await s3Client.send(deleteCommand);

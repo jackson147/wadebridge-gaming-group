@@ -1,4 +1,6 @@
 import { galleryPostRouter } from "~/server/api/routers/post";
+import { newsRouter } from "~/server/api/routers/news";
+
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 
 /**
@@ -8,6 +10,7 @@ import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
 	galleryPost: galleryPostRouter,
+	news: newsRouter,
 });
 
 // export type definition of API

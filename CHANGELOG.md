@@ -1,3 +1,10 @@
+## [1.9.5](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.4...v1.9.5) (2026-02-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @biomejs/biome to v2.4.1 ([#293](https://github.com/jackson147/wadebridge-gaming-group/issues/293)) ([97491da](https://github.com/jackson147/wadebridge-gaming-group/commit/97491dabba8bba8a1caefe4fe88d7a9b16d203d5))
+
 ## [1.9.4](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.3...v1.9.4) (2026-02-15)
 
 

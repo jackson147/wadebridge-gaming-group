@@ -15,6 +15,7 @@ import {
 export function TopNav() {
   const navLinks = [
     { href: "/", label: "Home" },
+    { href: "/news", label: "News" },
     { href: "/gallery", label: "Gallery" },
   ];
 

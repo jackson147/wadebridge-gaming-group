@@ -1,3 +1,11 @@
+## [1.9.12](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.11...v1.9.12) (2026-02-17)
+
+
+### Bug Fixes
+
+* reverted back to light as default and made the lgiht mode have the colour change ([8b68162](https://github.com/jackson147/wadebridge-gaming-group/commit/8b6816243efe31a741531feff6731dd65fc4cd05))
+* set dark to default ([80a1d38](https://github.com/jackson147/wadebridge-gaming-group/commit/80a1d38f522b7edaa67cd4bbf734fd618de51a79))
+
 ## [1.9.11](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.10...v1.9.11) (2026-02-17)
 
 

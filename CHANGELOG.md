@@ -1,3 +1,11 @@
+## [1.9.11](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.10...v1.9.11) (2026-02-17)
+
+
+### Bug Fixes
+
+* fixed light mode on news page ([1fdd0b3](https://github.com/jackson147/wadebridge-gaming-group/commit/1fdd0b35efb0f52e9cdd8b89ba18fcc283be84c4))
+* released news page ([be97f8a](https://github.com/jackson147/wadebridge-gaming-group/commit/be97f8a631b765eebfeeed33164706090372e38c))
+
 ## [1.9.10](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.9...v1.9.10) (2026-02-17)
 
 

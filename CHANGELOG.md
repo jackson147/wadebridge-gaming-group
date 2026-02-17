@@ -1,3 +1,10 @@
+## [1.9.8](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.7...v1.9.8) (2026-02-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lucide-react to ^0.565.0 ([#296](https://github.com/jackson147/wadebridge-gaming-group/issues/296)) ([579100f](https://github.com/jackson147/wadebridge-gaming-group/commit/579100f90a856959be4f2fc9c9936247107aff79))
+
 ## [1.9.7](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.6...v1.9.7) (2026-02-17)
 
 

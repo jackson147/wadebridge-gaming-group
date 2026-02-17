@@ -48,19 +48,19 @@ export function NewsPostItem({ post }: NewsPostItemProps) {
   };
 
   return (
-    <div className="relative flex flex-col gap-4 rounded-xl bg-white/10 p-6 text-white shadow-sm transition hover:bg-white/20">
+    <div className="relative flex flex-col gap-4 rounded-xl bg-gray-100/50 p-6 shadow-sm transition hover:bg-gray-200/50 dark:bg-white/10 dark:hover:bg-white/20">
       {canDelete && (
         <div className="absolute right-4 top-4 flex gap-2">
           <button
             onClick={() => setIsEditModalOpen(true)}
-            className="text-gray-400 hover:text-blue-500"
+            className="text-muted-foreground hover:text-blue-500"
             aria-label="Edit post"
           >
             <FaEdit />
           </button>
           <button
             onClick={() => setIsConfirmOpen(true)}
-            className="text-gray-400 hover:text-red-500"
+            className="text-muted-foreground hover:text-red-500"
             aria-label="Delete post"
           >
             <FaTimes />
@@ -69,10 +69,10 @@ export function NewsPostItem({ post }: NewsPostItemProps) {
       )}
 
       <div className="flex flex-col gap-2">
-        <h2 className="text-2xl font-bold text-white">
+        <h2 className="text-2xl font-bold">
           {post.title}
         </h2>
-        <div className="text-sm text-gray-400">
+        <div className="text-sm text-muted-foreground">
           <span>{post.createdBy.name ?? "Unknown"}</span>
           <span className="mx-2">•</span>
           <span>
@@ -83,7 +83,7 @@ export function NewsPostItem({ post }: NewsPostItemProps) {
         </div>
       </div>
 
-      <p className="whitespace-pre-wrap text-gray-200">
+      <p className="whitespace-pre-wrap text-foreground/90">
         {post.content}
       </p>
 

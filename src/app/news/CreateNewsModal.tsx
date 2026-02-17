@@ -117,50 +117,50 @@ export function CreateNewsModal({ onClose, post }: CreateNewsModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-2xl rounded-lg bg-gray-900 p-6 shadow-xl border border-gray-800 text-white">
+      <div className="w-full max-w-2xl rounded-lg border bg-card p-6 text-card-foreground shadow-xl">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-xl font-bold">{post ? "Edit News Post" : "Create News Post"}</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+          <button onClick={onClose} className="text-muted-foreground hover:text-foreground">
             <FaTimes />
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
-            <label className="mb-1 block text-sm font-medium">Title</label>
+            <label className="mb-1 block text-sm font-medium text-muted-foreground">Title</label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full rounded-md border border-gray-700 bg-gray-800 p-2 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none"
+              className="w-full rounded-md border bg-background p-2 placeholder:text-muted-foreground focus:border-primary focus:outline-none"
               required
             />
           </div>
 
           <div>
-            <label className="mb-1 block text-sm font-medium">Content</label>
+            <label className="mb-1 block text-sm font-medium text-muted-foreground">Content</label>
             <textarea
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="h-32 w-full rounded-md border border-gray-700 bg-gray-800 p-2 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none"
+              className="h-32 w-full rounded-md border bg-background p-2 placeholder:text-muted-foreground focus:border-primary focus:outline-none"
               required
             />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium">Upload Images</label>
+            <label className="mb-1 block text-sm font-medium text-muted-foreground">Upload Images</label>
             <input
               type="file"
               accept="image/*"
               multiple
               onChange={handleFileChange}
-              className="w-full rounded-md border border-gray-700 bg-gray-800 p-2 text-sm text-gray-300 file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-700"
+              className="w-full rounded-md border bg-background p-2 text-sm text-muted-foreground file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary-foreground hover:file:bg-primary/90"
             />
 
             {/* Image Preview List (URLs + Files) */}
             {(imageUrls.length > 0 || files.length > 0) && (
               <div className="mt-2 flex flex-wrap gap-2">
                 {imageUrls.map((url, idx) => (
-                  <div key={`url-${idx}`} className="relative h-20 w-20 overflow-hidden rounded-md border border-gray-700">
+                  <div key={`url-${idx}`} className="relative h-20 w-20 overflow-hidden rounded-md border">
                     <img src={url} alt="Preview" className="h-full w-full object-cover" />
                     <button
                       type="button"
@@ -172,7 +172,7 @@ export function CreateNewsModal({ onClose, post }: CreateNewsModalProps) {
                   </div>
                 ))}
                 {files.map((file, idx) => (
-                  <div key={`file-${idx}`} className="relative h-20 w-20 overflow-hidden rounded-md border border-gray-700">
+                  <div key={`file-${idx}`} className="relative h-20 w-20 overflow-hidden rounded-md border">
                     <img src={URL.createObjectURL(file)} alt="Preview" className="h-full w-full object-cover" />
                     <button
                       type="button"
@@ -188,11 +188,11 @@ export function CreateNewsModal({ onClose, post }: CreateNewsModalProps) {
           </div>
 
           <div className="mt-4 flex justify-end gap-2">
-            <button type="button" onClick={onClose} className="rounded-md px-4 py-2 hover:bg-gray-800 text-gray-300">Cancel</button>
+            <button type="button" onClick={onClose} className="rounded-md px-4 py-2 text-muted-foreground hover:bg-accent">Cancel</button>
             <button
               type="submit"
               disabled={createNews.isPending || updateNews.isPending || isUploading}
-              className="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50"
+              className="rounded-md bg-primary px-4 py-2 text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
             >
               {createNews.isPending || updateNews.isPending || isUploading ? "Saving..." : post ? "Update Post" : "Post News"}
             </button>

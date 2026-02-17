@@ -16,10 +16,10 @@ export default function NewsPage() {
             process.env.NODE_ENV === "development";
 
   return (
-    <main className="flex min-h-screen flex-col items-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white pb-16">
+    <main className="items-center">
       <div className="container mx-auto px-4 py-16">
         <div className="mb-8 flex items-center justify-between">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white">
+          <h1 className="text-4xl font-extrabold tracking-tight">
             News Feed
           </h1>
           {canCreate && (
@@ -36,7 +36,7 @@ export default function NewsPage() {
         {isLoading ? (
           <div className="text-center">Loading news...</div>
         ) : !newsPosts || newsPosts.length === 0 ? (
-          <div className="text-center text-white/80">No news yet.</div>
+          <div className="text-center opacity-80">No news yet.</div>
         ) : (
           <div className="mx-auto flex max-w-3xl flex-col gap-6">
             {newsPosts.map((post) => (

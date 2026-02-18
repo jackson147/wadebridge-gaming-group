@@ -1,3 +1,10 @@
+## [1.9.14](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.13...v1.9.14) (2026-02-18)
+
+
+### Bug Fixes
+
+* **deps:** update tailwindcss monorepo to v4.2.0 ([#302](https://github.com/jackson147/wadebridge-gaming-group/issues/302)) ([ffa454b](https://github.com/jackson147/wadebridge-gaming-group/commit/ffa454bfd99c4b8b59fb4f865e688ba805b07cc4))
+
 ## [1.9.13](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.12...v1.9.13) (2026-02-17)
 
 

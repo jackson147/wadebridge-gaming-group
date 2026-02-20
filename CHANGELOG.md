@@ -1,3 +1,11 @@
+## [1.9.21](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.20...v1.9.21) (2026-02-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/nodemailer to v7.0.11 ([#310](https://github.com/jackson147/wadebridge-gaming-group/issues/310)) ([3e48859](https://github.com/jackson147/wadebridge-gaming-group/commit/3e488599021505548cfc77757a5f967201840e1a))
+* **deps:** update dependency react-hook-form to v7.71.2 ([#311](https://github.com/jackson147/wadebridge-gaming-group/issues/311)) ([edd7a4e](https://github.com/jackson147/wadebridge-gaming-group/commit/edd7a4ea4d7904299dfb8db3947c0f403af7fb32))
+
 ## [1.9.20](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.19...v1.9.20) (2026-02-20)
 
 

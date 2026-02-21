@@ -1,3 +1,11 @@
+## [1.9.22](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.21...v1.9.22) (2026-02-21)
+
+
+### Bug Fixes
+
+* **deps:** update aws-sdk-js-v3 monorepo to v3.995.0 ([#313](https://github.com/jackson147/wadebridge-gaming-group/issues/313)) ([3ee8397](https://github.com/jackson147/wadebridge-gaming-group/commit/3ee8397915387acbf59ff1d00794f8e570fb30a7))
+* **deps:** update dependency @biomejs/biome to v2.4.4 ([#312](https://github.com/jackson147/wadebridge-gaming-group/issues/312)) ([9150a90](https://github.com/jackson147/wadebridge-gaming-group/commit/9150a90e5f63f4b03f04e0f7171142142376b96d))
+
 ## [1.9.21](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.20...v1.9.21) (2026-02-20)
 
 

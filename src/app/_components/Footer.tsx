@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+const version = process.env.NEXT_PUBLIC_VERSION || "0.0.0";
+
 export function Footer() {
   return (
     <footer className="mt-auto w-full border-t bg-background/50 py-6 backdrop-blur-sm">
@@ -25,7 +27,7 @@ export function Footer() {
           </Link>
         </div>
         <p className="text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Wadebridge Gaming Group. All rights reserved.
+          &copy; {new Date().getFullYear()} Wadebridge Gaming Group. v{version} All rights reserved.
         </p>
       </div>
     </footer>

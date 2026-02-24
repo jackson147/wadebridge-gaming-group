@@ -1,3 +1,4 @@
+import version from './package.json' with { type: 'json' };
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
@@ -7,6 +8,9 @@
 
 const config = {
     output: "standalone",
+    env: {
+        NEXT_PUBLIC_PACKAGE_VERSION: version.version,
+    },
     images: {
         remotePatterns: [
             {

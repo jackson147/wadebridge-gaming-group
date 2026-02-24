@@ -126,6 +126,21 @@ export const newsRouter = createTRPCRouter({
     });
   }),
 
+  getLatest: publicProcedure.query(async ({ ctx }) => {
+    return ctx.db.newsPost.findFirst({
+      orderBy: { createdAt: "desc" },
+      include: {
+        images: true,
+        createdBy: {
+          select: {
+            name: true,
+            image: true,
+          },
+        },
+      },
+    });
+  }),
+
   delete: protectedProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async ({ ctx, input }) => {

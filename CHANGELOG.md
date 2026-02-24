@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.0...v1.11.1) (2026-02-24)
+
+
+### Bug Fixes
+
+* fixed the card sizing for mobile ([d5071d3](https://github.com/jackson147/wadebridge-gaming-group/commit/d5071d3a44b21622e4701fbc65e67c6551f1746e))
+
 # [1.11.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.10.0...v1.11.0) (2026-02-24)
 
 

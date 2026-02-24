@@ -25,7 +25,7 @@ export function Footer() {
           </Link>
         </div>
         <p className="text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Wadebridge Gaming Group. All rights reserved.
+          &copy; {new Date().getFullYear()} Wadebridge Gaming Group. All rights reserved. v{process.env.NEXT_PUBLIC_PACKAGE_VERSION}
         </p>
       </div>
     </footer>

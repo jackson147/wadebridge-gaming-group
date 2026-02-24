@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.10.0...v1.11.0) (2026-02-24)
+
+
+### Bug Fixes
+
+* fixed the version number ([7f07a70](https://github.com/jackson147/wadebridge-gaming-group/commit/7f07a707f3bbbd2f25dda51d700c3a7fe07f4ff1))
+
+
+### Features
+
+* added version tag ([1d8003f](https://github.com/jackson147/wadebridge-gaming-group/commit/1d8003f869fee398f16c17fe8f62808fa5eb98d5))
+
 # [1.10.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.24...v1.10.0) (2026-02-24)
 
 

@@ -42,7 +42,7 @@ export default async function Home() {
             Egloshayle Pavilion, Wadebridge.
           </p>
 
-          <Card className="w-full max-w-4xl bg-gray-100/50 p-6 hover:bg-gray-200/50 dark:bg-white/10 dark:hover:bg-white/20">
+          <Card className="w-full max-w-4xl bg-gray-100/50 dark:bg-white/10">
             <CardHeader>
               <CardTitle className="text-center text-2xl">
                 Find us at
@@ -69,7 +69,7 @@ export default async function Home() {
           </Card>
 
           {latestNewsPost && (
-            <Card className="w-full max-w-4xl bg-gray-100/50 p-6 hover:bg-gray-200/50 dark:bg-white/10 dark:hover:bg-white/20">
+            <Card className="w-full max-w-4xl bg-gray-100/50 dark:bg-white/10">
               <CardHeader>
                 <CardTitle className="text-center text-2xl">
                   Latest News

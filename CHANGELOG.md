@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.24...v1.10.0) (2026-02-24)
+
+
+### Bug Fixes
+
+* news post now in line with rest of main page content ([53511fa](https://github.com/jackson147/wadebridge-gaming-group/commit/53511fa01c5ff467b7418a69fef983c281dd831d))
+
+
+### Features
+
+* added news to main page, but it's not matching up ([782920a](https://github.com/jackson147/wadebridge-gaming-group/commit/782920acb27fc63254f464e880b69c7ee3301c68))
+
 ## [1.9.24](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.9.23...v1.9.24) (2026-02-23)
 
 

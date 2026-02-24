@@ -69,15 +69,23 @@ export default async function Home() {
           </Card>
 
           {latestNewsPost && (
-            <div className="flex w-full max-w-4xl flex-col items-center gap-6">
-              <h2 className="text-center text-2xl font-semibold">Latest News</h2>
-              <div className="w-full">
-                <NewsPostItem key={latestNewsPost.id} post={latestNewsPost} />
-              </div>
-              <Button asChild size="lg">
-                <Link href="/news">View More News</Link>
-              </Button>
-            </div>
+            <Card className="w-full max-w-4xl bg-gray-100/50 p-6 hover:bg-gray-200/50 dark:bg-white/10 dark:hover:bg-white/20">
+              <CardHeader>
+                <CardTitle className="text-center text-2xl">
+                  Latest News
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center gap-4">
+                <div className="flex w-full max-w-4xl flex-col items-center gap-6">
+                  <div className="w-full">
+                    <NewsPostItem key={latestNewsPost.id} post={latestNewsPost} />
+                  </div>
+                  <Button asChild size="lg">
+                    <Link href="/news">View More News</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           )}
 
           <div className="flex w-full max-w-2xl flex-col items-center gap-4">

@@ -1,3 +1,11 @@
+## [1.11.4](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.3...v1.11.4) (2026-02-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v24.10.14 ([#321](https://github.com/jackson147/wadebridge-gaming-group/issues/321)) ([9871931](https://github.com/jackson147/wadebridge-gaming-group/commit/987193182b897d86b12f954df746360de60d3a2a))
+* **deps:** update npm to v11.11.0 ([#322](https://github.com/jackson147/wadebridge-gaming-group/issues/322)) ([df4188c](https://github.com/jackson147/wadebridge-gaming-group/commit/df4188cc0a8c6cdd09e9dc957e3bffc14f055d45))
+
 ## [1.11.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.2...v1.11.3) (2026-02-25)
 
 

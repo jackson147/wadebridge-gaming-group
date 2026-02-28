@@ -1,3 +1,10 @@
+## [1.11.9](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.8...v1.11.9) (2026-02-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency minio to v8.0.7 ([#327](https://github.com/jackson147/wadebridge-gaming-group/issues/327)) ([509eff4](https://github.com/jackson147/wadebridge-gaming-group/commit/509eff40eff042aec99c3115ade32bc5cb932717))
+
 ## [1.11.8](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.7...v1.11.8) (2026-02-27)
 
 

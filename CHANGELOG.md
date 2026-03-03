@@ -1,3 +1,10 @@
+## [1.11.14](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.13...v1.11.14) (2026-03-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency postcss to v8.5.8 ([#332](https://github.com/jackson147/wadebridge-gaming-group/issues/332)) ([454db47](https://github.com/jackson147/wadebridge-gaming-group/commit/454db470cef98c7f2cbd6aefdc810e8986cc4b1e))
+
 ## [1.11.13](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.12...v1.11.13) (2026-03-02)
 
 

@@ -1,3 +1,10 @@
+## [1.11.15](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.14...v1.11.15) (2026-03-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-icons to v5.6.0 ([#333](https://github.com/jackson147/wadebridge-gaming-group/issues/333)) ([930a499](https://github.com/jackson147/wadebridge-gaming-group/commit/930a499dc7744d090b5b518438301326f6630035))
+
 ## [1.11.14](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.13...v1.11.14) (2026-03-03)
 
 

@@ -1,3 +1,10 @@
+## [1.11.33](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.32...v1.11.33) (2026-03-14)
+
+
+### Bug Fixes
+
+* **deps:** update docker/setup-buildx-action action to v4 ([f9686cd](https://github.com/jackson147/wadebridge-gaming-group/commit/f9686cd6e081efa0c688b966b12dd3228525650d))
+
 ## [1.11.32](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.31...v1.11.32) (2026-03-13)
 
 

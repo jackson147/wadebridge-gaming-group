@@ -1,3 +1,10 @@
+## [1.11.34](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.33...v1.11.34) (2026-03-14)
+
+
+### Bug Fixes
+
+* **deps:** update docker/setup-qemu-action action to v4 ([9c12830](https://github.com/jackson147/wadebridge-gaming-group/commit/9c1283082fafbfc3da002d44fd454cc79d3f8b4f))
+
 ## [1.11.33](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.32...v1.11.33) (2026-03-14)
 
 

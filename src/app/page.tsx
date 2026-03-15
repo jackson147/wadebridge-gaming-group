@@ -81,6 +81,14 @@ export default async function Home() {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                <Image
+                  src="/Pavilion_1.jpg"
+                  alt="Egloshayle Pavilion"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="text-center text-lg">
                 <p className="font-semibold">Egloshayle Pavilion</p>
                 <p>Wadebridge, PL27 6AQ</p>

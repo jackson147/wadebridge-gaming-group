@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.1...v1.12.2) (2026-03-15)
+
+
+### Bug Fixes
+
+* enforced background of dc2 sign to be dark, yellow on white doesn't work ([75f78f4](https://github.com/jackson147/wadebridge-gaming-group/commit/75f78f4bd5e9a7f0ca3cdda42c1d6d30eac16ef8))
+
 ## [1.12.1](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.0...v1.12.1) (2026-03-15)
 
 

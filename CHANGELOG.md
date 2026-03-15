@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.39...v1.12.0) (2026-03-15)
+
+
+### Features
+
+* added shop page ([f2a4b8b](https://github.com/jackson147/wadebridge-gaming-group/commit/f2a4b8b5fd587301ca5ee4e2985b798a9c501a53))
+
 ## [1.11.39](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.38...v1.11.39) (2026-03-15)
 
 

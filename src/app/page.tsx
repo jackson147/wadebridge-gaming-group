@@ -42,6 +42,26 @@ export default async function Home() {
             Egloshayle Pavilion, Wadebridge.
           </p>
 
+          {latestNewsPost && (
+            <Card className="w-full max-w-4xl bg-gray-100/50 dark:bg-white/10">
+              <CardHeader>
+                <CardTitle className="text-center text-2xl">
+                  Latest News
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center gap-4">
+                <div className="flex w-full max-w-4xl flex-col items-center gap-6">
+                  <div className="w-full">
+                    <NewsPostItem key={latestNewsPost.id} post={latestNewsPost} />
+                  </div>
+                  <Button asChild size="lg">
+                    <Link href="/news">View More News</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
           <Card className="w-full max-w-4xl bg-gray-100/50 dark:bg-white/10">
             <CardHeader>
               <CardTitle className="text-center text-2xl">
@@ -67,26 +87,6 @@ export default async function Home() {
               </div>
             </CardContent>
           </Card>
-
-          {latestNewsPost && (
-            <Card className="w-full max-w-4xl bg-gray-100/50 dark:bg-white/10">
-              <CardHeader>
-                <CardTitle className="text-center text-2xl">
-                  Latest News
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col items-center gap-4">
-                <div className="flex w-full max-w-4xl flex-col items-center gap-6">
-                  <div className="w-full">
-                    <NewsPostItem key={latestNewsPost.id} post={latestNewsPost} />
-                  </div>
-                  <Button asChild size="lg">
-                    <Link href="/news">View More News</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          )}
 
           <div className="flex w-full max-w-2xl flex-col items-center gap-4">
             <h2 className="text-center text-2xl font-semibold">

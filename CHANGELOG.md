@@ -1,3 +1,10 @@
+## [1.11.36](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.35...v1.11.36) (2026-03-15)
+
+
+### Bug Fixes
+
+* **deps:** update docker/login-action action to v4 ([abff758](https://github.com/jackson147/wadebridge-gaming-group/commit/abff758dce4cd5626ffbc3c3de6dac75ed6dea02))
+
 ## [1.11.35](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.34...v1.11.35) (2026-03-15)
 
 

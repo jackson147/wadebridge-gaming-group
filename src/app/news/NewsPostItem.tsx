@@ -131,12 +131,11 @@ export function NewsPostItem({ post }: NewsPostItemProps) {
         </div>
       )}
 
-      {isEditModalOpen && (
-        <CreateNewsModal
-          post={post}
-          onClose={() => setIsEditModalOpen(false)}
-        />
-      )}
+      <CreateNewsModal
+        isOpen={isEditModalOpen}
+        post={post}
+        onClose={() => setIsEditModalOpen(false)}
+      />
 
       <ConfirmationModal
         isOpen={isConfirmOpen}

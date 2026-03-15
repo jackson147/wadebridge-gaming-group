@@ -38,35 +38,9 @@ export default async function Home() {
 
           <p className="max-w-3xl text-center text-3xl font-semibold">
             Board games and other tabletop fun every{" "}
-            <span className="text-orange-400">Thursday at 6:30 PM</span> at the
+            <span className="text-primary">Thursday at 6:30 PM</span> at the
             Egloshayle Pavilion, Wadebridge.
           </p>
-
-          <Card className="w-full max-w-4xl bg-gray-100/50 dark:bg-white/10">
-            <CardHeader>
-              <CardTitle className="text-center text-2xl">
-                Find us at
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col items-center gap-4">
-              <div className="aspect-video w-full overflow-hidden rounded-lg">
-                <iframe
-                  title="Meeting place - Egloshayle Pavilion, Wadebridge"
-                  src="https://www.google.com/maps?q=Wadebridge+Egloshayle+Pavilion,+Wadebridge,+PL27+6AQ&output=embed"
-                  width="100%"
-                  height="100%"
-                  className="border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-              <div className="text-center text-lg">
-                <p className="font-semibold">Egloshayle Pavilion</p>
-                <p>Wadebridge, PL27 6AQ</p>
-              </div>
-            </CardContent>
-          </Card>
 
           {latestNewsPost && (
             <Card className="w-full max-w-4xl bg-gray-100/50 dark:bg-white/10">
@@ -87,6 +61,40 @@ export default async function Home() {
               </CardContent>
             </Card>
           )}
+
+          <Card className="w-full max-w-4xl bg-gray-100/50 dark:bg-white/10">
+            <CardHeader>
+              <CardTitle className="text-center text-2xl">
+                Find us at
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col items-center gap-4">
+              <div className="aspect-video w-full overflow-hidden rounded-lg">
+                <iframe
+                  title="Meeting place - Egloshayle Pavilion, Wadebridge"
+                  src="https://www.google.com/maps?q=Wadebridge+Egloshayle+Pavilion,+Wadebridge,+PL27+6AQ&output=embed"
+                  width="100%"
+                  height="100%"
+                  className="border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                <Image
+                  src="/Pavilion_1.jpg"
+                  alt="Egloshayle Pavilion"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="text-center text-lg">
+                <p className="font-semibold">Egloshayle Pavilion</p>
+                <p>Wadebridge, PL27 6AQ</p>
+              </div>
+            </CardContent>
+          </Card>
 
           <div className="flex w-full max-w-2xl flex-col items-center gap-4">
             <h2 className="text-center text-2xl font-semibold">

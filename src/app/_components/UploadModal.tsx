@@ -16,6 +16,7 @@ import { FaFileImage, FaUpload } from "react-icons/fa";
 import { api } from "~/trpc/react";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
 
 export function UploadModal() {
   const [files, setFiles] = useState<File[]>([]);
@@ -127,9 +128,9 @@ export function UploadModal() {
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-4 py-4">
-          <label
+          <Label
             htmlFor="picture"
-            className="relative flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-border bg-background p-8 text-center transition hover:bg-accent"
+            className="relative flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-input bg-background p-8 text-center transition hover:bg-accent"
           >
             <FaUpload className="size-8 text-muted-foreground" />
             <span className="font-semibold text-muted-foreground">
@@ -146,16 +147,19 @@ export function UploadModal() {
               multiple
               className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
             />
-          </label>
+          </Label>
           {files.length > 0 && (
             <div className="text-sm text-muted-foreground">
               <p>
                 Selected: {files.length} file{files.length > 1 ? "s" : ""}
               </p>
               <ul className="mt-2 grid gap-2">
-                {files.map((f, index) => (
-                  <li key={f.name} className="truncate">
-                    {f.name}
+                {files.map((f) => (
+                  <li key={f.name} className="flex items-center gap-2">
+                    <FaFileImage className="size-4 shrink-0" />
+                    <span className="truncate" title={f.name}>
+                      {f.name}
+                    </span>
                   </li>
                 ))}
               </ul>

@@ -1,11 +1,11 @@
 "use client";
-
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { api } from "~/trpc/react";
 import { CreateNewsModal } from "./CreateNewsModal";
 import { NewsPostItem } from "./NewsPostItem";
 import { FaPlus } from "react-icons/fa";
+import { Button } from "~/components/ui/button";
 
 export default function NewsPage() {
   const { data: session } = useSession();
@@ -23,13 +23,10 @@ export default function NewsPage() {
             News Feed
           </h1>
           {canCreate && (
-            <button
-              onClick={() => setIsCreateModalOpen(true)}
-              className="flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
-            >
-              <FaPlus />
+            <Button onClick={() => setIsCreateModalOpen(true)}>
+              <FaPlus className="mr-2 size-5" />
               <span>Create Post</span>
-            </button>
+            </Button>
           )}
         </div>
 
@@ -44,10 +41,10 @@ export default function NewsPage() {
             ))}
           </div>
         )}
-
-        {isCreateModalOpen && (
-          <CreateNewsModal onClose={() => setIsCreateModalOpen(false)} />
-        )}
+        <CreateNewsModal
+          isOpen={isCreateModalOpen}
+          onClose={() => setIsCreateModalOpen(false)}
+        />
       </div>
     </main>
   );

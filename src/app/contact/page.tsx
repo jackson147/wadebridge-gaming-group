@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
 
 const initialState = {
@@ -57,17 +58,17 @@ export default function ContactPage() {
                 <div className="text-red-500 font-medium">{state.message}</div>
               )}
               <div className="grid gap-2">
-                <label htmlFor="name" className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Name</label>
+                <Label htmlFor="name" className="text-lg">Name</Label>
                 <Input id="name" name="name" placeholder="Your Name" className="text-lg h-12" defaultValue={state.fields?.name} />
                 {state.errors?.name && <p className="text-red-500 text-sm">{state.errors.name[0]}</p>}
               </div>
               <div className="grid gap-2">
-                <label htmlFor="email" className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label>
+                <Label htmlFor="email" className="text-lg">Email</Label>
                 <Input id="email" name="email" type="email" placeholder="Your Email" className="text-lg h-12" defaultValue={state.fields?.email} />
                 {state.errors?.email && <p className="text-red-500 text-sm">{state.errors.email[0]}</p>}
               </div>
               <div className="grid gap-2">
-                <label htmlFor="message" className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Message</label>
+                <Label htmlFor="message" className="text-lg">Message</Label>
                 <Textarea
                   id="message"
                   name="message"

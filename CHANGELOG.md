@@ -1,3 +1,10 @@
+## [1.12.3](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.2...v1.12.3) (2026-03-15)
+
+
+### Bug Fixes
+
+* updated shadcn components ([d2af6e4](https://github.com/jackson147/wadebridge-gaming-group/commit/d2af6e4b215ade14d2e1e4b0cf95432c236bf69c))
+
 ## [1.12.2](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.1...v1.12.2) (2026-03-15)
 
 

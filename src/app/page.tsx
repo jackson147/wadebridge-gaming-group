@@ -38,7 +38,7 @@ export default async function Home() {
 
           <p className="max-w-3xl text-center text-3xl font-semibold">
             Board games and other tabletop fun every{" "}
-            <span className="text-orange-400">Thursday at 6:30 PM</span> at the
+            <span className="text-primary">Thursday at 6:30 PM</span> at the
             Egloshayle Pavilion, Wadebridge.
           </p>
 

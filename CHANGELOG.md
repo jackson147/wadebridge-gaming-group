@@ -1,3 +1,13 @@
+## [1.11.37](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.36...v1.11.37) (2026-03-15)
+
+
+### Bug Fixes
+
+* added pic of pavillion to the find us card ([fffd20e](https://github.com/jackson147/wadebridge-gaming-group/commit/fffd20ee8a9d7512a4d266e51674c20857ccd57f))
+* fixed colours and used more shadcn components ([781f4fe](https://github.com/jackson147/wadebridge-gaming-group/commit/781f4fe2d75fe2d359e3c845d69c06b4c3ab59c2))
+* news now comes first ([bd5470d](https://github.com/jackson147/wadebridge-gaming-group/commit/bd5470d9be14022e37d88e61d693182209d93839))
+* sorted out colours ([585cc98](https://github.com/jackson147/wadebridge-gaming-group/commit/585cc9867bcd06fa7a47da1b972f1cc58d650938))
+
 ## [1.11.36](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.11.35...v1.11.36) (2026-03-15)
 
 

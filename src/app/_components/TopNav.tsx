@@ -17,6 +17,7 @@ export function TopNav() {
     { href: "/", label: "Home" },
     { href: "/news", label: "News" },
     { href: "/gallery", label: "Gallery" },
+    { href: "/shop", label: "Shop" },
   ];
 
   return (

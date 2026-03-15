@@ -27,7 +27,7 @@ export default function ShopPage() {
             </p>
           </div>
 
-          <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted">
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-[oklch(0.269_0_0)]">
             <Image
               src="/400_filter_nobg_6724f4d9b3564.webp"
               alt="D2C Signs"

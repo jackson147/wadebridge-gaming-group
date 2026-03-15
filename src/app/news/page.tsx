@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { api } from "~/trpc/react";
@@ -24,8 +23,7 @@ export default function NewsPage() {
             News Feed
           </h1>
           {canCreate && (
-            <Button
-              onClick={() => setIsCreateModalOpen(true)}>
+            <Button onClick={() => setIsCreateModalOpen(true)}>
               <FaPlus className="mr-2 size-5" />
               <span>Create Post</span>
             </Button>
@@ -43,10 +41,10 @@ export default function NewsPage() {
             ))}
           </div>
         )}
-
-        {isCreateModalOpen && (
-          <CreateNewsModal onClose={() => setIsCreateModalOpen(false)} />
-        )}
+        <CreateNewsModal
+          isOpen={isCreateModalOpen}
+          onClose={() => setIsCreateModalOpen(false)}
+        />
       </div>
     </main>
   );

@@ -2,10 +2,23 @@
 
 import imageCompression from "browser-image-compression";
 import { useState } from "react";
-import { FaPlus, FaTimes } from "react-icons/fa";
+import { FaTimes, FaUpload } from "react-icons/fa";
 import { api } from "~/trpc/react";
+import { Button } from "~/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "~/components/ui/dialog";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
+import { Textarea } from "~/components/ui/textarea";
 
 interface CreateNewsModalProps {
+  isOpen: boolean;
   onClose: () => void;
   post?: {
     id: string;
@@ -15,11 +28,10 @@ interface CreateNewsModalProps {
   };
 }
 
-export function CreateNewsModal({ onClose, post }: CreateNewsModalProps) {
+export function CreateNewsModal({ isOpen, onClose, post }: CreateNewsModalProps) {
   const utils = api.useUtils();
   const [title, setTitle] = useState(post?.title ?? "");
   const [content, setContent] = useState(post?.content ?? "");
-  const [imageUrlInput, setImageUrlInput] = useState("");
   const [imageUrls, setImageUrls] = useState<string[]>(
     post?.images.map((img) => img.url) ?? [],
   );
@@ -41,13 +53,6 @@ export function CreateNewsModal({ onClose, post }: CreateNewsModalProps) {
       onClose();
     },
   });
-
-  const handleAddImage = () => {
-    if (imageUrlInput.trim()) {
-      setImageUrls([...imageUrls, imageUrlInput.trim()]);
-      setImageUrlInput("");
-    }
-  };
 
   const handleRemoveImage = (index: number) => {
     setImageUrls(imageUrls.filter((_, i) => i !== index));
@@ -116,89 +121,102 @@ export function CreateNewsModal({ onClose, post }: CreateNewsModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-2xl rounded-lg border bg-card p-6 text-card-foreground shadow-xl">
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-xl font-bold">{post ? "Edit News Post" : "Create News Post"}</h2>
-          <button onClick={onClose} className="text-muted-foreground hover:text-foreground">
-            <FaTimes />
-          </button>
-        </div>
-
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div>
-            <label className="mb-1 block text-sm font-medium text-muted-foreground">Title</label>
-            <input
-              type="text"
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="sm:max-w-[625px]">
+        <DialogHeader>
+          <DialogTitle>{post ? "Edit News Post" : "Create News Post"}</DialogTitle>
+          <DialogDescription>
+            Fill in the details for the news post. You can upload images to
+            accompany the post.
+          </DialogDescription>
+        </DialogHeader>
+        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+          <div className="grid gap-2">
+            <Label htmlFor="title">Title</Label>
+            <Input
+              id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full rounded-md border bg-background p-2 placeholder:text-muted-foreground focus:border-primary focus:outline-none"
+              className="border-input"
               required
             />
           </div>
-
-          <div>
-            <label className="mb-1 block text-sm font-medium text-muted-foreground">Content</label>
-            <textarea
+          <div className="grid gap-2">
+            <Label htmlFor="content">Content</Label>
+            <Textarea
+              id="content"
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="h-32 w-full rounded-md border bg-background p-2 placeholder:text-muted-foreground focus:border-primary focus:outline-none"
+              className="border-input"
               required
             />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-muted-foreground">Upload Images</label>
-            <input
-              type="file"
-              accept="image/*"
-              multiple
-              onChange={handleFileChange}
-              className="w-full rounded-md border bg-background p-2 text-sm text-muted-foreground file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary-foreground hover:file:bg-primary/90"
-            />
-
-            {/* Image Preview List (URLs + Files) */}
+            <Label htmlFor="picture-upload" className="text-sm font-medium">Images</Label>
+            <Label
+              htmlFor="picture-upload"
+              className="relative mt-2 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-input bg-transparent p-8 text-center transition hover:bg-accent"
+            >
+              <FaUpload className="size-8 text-muted-foreground" />
+              <span className="font-semibold text-muted-foreground">
+                Click to upload or drag and drop
+              </span>
+              <p className="text-xs text-muted-foreground">
+                Maximum file size 1MB per image
+              </p>
+              <Input
+                id="picture-upload"
+                type="file"
+                onChange={handleFileChange}
+                accept="image/*"
+                multiple
+                className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+              />
+            </Label>
             {(imageUrls.length > 0 || files.length > 0) && (
-              <div className="mt-2 flex flex-wrap gap-2">
+              <div className="mt-4 flex flex-wrap gap-2">
                 {imageUrls.map((url, idx) => (
-                  <div key={`url-${idx}`} className="relative h-20 w-20 overflow-hidden rounded-md border">
-                    <img src={url} alt="Preview" className="h-full w-full object-cover" />
-                    <button
+                  <div key={`url-${idx}`} className="relative h-24 w-24">
+                    <img src={url} alt="Preview" className="h-full w-full rounded-md object-cover" />
+                    <Button
                       type="button"
+                      variant="destructive"
+                      size="icon"
+                      className="absolute right-1 top-1 h-6 w-6"
                       onClick={() => handleRemoveImage(idx)}
-                      className="absolute right-0 top-0 bg-red-500 p-1 text-xs text-white"
                     >
-                      <FaTimes />
-                    </button>
+                      <FaTimes className="h-3 w-3" />
+                    </Button>
                   </div>
                 ))}
                 {files.map((file, idx) => (
-                  <div key={`file-${idx}`} className="relative h-20 w-20 overflow-hidden rounded-md border">
-                    <img src={URL.createObjectURL(file)} alt="Preview" className="h-full w-full object-cover" />
-                    <button
+                  <div key={`file-${idx}`} className="relative h-24 w-24">
+                    <img src={URL.createObjectURL(file)} alt={file.name} className="h-full w-full rounded-md object-cover" />
+                    <Button
                       type="button"
+                      variant="destructive"
+                      size="icon"
+                      className="absolute right-1 top-1 h-6 w-6"
                       onClick={() => handleRemoveFile(idx)}
-                      className="absolute right-0 top-0 bg-red-500 p-1 text-xs text-white"
                     >
-                      <FaTimes />
-                    </button>
+                      <FaTimes className="h-3 w-3" />
+                    </Button>
                   </div>
                 ))}
               </div>
             )}
           </div>
-
-          <div className="mt-4 flex justify-end gap-2">
-            <button type="button" onClick={onClose} className="rounded-md px-4 py-2 text-muted-foreground hover:bg-accent">Cancel</button>
-            <button
+          <DialogFooter>
+            <Button type="button" variant="secondary" onClick={onClose} disabled={createNews.isPending || updateNews.isPending || isUploading}>Cancel</Button>
+            <Button
               type="submit"
               disabled={createNews.isPending || updateNews.isPending || isUploading}
-              className="rounded-md bg-primary px-4 py-2 text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
             >
               {createNews.isPending || updateNews.isPending || isUploading ? "Saving..." : post ? "Update Post" : "Post News"}
-            </button>
-          </div>
+            </Button>
+          </DialogFooter>
         </form>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }

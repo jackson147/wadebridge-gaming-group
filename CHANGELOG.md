@@ -1,3 +1,11 @@
+## [1.12.8](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.7...v1.12.8) (2026-03-18)
+
+
+### Bug Fixes
+
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1012.0 ([#369](https://github.com/jackson147/wadebridge-gaming-group/issues/369)) ([f62ca9c](https://github.com/jackson147/wadebridge-gaming-group/commit/f62ca9cd39a453fe939c731a0bd4db82e1c5af7b))
+* **deps:** update dependency @tanstack/react-query to v5.91.0 ([#370](https://github.com/jackson147/wadebridge-gaming-group/issues/370)) ([2d608d6](https://github.com/jackson147/wadebridge-gaming-group/commit/2d608d60cb0b085b744c246628dd4a9f58c9fa48))
+
 ## [1.12.7](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.6...v1.12.7) (2026-03-18)
 
 

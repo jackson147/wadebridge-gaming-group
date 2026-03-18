@@ -1,3 +1,11 @@
+## [1.12.7](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.6...v1.12.7) (2026-03-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @biomejs/biome to v2.4.8 ([#367](https://github.com/jackson147/wadebridge-gaming-group/issues/367)) ([b7a18f6](https://github.com/jackson147/wadebridge-gaming-group/commit/b7a18f6f9f336ba534a04e9896f870e1fd2dd702))
+* **deps:** update tailwindcss monorepo to v4.2.2 ([#368](https://github.com/jackson147/wadebridge-gaming-group/issues/368)) ([313842d](https://github.com/jackson147/wadebridge-gaming-group/commit/313842d92c15e66c9fdf1e6d7e7491e1f077171a))
+
 ## [1.12.6](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.5...v1.12.6) (2026-03-17)
 
 

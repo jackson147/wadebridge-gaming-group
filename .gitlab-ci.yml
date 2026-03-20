@@ -35,8 +35,6 @@ install_deps:
 # Job to verify multi-arch build succeeds (Dry Run)
 build_dry_run:
   stage: build
-  before_script:
-    - docker buildx create --use
   script:
     # Build for x86, throwing away output (just verification)
     # Note: Add --build-arg AUTH_URL=$AUTH_URL if your Dockerfile requires it
@@ -47,7 +45,6 @@ push_image:
   stage: deploy
   when: manual
   before_script:
-    - docker buildx create --use
     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
   script:
     # Tag format: dev:a1b2c3d

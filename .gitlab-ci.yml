@@ -47,7 +47,7 @@ push_image:
   before_script:
     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
   script:
-    # Tag format: dev:a1b2c3d
-    - TAG="dev:$CI_COMMIT_SHORT_SHA"
+    # Tag format: dev-a1b2c3d
+    - TAG="dev-$CI_COMMIT_SHORT_SHA"
     - echo "Building and pushing $CI_REGISTRY_IMAGE:$TAG"
     - docker buildx build --platform linux/amd64 --push -t "$CI_REGISTRY_IMAGE:$TAG" .

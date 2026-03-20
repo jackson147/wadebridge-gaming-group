@@ -1,0 +1,56 @@
+image: docker:24
+
+services:
+  - docker:24-dind
+
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  # Use overlay2 for better performance
+  DOCKER_DRIVER: overlay2
+  # Standard TLS location for Docker-in-Docker
+  DOCKER_TLS_CERTDIR: "/certs"
+
+# Only run this pipeline on branches that are NOT main
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH != "main"'
+
+install_deps:
+  stage: test
+  image: node:24
+  # Cache node_modules to speed up subsequent runs
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules/
+  script:
+    - npm ci
+
+# Job to verify multi-arch build succeeds (Dry Run)
+build_dry_run:
+  stage: build
+  before_script:
+    - docker buildx create --use
+  script:
+    # Build for x86, throwing away output (just verification)
+    # Note: Add --build-arg AUTH_URL=$AUTH_URL if your Dockerfile requires it
+    - docker buildx build --platform linux/amd64 .
+
+# Manual job to build and push to registry
+push_image:
+  stage: deploy
+  when: manual
+  before_script:
+    - docker buildx create --use
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+  script:
+    # Tag format: dev:a1b2c3d
+    - TAG="dev:$CI_COMMIT_SHORT_SHA"
+    - echo "Building and pushing $CI_REGISTRY_IMAGE:$TAG"
+    - docker buildx build --platform linux/amd64 --push -t "$CI_REGISTRY_IMAGE:$TAG" .

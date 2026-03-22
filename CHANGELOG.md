@@ -1,3 +1,10 @@
+## [1.12.17](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.16...v1.12.17) (2026-03-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-hook-form to v7.72.0 ([#382](https://github.com/jackson147/wadebridge-gaming-group/issues/382)) ([b35b144](https://github.com/jackson147/wadebridge-gaming-group/commit/b35b1440e9cda5bab8cbdc81f32c107ce48ec700))
+
 ## [1.12.16](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.15...v1.12.16) (2026-03-21)
 
 

@@ -33,21 +33,29 @@ install_deps:
     - npm ci
 
 # Job to verify multi-arch build succeeds (Dry Run)
-build_dry_run:
+build_image:
   stage: build
   script:
-    # Build for x86, throwing away output (just verification)
+    # Build for x86 and save to file for next step
     # Note: Add --build-arg AUTH_URL=$AUTH_URL if your Dockerfile requires it
-    - docker buildx build --platform linux/amd64 .
+    - docker buildx build --platform linux/amd64 -t temp-image --load .
+    - docker save -o image.tar temp-image
+  artifacts:
+    paths:
+      - image.tar
+    expire_in: 1 day
 
 # Manual job to build and push to registry
-push_image:
-  stage: deploy
+push_dev_image:
   when: manual
+  dependencies:
+    - build_image
   before_script:
     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
   script:
+    - docker load -i image.tar
     # Tag format: dev-a1b2c3d
     - TAG="dev-$CI_COMMIT_SHORT_SHA"
-    - echo "Building and pushing $CI_REGISTRY_IMAGE:$TAG"
-    - docker buildx build --platform linux/amd64 --push -t "$CI_REGISTRY_IMAGE:$TAG" .
+    - echo "Pushing $CI_REGISTRY_IMAGE:$TAG"
+    - docker tag temp-image "$CI_REGISTRY_IMAGE:$TAG"
+    - docker push "$CI_REGISTRY_IMAGE:$TAG"

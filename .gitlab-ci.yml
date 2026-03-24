@@ -6,7 +6,6 @@ services:
 stages:
   - test
   - build
-  - deploy
 
 variables:
   # Use overlay2 for better performance
@@ -47,6 +46,7 @@ build_image:
 
 # Manual job to build and push to registry
 push_dev_image:
+  stage: build
   when: manual
   dependencies:
     - build_image

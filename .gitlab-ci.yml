@@ -6,6 +6,7 @@ services:
 stages:
   - test
   - build
+  - release
 
 variables:
   # Use overlay2 for better performance
@@ -13,10 +14,9 @@ variables:
   # Standard TLS location for Docker-in-Docker
   DOCKER_TLS_CERTDIR: "/certs"
 
-# Only run this pipeline on branches that are NOT main
 workflow:
   rules:
-    - if: '$CI_COMMIT_BRANCH != "main"'
+    - if: '$CI_COMMIT_BRANCH'
 
 install_deps:
   stage: test
@@ -59,3 +59,20 @@ push_dev_image:
     - echo "Pushing $CI_REGISTRY_IMAGE:$TAG"
     - docker tag temp-image "$CI_REGISTRY_IMAGE:$TAG"
     - docker push "$CI_REGISTRY_IMAGE:$TAG"
+
+semantic_release:
+  stage: release
+  image: node:24
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules/
+    policy: pull
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  script:
+    - npx semantic-release
+  variables:
+    GITLAB_TOKEN: $GITLAB_TOKEN

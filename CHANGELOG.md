@@ -1,3 +1,10 @@
+## [1.12.33](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.32...v1.12.33) (2026-03-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-resizable-panels to v4.8.0 ([#400](https://github.com/jackson147/wadebridge-gaming-group/issues/400)) ([cbd7144](https://github.com/jackson147/wadebridge-gaming-group/commit/cbd7144df577f553fe4444c4e380415a020d604b))
+
 ## [1.12.32](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.31...v1.12.32) (2026-03-28)
 
 

@@ -1,3 +1,10 @@
+## [1.12.32](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.31...v1.12.32) (2026-03-28)
+
+
+### Bug Fixes
+
+* **deps:** update trpc monorepo to v11.16.0 ([#399](https://github.com/jackson147/wadebridge-gaming-group/issues/399)) ([55eec78](https://github.com/jackson147/wadebridge-gaming-group/commit/55eec78075e2879d67f9c268829275540d69ff6f))
+
 ## [1.12.31](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.30...v1.12.31) (2026-03-27)
 
 

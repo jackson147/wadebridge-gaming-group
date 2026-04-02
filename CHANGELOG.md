@@ -1,3 +1,11 @@
+## [1.12.42](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.41...v1.12.42) (2026-04-02)
+
+
+### Bug Fixes
+
+* **deps:** update aws-sdk-js-v3 monorepo to v3.1023.0 ([#409](https://github.com/jackson147/wadebridge-gaming-group/issues/409)) ([819a848](https://github.com/jackson147/wadebridge-gaming-group/commit/819a8483a9408f189f3224010c3dac118467dda1))
+* **deps:** update dependency react-resizable-panels to v4.9.0 ([#410](https://github.com/jackson147/wadebridge-gaming-group/issues/410)) ([8fb0e5d](https://github.com/jackson147/wadebridge-gaming-group/commit/8fb0e5d677720ec33ab381afa9e65bb0006d5445))
+
 ## [1.12.41](https://github.com/jackson147/wadebridge-gaming-group/compare/v1.12.40...v1.12.41) (2026-04-01)
 
 
